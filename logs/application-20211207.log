@@ -1,0 +1,44 @@
+2021-12-07 12:10:12.893 [main] INFO  org.example.App - All records were added
+2021-12-07 12:10:12.927 [main] INFO  org.example.App - {"id":1638868212799,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"07/12/2021 12:10:12","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-07 12:10:13.200 [main] INFO  org.example.App - Connected to db
+2021-12-07 12:10:13.278 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-12-07 12:10:13.282 [main] INFO  org.example.App - Collection received
+2021-12-07 12:10:13.316 [main] INFO  org.example.App - Record added
+2021-12-07 12:36:46.555 [main] ERROR org.example.App - java.io.FileNotFoundException./src/main/resources/CSVClass.csv (No such file or directory)
+2021-12-07 12:38:07.950 [main] ERROR org.example.App - java.io.FileNotFoundException./src/main/resources/CSV/Class.csv (No such file or directory)
+2021-12-07 12:39:14.115 [main] INFO  org.example.App - Records were selected
+2021-12-07 12:39:43.274 [main] INFO  org.example.App - All records were added
+2021-12-07 12:39:43.306 [main] INFO  org.example.App - {"id":1638869983185,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"07/12/2021 12:39:43","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-07 12:39:43.519 [main] INFO  org.example.App - Connected to db
+2021-12-07 12:39:43.557 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-12-07 12:39:43.560 [main] INFO  org.example.App - Collection received
+2021-12-07 12:39:43.577 [main] INFO  org.example.App - Record added
+2021-12-07 12:40:31.113 [main] INFO  org.example.App - CSV PATH is :./src/main/resources/CSV/ListN.csv
+2021-12-07 12:40:31.197 [main] INFO  org.example.App - All records were added
+2021-12-07 12:40:31.225 [main] INFO  org.example.App - {"id":1638870031105,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"07/12/2021 12:40:31","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-07 12:40:31.435 [main] INFO  org.example.App - Connected to db
+2021-12-07 12:40:31.493 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-12-07 12:40:31.496 [main] INFO  org.example.App - Collection received
+2021-12-07 12:40:31.511 [main] INFO  org.example.App - Record added
+2021-12-07 12:41:52.416 [main] INFO  org.example.App - CSV PATH is :./src/main/resources/CSV/Trainer.csv
+2021-12-07 12:41:52.487 [main] INFO  org.example.App - All records were added
+2021-12-07 12:41:52.512 [main] INFO  org.example.App - {"id":1638870112409,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"07/12/2021 12:41:52","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-07 12:41:52.714 [main] INFO  org.example.App - Connected to db
+2021-12-07 12:41:52.751 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-12-07 12:41:52.754 [main] INFO  org.example.App - Collection received
+2021-12-07 12:41:52.772 [main] INFO  org.example.App - Record added
+2021-12-07 13:03:51.244 [main] INFO  org.example.App - CSV PATH is :./src/main/resources/CSV/Trainer.csv
+2021-12-07 13:03:51.325 [main] INFO  org.example.App - All records were added
+2021-12-07 13:03:51.354 [main] INFO  org.example.App - {"id":1638871431235,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"07/12/2021 13:03:51","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-07 13:03:51.578 [main] INFO  org.example.App - Connected to MongoDB
+2021-12-07 13:03:51.624 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-12-07 13:03:51.628 [main] INFO  org.example.App - MongoDB collection received
+2021-12-07 13:03:51.645 [main] INFO  org.example.App - New History record added
+2021-12-07 13:09:02.560 [main] INFO  org.example.App - Created new CSV file:Exercise
+2021-12-07 13:09:02.562 [main] INFO  org.example.App - CSV PATH is :./src/main/resources/CSV/Exercise.csv
+2021-12-07 13:09:02.635 [main] INFO  org.example.App - Added new exercise
+2021-12-07 13:09:02.636 [main] INFO  org.example.App - {"id":1638871742526,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"07/12/2021 13:09:02","actor":"system","methodName":"addNewExercise","bean":"{\"count\":0,\"id\":1638871742011,\"name\":\"exercise1\",\"description\":\"some description\",\"video\":\"some URL\"}","status":"SUCCESS"}
+2021-12-07 13:09:02.864 [main] INFO  org.example.App - Connected to MongoDB
+2021-12-07 13:09:02.912 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-12-07 13:09:02.916 [main] INFO  org.example.App - MongoDB collection received
+2021-12-07 13:09:02.932 [main] INFO  org.example.App - New History record added
