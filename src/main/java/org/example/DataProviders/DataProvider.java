@@ -28,7 +28,7 @@ public abstract class DataProvider {
 
     // ---------- Trainer CRUD ----------
 
-    abstract boolean createNewTrainer(Trainer trainer);
+    abstract boolean insertTrainer(Trainer trainer);
 
     abstract boolean deleteTrainerById(long id);
 
@@ -38,9 +38,7 @@ public abstract class DataProvider {
 
     // ---------- Client CRUD ----------
 
-    abstract boolean createNewClient(Client client);
-
-    abstract boolean deleteClientById(long id);
+    abstract boolean insertClient(Client client);
 
     abstract Optional<Client> getClientById(long id);
 
@@ -48,19 +46,13 @@ public abstract class DataProvider {
 
     // ---------- Exercise CRUD ----------
 
-    abstract boolean createNewExercise(Exercise exercise);
-
-    abstract boolean deleteExerciseById(long id);
+    abstract boolean insertExercise(Exercise exercise);
 
     abstract Optional<Exercise> getExerciseById(long id);
 
-    abstract boolean updateExercise(Exercise exercise);
-
     // ---------- Workout CRUD ----------
 
-    abstract boolean createNewWorkout(Workout workout);
-
-    abstract boolean deleteWorkoutById(long id);
+    abstract boolean insertWorkout(Workout workout);
 
     abstract Optional<Workout> getWorkoutById(long id);
 
@@ -68,46 +60,35 @@ public abstract class DataProvider {
 
     // ---------- Feedback CRUD ----------
 
-    abstract boolean createNewFeedback(Feedback feedback);
-
-    abstract boolean deleteFeedbackById(long id);
+    abstract boolean insertFeedback(Feedback feedback);
 
     abstract Optional<Feedback> getFeedbackById(long id);
-
-    abstract boolean updateFeedback(Feedback feedback);
 
     // ---------- Program CRUD ----------
 
     abstract boolean createNewProgram(Program program);
 
-    abstract boolean deleteProgramById(long id);
-
     abstract Optional<Program> getProgramById(long id);
 
-    abstract boolean updateProgram(Program program);
-
-    // ---------- Use-case extra implementation ----------
+    // ---------- Use-case implementation ----------
     //Trainer role
-    abstract boolean composeProgram(int workoutsAmount, int durationInWeeks, int workoutsPerWeek,
-                                           String description, Program.ProgramType type, long clientId);
 
-    abstract long composeWorkout(List<Long> exercisesIds, List<Integer> weights, List<Integer> rounds,
-                                    List<Integer> repetitions);
+    //abstract boolean composeProgram(int workoutsAmount, int durationInWeeks, int workoutsPerWeek,
+    //                                       String description, Program.ProgramType type, long clientId);
+//
+    //abstract long composeWorkout(List<Long> exercisesIds, List<Integer> weights, List<Integer> rounds,
+    //                                List<Integer> repetitions);
 
     abstract Optional<Exercise> addNewExercise(long id);
 
-    abstract Optional<Client> selectClient(long id);
-
     abstract Optional<Feedback> viewFeedback(Client client);
 
-    abstract Optional<Client> addNewClient(long id);
-
     //Client role
-    abstract Optional<Program> selectProgram(Client client);
+    abstract boolean executeWorkout(long workoutID, String isCompleted);
 
-    abstract Optional<Workout> selectWorkout(Program program, boolean isCompleted);
+    abstract boolean viewWorkout(long workoutID);
 
-    abstract boolean composeFeedback(Workout workout);
+    abstract long composeFeedback(String isCompleted);
 
     // ----------- MongoDB history --------------
 
@@ -117,25 +98,25 @@ public abstract class DataProvider {
         MongoDatabase database = connectToDB();
         MongoCollection collection = receiveCollection(database);
         collection.insertOne(Document.parse(recordJson));
-        logger.info("New History record added");
+        logger.debug("New History record added");
     }
 
     private static MongoDatabase connectToDB(){
         MongoClient mongoClient = new MongoClient("localhost", 27017);
         MongoDatabase database = mongoClient.getDatabase("myMongoDb");
-        logger.info("Connected to MongoDB");
+        logger.debug("Connected to MongoDB");
         return database;
     }
 
     private static MongoCollection receiveCollection(MongoDatabase database){
         try {
             database.createCollection("HistoryContent");
-            logger.info("MongoDB collection created");
+            logger.debug("MongoDB collection created");
         }catch (MongoCommandException e){
             logger.error(e.getClass().getName() + e.getMessage()); ;
         }
         MongoCollection<Document> collection = database.getCollection("HistoryContent");
-        logger.info("MongoDB collection received");
+        logger.debug("MongoDB collection received");
         return collection;
     }
 

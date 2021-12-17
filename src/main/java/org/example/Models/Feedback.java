@@ -2,12 +2,15 @@ package org.example.Models;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
+import org.example.Constants;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Feedback {
 
@@ -19,23 +22,20 @@ public class Feedback {
     @CsvBindByName
     @CsvBindByPosition(position = 1)
     @Element(name = "Date")
-    private String date;
+    private String date = LocalDate.now().toString();
 
     @CsvBindByName
     @CsvBindByPosition(position = 2)
     @Element(name = "Comments")
-    private List<String> comments;
+    private String comment = Constants.SOME_COMMENTS;
 
     @CsvBindByName
     @CsvBindByPosition(position = 3)
     @Element(name = "Estimates")
-    private List<Estimate> estimates;
+    private Estimate estimate;
 
-    public Feedback(long id, String date, List<String> comments, List<Estimate> estimates) {
-        this.id = id;
-        this.date = date;
-        this.comments = comments;
-        this.estimates = estimates;
+    public Feedback(Estimate estimate) {
+        this.estimate = estimate;
     }
 
     public Feedback() {
@@ -57,20 +57,20 @@ public class Feedback {
         this.date = date;
     }
 
-    public List<String> getComments() {
-        return comments;
+    public String getComment() {
+        return comment;
     }
 
-    public void setComments(List<String> comments) {
-        this.comments = comments;
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
-    public List<Estimate> getEstimates() {
-        return estimates;
+    public Estimate getEstimate() {
+        return estimate;
     }
 
-    public void setEstimates(List<Estimate> estimates) {
-        this.estimates = estimates;
+    public void setEstimate(Estimate estimate) {
+        this.estimate = estimate;
     }
 
     @Override
@@ -78,13 +78,12 @@ public class Feedback {
         if (this == o) return true;
         if (!(o instanceof Feedback)) return false;
         Feedback feedback = (Feedback) o;
-        return getId() == feedback.getId() && getDate().equals(feedback.getDate()) && Objects.equals(getComments(),
-                feedback.getComments()) && Objects.equals(getEstimates(), feedback.getEstimates());
+        return getId() == feedback.getId() && getDate().equals(feedback.getDate()) && Objects.equals(getComment(), feedback.getComment()) && getEstimate() == feedback.getEstimate();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getDate(), getComments(), getEstimates());
+        return Objects.hash(getId(), getDate(), getComment(), getEstimate());
     }
 
     @Override
@@ -92,13 +91,13 @@ public class Feedback {
         final StringBuffer sb = new StringBuffer("Feedback{");
         sb.append("id=").append(id);
         sb.append(", date='").append(date).append('\'');
-        sb.append(", comments=").append(comments == null ? "null" : Arrays.asList(comments).toString());
-        sb.append(", estimates=").append(estimates == null ? "null" : Arrays.asList(estimates).toString());
+        sb.append(", comment='").append(comment).append('\'');
+        sb.append(", estimate=").append(estimate);
         sb.append('}');
         return sb.toString();
     }
 
-    enum Estimate{
+    public enum Estimate{
         VERY_EASY,
         EASY,
         COMMON,

@@ -422,3 +422,90 @@ SELECT * FROM ? [42001-202]
 2021-12-15 15:29:49.761 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
 2021-12-15 15:29:49.773 [main] DEBUG org.example.DataProviders.DataProviderDB - Trainer was added
 2021-12-15 15:37:04.333 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
+2021-12-15 21:49:38.426 [main] INFO  org.example.DataProviders.DataProviderCsv - Created new XML file: Trainer
+2021-12-15 21:49:38.428 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 21:49:38.484 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 21:49:38.518 [main] INFO  org.example.App - {"id":1639594178403,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 21:49:38","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 21:49:38.823 [main] INFO  org.example.App - Connected to MongoDB
+2021-12-15 21:49:38.941 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 21:49:38.946 [main] INFO  org.example.App - MongoDB collection received
+2021-12-15 21:49:38.994 [main] INFO  org.example.App - New History record added
+2021-12-15 21:52:17.715 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 21:52:17.778 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 21:52:17.816 [main] INFO  org.example.App - {"id":1639594337692,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 21:52:17","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 21:52:18.105 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 21:52:18.175 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 21:52:18.181 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 21:52:18.199 [main] DEBUG org.example.App - New History record added
+2021-12-15 21:54:04.923 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 21:54:04.988 [main] DEBUG org.example.DataProviders.DataProviderCsv - javax.xml.stream.XMLStreamExceptionParseError at [row,col]:[3,25]
+Message: XML document structures must start and end within the same entity.
+2021-12-15 22:09:15.638 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:09:15.709 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:09:15.739 [main] INFO  org.example.App - {"id":1639595355609,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:09:15","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:09:16.010 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:09:16.080 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:09:16.087 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:09:16.107 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:12:20.168 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:12:20.315 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:12:20.352 [main] INFO  org.example.App - {"id":1639595540117,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:12:20","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:12:20.617 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:12:20.682 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:12:20.687 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:12:20.702 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:13:06.838 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:13:06.894 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:13:06.922 [main] INFO  org.example.App - {"id":1639595586819,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:13:06","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:13:07.157 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:13:07.221 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:13:07.227 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:13:07.246 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:26:34.775 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:26:34.846 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:26:34.882 [main] INFO  org.example.App - {"id":1639596394718,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:26:34","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:26:35.139 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:26:35.197 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:26:35.203 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:26:35.220 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:31:07.249 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:31:07.413 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:31:07.481 [main] INFO  org.example.App - {"id":1639596667215,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:31:07","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:31:07.752 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:31:07.813 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:31:07.819 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:31:07.834 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:33:58.093 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:33:58.174 [main] DEBUG org.example.DataProviders.DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:33:58.203 [main] INFO  org.example.App - {"id":1639596838072,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:33:58","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:33:58.426 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:33:58.482 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:33:58.487 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:33:58.500 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:34:54.148 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:34:54.201 [main] ERROR org.example.DataProviders.DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:34:54.233 [main] INFO  org.example.App - {"id":1639596894129,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:34:54","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:34:54.468 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:34:54.531 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:34:54.536 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:34:54.552 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:39:51.542 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:39:51.601 [main] ERROR org.example.DataProviders.DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
+2021-12-15 22:39:51.634 [main] INFO  org.example.App - {"id":1639597191521,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:39:51","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:39:51.906 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:39:51.976 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:39:51.982 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:39:52.001 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:40:40.492 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:40:40.580 [main] INFO  org.example.App - {"id":1639597240473,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:40:40","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-15 22:40:40.809 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:40:40.872 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:40:40.878 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:40:40.891 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:43:07.118 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:43:07.247 [main] ERROR org.example.DataProviders.DataProviderXml - org.simpleframework.xml.transform.TransformExceptionTransform of class java.util.ImmutableCollections$ListN not supported
+2021-12-15 22:43:07.344 [main] INFO  org.example.App - {"id":1639597387095,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:43:07","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:43:07.632 [main] DEBUG org.example.App - Connected to MongoDB
+2021-12-15 22:43:07.691 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:43:07.695 [main] DEBUG org.example.App - MongoDB collection received
+2021-12-15 22:43:07.709 [main] DEBUG org.example.App - New History record added

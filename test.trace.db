@@ -788,3 +788,9 @@ INSERT INTO ? VALUES (?, ?, ?) [42001-202]
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
+2021-12-17 08:54:51 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-202]
+2021-12-17 08:56:59 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Объект уже закрыт
+The object is already closed [90007-202]

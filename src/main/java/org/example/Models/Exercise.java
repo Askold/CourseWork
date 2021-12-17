@@ -27,24 +27,39 @@ public class Exercise implements Serializable {
 
     @CsvBindByName
     @CsvBindByPosition(position = 3)
-    @Element(name = "Video")
-    private String video;
+    @Element(name = "Weight")
+    private int weight;
 
-    public Exercise(long id, String name, String description, String video) {
-        this.id = id;
+    @CsvBindByName
+    @CsvBindByPosition(position = 4)
+    @Element(name = "Repetitions")
+    private int repetitions;
+
+    @CsvBindByName
+    @CsvBindByPosition(position = 5)
+    @Element(name = "Rounds")
+    private int rounds;
+
+    @CsvBindByName
+    @CsvBindByPosition(position = 6)
+    @Element(name = "Workout")
+    private long workout;
+
+    public Exercise(String name, String description, int weight, int repetitions, int rounds) {
         this.name = name;
         this.description = description;
-        this.video = video;
+        this.weight = weight;
+        this.repetitions = repetitions;
+        this.rounds = rounds;
     }
 
-    public Exercise(long id) {
-        this.id = id;
-    }
-
-    public Exercise(String name, String description, String video) {
+    public Exercise(String name, String description, int weight, int repetitions, int rounds, long workout) {
         this.name = name;
         this.description = description;
-        this.video = video;
+        this.weight = weight;
+        this.repetitions = repetitions;
+        this.rounds = rounds;
+        this.workout = workout;
     }
 
     public Exercise() {
@@ -74,12 +89,36 @@ public class Exercise implements Serializable {
         this.description = description;
     }
 
-    public String getVideo() {
-        return video;
+    public int getWeight() {
+        return weight;
     }
 
-    public void setVideo(String video) {
-        this.video = video;
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getRepetitions() {
+        return repetitions;
+    }
+
+    public void setRepetitions(int repetitions) {
+        this.repetitions = repetitions;
+    }
+
+    public int getRounds() {
+        return rounds;
+    }
+
+    public void setRounds(int rounds) {
+        this.rounds = rounds;
+    }
+
+    public long getWorkout() {
+        return workout;
+    }
+
+    public void setWorkout(long workout) {
+        this.workout = workout;
     }
 
     @Override
@@ -87,12 +126,12 @@ public class Exercise implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Exercise)) return false;
         Exercise exercise = (Exercise) o;
-        return getId() == exercise.getId() && Objects.equals(getName(), exercise.getName()) && Objects.equals(getDescription(), exercise.getDescription()) && Objects.equals(getVideo(), exercise.getVideo());
+        return getId() == exercise.getId() && getWeight() == exercise.getWeight() && getRepetitions() == exercise.getRepetitions() && getRounds() == exercise.getRounds() && getWorkout() == exercise.getWorkout() && getName().equals(exercise.getName()) && Objects.equals(getDescription(), exercise.getDescription());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getDescription(), getVideo());
+        return Objects.hash(getId(), getName(), getDescription(), getWeight(), getRepetitions(), getRounds(), getWorkout());
     }
 
     @Override
@@ -101,7 +140,10 @@ public class Exercise implements Serializable {
         sb.append("id=").append(id);
         sb.append(", name='").append(name).append('\'');
         sb.append(", description='").append(description).append('\'');
-        sb.append(", video='").append(video).append('\'');
+        sb.append(", weight=").append(weight);
+        sb.append(", repetitions=").append(repetitions);
+        sb.append(", rounds=").append(rounds);
+        sb.append(", workout=").append(workout);
         sb.append('}');
         return sb.toString();
     }

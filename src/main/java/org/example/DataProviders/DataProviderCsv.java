@@ -15,10 +15,10 @@ import org.example.Utils.ConfigurationUtil;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class DataProviderCsv extends DataProvider {
-    private String FilePath;
     private static final Logger logger = LogManager.getLogger(DataProviderCsv.class);
 
     @Override
@@ -35,7 +35,7 @@ public class DataProviderCsv extends DataProvider {
             }
             logger.info(Constants.CSV_PATH_IS + filePath);
         } catch (IOException e) {
-            logger.error(e.getClass().getName() + e.getMessage());
+            logger.error(e.getClass().getName() +"    "+ e.getMessage());
         }
         return file;
     }
@@ -81,7 +81,7 @@ public class DataProviderCsv extends DataProvider {
 
     // -------------------------Trainer class CRUD--------------------------------------
     @Override
-    boolean createNewTrainer(Trainer trainer) {
+    boolean insertTrainer(Trainer trainer) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         historyRecord.setBean(new Gson().toJson(trainer));
@@ -139,7 +139,7 @@ public class DataProviderCsv extends DataProvider {
                 logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
                 return false;
             }
-            createNewTrainer(bean);
+            insertTrainer(bean);
         }
         addHistoryRecord(historyRecord);
         logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
@@ -169,7 +169,7 @@ public class DataProviderCsv extends DataProvider {
 
     // -------------------------Client class CRUD--------------------------------------
     @Override
-    boolean createNewClient(Client client) {
+    boolean insertClient(Client client) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         historyRecord.setBean(new Gson().toJson(client));
@@ -221,30 +221,16 @@ public class DataProviderCsv extends DataProvider {
                 logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
                 return false;
             }
-            createNewClient(bean);
+            insertClient(bean);
         }
         addHistoryRecord(historyRecord);
         logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
         return true;
     }
 
-    @Override
-    boolean deleteClientById(long id) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Client beanToRemove = new Client();
-        if (getClientById(id).isPresent()) beanToRemove = getClientById(id).get();
-        List<Client> listOfBeans = selectRecords(Client.class);
-        Client finalBeanToRemove = beanToRemove;
-        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
-        addHistoryRecord(historyRecord);
-        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
-        return saveRecords(listOfBeans);
-    }
-
     // -------------------------Exercises class CRUD--------------------------------------
     @Override
-    boolean createNewExercise(Exercise exercise) {
+    boolean insertExercise(Exercise exercise) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         historyRecord.setBean(new Gson().toJson(exercise));
@@ -283,43 +269,10 @@ public class DataProviderCsv extends DataProvider {
         return Optional.of(result);
     }
 
-    @Override
-    boolean updateExercise(Exercise bean) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Exercise beanToUpdate = new Exercise();
-        if (getExerciseById(bean.getId()).isPresent()) beanToUpdate = getExerciseById(bean.getId()).get();
-        if (!beanToUpdate.equals(bean)) {
-            if (!deleteTrainerById(bean.getId())){
-                historyRecord.setStatus(HistoryContent.Status.FAULT);
-                addHistoryRecord(historyRecord);
-                logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
-                return false;
-            }
-            createNewExercise(bean);
-        }
-        addHistoryRecord(historyRecord);
-        logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
-        return true;
-    }
-
-    @Override
-    boolean deleteExerciseById(long id) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Exercise beanToRemove = new Exercise();
-        if (getExerciseById(id).isPresent()) beanToRemove = getExerciseById(id).get();
-        List<Exercise> listOfBeans = selectRecords(Exercise.class);
-        Exercise finalBeanToRemove = beanToRemove;
-        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
-        addHistoryRecord(historyRecord);
-        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
-        return saveRecords(listOfBeans);
-    }
 
     // -------------------------Workout class CRUD--------------------------------------
     @Override
-    boolean createNewWorkout(Workout workout) {
+    boolean insertWorkout(Workout workout) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         historyRecord.setBean(new Gson().toJson(workout));
@@ -371,30 +324,16 @@ public class DataProviderCsv extends DataProvider {
                 logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
                 return false;
             }
-            createNewWorkout(bean);
+            insertWorkout(bean);
         }
         addHistoryRecord(historyRecord);
         logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
         return true;
     }
 
-    @Override
-    boolean deleteWorkoutById(long id) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Workout beanToRemove = new Workout();
-        if (getWorkoutById(id).isPresent()) beanToRemove = getWorkoutById(id).get();
-        List<Workout> listOfBeans = selectRecords(Workout.class);
-        Workout finalBeanToRemove = beanToRemove;
-        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
-        addHistoryRecord(historyRecord);
-        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
-        return saveRecords(listOfBeans);
-    }
-
     // -------------------------Feedback class CRUD--------------------------------------
     @Override
-    boolean createNewFeedback(Feedback feedback) {
+    boolean insertFeedback(Feedback feedback) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         historyRecord.setBean(new Gson().toJson(feedback));
@@ -431,40 +370,6 @@ public class DataProviderCsv extends DataProvider {
             logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
         }
         return Optional.of(result);
-    }
-
-    @Override
-    boolean updateFeedback(Feedback bean) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Feedback beanToUpdate = new Feedback();
-        if (getFeedbackById(bean.getId()).isPresent()) beanToUpdate = getFeedbackById(bean.getId()).get();
-        if (!beanToUpdate.equals(bean)) {
-            if (!deleteTrainerById(bean.getId())){
-                historyRecord.setStatus(HistoryContent.Status.FAULT);
-                addHistoryRecord(historyRecord);
-                logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
-                return false;
-            }
-            createNewFeedback(bean);
-        }
-        addHistoryRecord(historyRecord);
-        logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
-        return true;
-    }
-
-    @Override
-    boolean deleteFeedbackById(long id) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Feedback beanToRemove = new Feedback();
-        if (getFeedbackById(id).isPresent()) beanToRemove = getFeedbackById(id).get();
-        List<Feedback> listOfBeans = selectRecords(Feedback.class);
-        Feedback finalBeanToRemove = beanToRemove;
-        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
-        addHistoryRecord(historyRecord);
-        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
-        return saveRecords(listOfBeans);
     }
 
     // -------------------------Program class CRUD--------------------------------------
@@ -508,89 +413,14 @@ public class DataProviderCsv extends DataProvider {
         return Optional.of(result);
     }
 
-    @Override
-    boolean updateProgram(Program bean) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Program beanToUpdate = new Program();
-        if (getProgramById(bean.getId()).isPresent()) beanToUpdate = getProgramById(bean.getId()).get();
-        if (!beanToUpdate.equals(bean)) {
-            if (!deleteTrainerById(bean.getId())){
-                historyRecord.setStatus(HistoryContent.Status.FAULT);
-                addHistoryRecord(historyRecord);
-                logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
-                return false;
-            }
-            createNewProgram(bean);
-        }
-        addHistoryRecord(historyRecord);
-        logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
-        return true;
-    }
-
-    @Override
-    boolean deleteProgramById(long id) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        Program beanToRemove = new Program();
-        if (getProgramById(id).isPresent()) beanToRemove = getProgramById(id).get();
-        List<Program> listOfBeans = selectRecords(Program.class);
-        Program finalBeanToRemove = beanToRemove;
-        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
-        addHistoryRecord(historyRecord);
-        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
-        return saveRecords(listOfBeans);
-    }
-
-    // ------------------------- Use-case extra implementation--------------------------------------
+    // ------------------------- Use-case implementation--------------------------------------
     //Trainer role
-    @Override
-    boolean composeProgram( int workoutsAmount, int durationInWeeks, int workoutsPerWeek,
-                                  String description, Program.ProgramType type, long clientId) {
-        Program program = new Program(durationInWeeks, workoutsPerWeek, description, type);
-        Long[] list = new Long[workoutsAmount];
-        Arrays.stream(list).forEach(x -> x=composeSomeWorkout());
-        program.setWorkouts(Arrays.asList(list));
-        return !(!createNewProgram(program) | !updateClientPrograms(clientId, program.getId()));
-    }
 
-    boolean updateClientPrograms(long clientId, long programId){
-        Client client;
-        if (getClientById(clientId).isPresent()) {
-            client = getClientById(clientId).get();
-        }
-        else {
-            return false;
-        }
-        List<Long> clientPrograms = client.getPrograms();
-        clientPrograms.add(programId);
-        client.setPrograms(clientPrograms);
-        updateClient(client);
-        return true;
-    }
-
-    @Override
-    long composeWorkout(List<Long> exercises, List<Integer> weights, List<Integer> rounds,
-                           List<Integer> repetitions) {
-        Workout workout = new Workout(weights, rounds, repetitions);
-        addExercises(exercises);
-        workout.setExercises(exercises);
-        createNewWorkout(workout);
-        return workout.getId();
-    }
-
-    long composeSomeWorkout(){
-        List<Long> exercises = List.of();
-        List<Integer> weights = List.of();
-        List<Integer> rounds = List.of();
-        List<Integer> repetitions = List.of();
-        return composeWorkout(exercises, weights, rounds, repetitions);
-    }
 
     @Override
     Optional<Exercise> addNewExercise(long id){
-        Exercise exercise = new Exercise(id);
-        createNewExercise(exercise);
+        Exercise exercise = new Exercise();
+        insertExercise(exercise);
         return Optional.of(exercise);
     }
 
@@ -605,76 +435,60 @@ public class DataProviderCsv extends DataProvider {
     }
 
     @Override
-    Optional<Client> selectClient(long id) {
-        Client client;
-        Optional<Client> opt = getClientById(id);
-        client = opt.orElseGet(() -> addNewClient(id).orElseThrow());
-        logger.info(Constants.SELECTED_CLIENT + client);
-        viewFeedback(client);
-        return Optional.of(client);
-    }
-
-    @Override
     Optional<Feedback> viewFeedback(Client client) {
-        Workout workout = new Workout();
-        try {
-             workout = getLastWorkout(getLastProgram(client).orElseThrow()).orElseThrow();
-        } catch (NoSuchElementException e){
-            logger.error(e.getClass().getName() + e.getMessage());
-        }
-        List<Long> feedbacks = workout.getFeedbacks();
-        Feedback feedback = getFeedbackById(feedbacks.get(feedbacks.size() - 1)).orElseThrow();
-        logger.info(Constants.LAST_FEEDBACK + feedback);
-        return Optional.of(feedback);
+
+        return Optional.empty();
     }
 
-    Optional<Program> getLastProgram(Client client){
-        List<Long> programs = client.getPrograms();
-        long programId = programs.get(programs.size() - 1);
-        Program program = getProgramById(programId).orElseThrow();
-        logger.info(Constants.LAST_PROGRAM + program);
-        return Optional.of(program);
-    }
-
-    Optional<Workout> getLastWorkout(Program program){
-        List<Long> workouts = program.getWorkouts();
-        long workoutId = workouts.get(workouts.size() - 1);
-        Workout workout = getWorkoutById(workoutId).orElseThrow();
-        logger.info(Constants.LAST_WORKOUT + program);
-        return Optional.of(workout);
-    }
-
-    @Override
-    Optional<Client> addNewClient(long id) {
-        Client client = new Client(id);
-        createNewClient(client);
-        return Optional.of(client);
-    }
 
     //Client role
-    @Override
-    Optional<Program> selectProgram(Client client) {
-        Program program = getLastProgram(client).orElseThrow();
-        return Optional.of(program);
-    }
 
     @Override
-    Optional<Workout> selectWorkout(Program program, boolean isCompleted) {
-        Workout workout = getLastWorkout(program).orElseThrow();
-        if (isCompleted){
-            composeFeedback(workout);
+    boolean executeWorkout(long workoutID, String isCompleted){
+        if (getWorkoutById(workoutID).isEmpty()){
+            logger.error(Workout.class.getSimpleName()+Constants.NOT_FOUND);
+            return false;
         }
-        return Optional.of(workout);
+        if(!viewWorkout(workoutID)){
+            logger.error("Impossible to view workout");
+            return false;
+        }
+        if(!isCompleted.isEmpty()){
+            Workout workout = getWorkoutById(workoutID).get();
+            workout.setFeedback(composeFeedback(isCompleted));
+            updateWorkout(workout);
+            //Client client = getClientById();
+        }
+        return true;
     }
 
     @Override
-    boolean composeFeedback(Workout workout) {
-        Feedback feedback = new Feedback();
-        List<Long> feedbacks = workout.getFeedbacks();
-        feedbacks.add(feedback.getId());
-        workout.setFeedbacks(feedbacks);
-        return !(!createNewFeedback(feedback) | !updateWorkout(workout));
+    boolean viewWorkout(long workoutID){
+        List<Exercise> exercises = selectRecords(Exercise.class);
+        List<Exercise> result = exercises.stream().filter(bean -> bean.getWorkout() == workoutID).collect(Collectors.toList());
+        if(result.isEmpty()) {
+            logger.error("Exercises for this workout wasn't found");
+            return false;
+        }
+        result.forEach(logger::info);
+        return true;
     }
 
+    @Override
+    long composeFeedback(String isCompleted) {
+        Feedback.Estimate estimate = null;
+        try {
+            estimate = Feedback.Estimate.valueOf(isCompleted);
+            }
+        catch (IllegalArgumentException e){
+            logger.error(e.getClass().getName() + e.getMessage());
+            return -1;
+            }
+        Feedback feedback = new Feedback(estimate);
+        if (!insertFeedback(feedback)){
+            logger.error(feedback.getClass().getSimpleName()+Constants.NOT_ADDED);
+        }
+        return feedback.getId();
+    }
 
 }

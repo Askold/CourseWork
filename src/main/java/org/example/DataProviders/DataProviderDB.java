@@ -15,23 +15,12 @@ public class DataProviderDB{
 
     private final Connection connection = getNewConnection();
 
-    public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS TRAINER (" +
-            "id BIGINT PRIMARY KEY, " +
-            "name VARCHAR, " +
-            "surname VARCHAR)";
-    public static final String INSERT ="INSERT INTO Trainer VALUES (?, ?, ?)";
-    public static final String SELECT_ALL = "SELECT * FROM ";
-    public static final String GET_ONE = "SELECT * FROM TRAINER WHERE id = ?";
-    public static final String UPDATE = "UPDATE Trainer SET name = ?, surname = ? WHERE id = ?";
-    public static final String DELETE = "DELETE FROM Trainer WHERE id = ?";
-    public static final String CLEAR = "TRUNCATE TABLE Trainer";
-
     public Optional<ResultSet> readFromDB(Class<?> type){
         createTable();
         PreparedStatement statement;
         ResultSet resultSet = null;
         try {
-            statement = connection.prepareStatement(SELECT_ALL + type.getSimpleName());
+            statement = connection.prepareStatement(Constants.SELECT_ALL + type.getSimpleName());
             statement.execute();
             resultSet = statement.getResultSet();
 
@@ -61,7 +50,7 @@ public class DataProviderDB{
         if(!createTable()) return false;
         PreparedStatement statement;
         try {
-            statement = connection.prepareStatement(INSERT);
+            statement = connection.prepareStatement(Constants.INSERT_TRAINER);
             statement.setString(1, trainer.getClass().getSimpleName());
             statement.setString(1, String.valueOf(trainer.getId()));
             statement.setString(2, trainer.getName());
@@ -81,7 +70,7 @@ public class DataProviderDB{
         createTable();
         PreparedStatement statement;
         try {
-            statement = connection.prepareStatement(GET_ONE);
+            statement = connection.prepareStatement(Constants.GET_TRAINER);
             statement.setString(1, String.valueOf(id));
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
@@ -99,8 +88,8 @@ public class DataProviderDB{
     public boolean updateTrainer(Trainer trainer){
         createTable();
         PreparedStatement preparedStatement;
-        try {
-            preparedStatement = connection.prepareStatement(UPDATE);
+        try(Connection connection = getNewConnection()) {
+            preparedStatement = connection.prepareStatement(Constants.UPDATE_TRAINER);
             preparedStatement.setString(1, trainer.getName());
             preparedStatement.setString(2, trainer.getSurname());
             preparedStatement.setString(3, String .valueOf(trainer.getId()));
@@ -117,7 +106,7 @@ public class DataProviderDB{
         createTable();
         PreparedStatement preparedStatement;
         try {
-            preparedStatement = connection.prepareStatement(DELETE);
+            preparedStatement = connection.prepareStatement(Constants.DELETE_TRAINER);
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {
@@ -131,7 +120,7 @@ public class DataProviderDB{
         createTable();
         PreparedStatement statement;
         try {
-            statement = connection.prepareStatement(CLEAR);
+            statement = connection.prepareStatement(Constants.CLEAR + Trainer.class.getSimpleName());
             statement.execute();
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
@@ -144,7 +133,7 @@ public class DataProviderDB{
         Statement stmt;
         try {
             stmt = connection.createStatement();
-            stmt.execute(CREATE_TABLE);
+            stmt.execute(Constants.CREATE_TABLE_TRAINER);
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
             return false;
@@ -155,14 +144,13 @@ public class DataProviderDB{
     public Connection getNewConnection() {
         Connection con = null;
         try {
-            Class.forName("org.h2.Driver");
+            Class.forName(Constants.JDBC_DRIVER);
             con = DriverManager.getConnection(Constants.DATABASE_URL,
                     Constants.DATABASE_USER, Constants.DATABASE_PASSWORD);
         } catch (SQLException | ClassNotFoundException e) {
             logger.error(e.getClass().getName() + "    " + e.getMessage());
         }
-        logger.debug("Connected to DB");
-
+        logger.debug(Constants.CONNECTED_TO_DB);
         return con;
 
     }

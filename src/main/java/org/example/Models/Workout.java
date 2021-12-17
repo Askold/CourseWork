@@ -19,43 +19,21 @@ public class Workout implements Serializable {
 
     @CsvBindByName
     @CsvBindByPosition(position = 1)
-    @Element(name = "Exercises")
-    private List<Long> exercises;
-
-    @CsvBindByName
-    @CsvBindByPosition(position = 2)
-    @Element(name = "Weights")
-    private List<Integer> weights;
-
-    @CsvBindByName
-    @CsvBindByPosition(position = 3)
-    @Element(name = "Rounds")
-    private List<Integer> rounds;
-
-    @CsvBindByName
-    @CsvBindByPosition(position = 4)
-    @Element(name = "Repetitions")
-    private List<Integer> repetitions;
+    @Element(name = "Program")
+    private long program;
 
     @CsvBindByName
     @CsvBindByPosition(position = 5)
     @Element(name = "Feedback")
-    private List<Long> feedbacks;
+    private long feedback;
 
-    public Workout(List<Integer> weights, List<Integer> rounds,
-                   List<Integer> repetitions) {
-        this.weights = weights;
-        this.rounds = rounds;
-        this.repetitions = repetitions;
+    public Workout(long program, long feedback) {
+        this.program = program;
+        this.feedback = feedback;
     }
 
-    public Workout(long id, List<Long> exercises, List<Integer> weights, List<Integer> rounds,
-                   List<Integer> repetitions) {
+    public Workout(long id) {
         this.id = id;
-        this.exercises = exercises;
-        this.weights = weights;
-        this.rounds = rounds;
-        this.repetitions = repetitions;
     }
 
     public Workout() {
@@ -69,44 +47,20 @@ public class Workout implements Serializable {
         this.id = id;
     }
 
-    public List<Long> getExercises() {
-        return exercises;
+    public long getProgram() {
+        return program;
     }
 
-    public void setExercises(List<Long> exercises) {
-        this.exercises = exercises;
+    public void setProgram(long program) {
+        this.program = program;
     }
 
-    public List<Integer> getWeights() {
-        return weights;
+    public long getFeedback() {
+        return feedback;
     }
 
-    public void setWeights(List<Integer> weights) {
-        this.weights = weights;
-    }
-
-    public List<Integer> getRounds() {
-        return rounds;
-    }
-
-    public void setRounds(List<Integer> rounds) {
-        this.rounds = rounds;
-    }
-
-    public List<Integer> getRepetitions() {
-        return repetitions;
-    }
-
-    public void setRepetitions(List<Integer> repetitions) {
-        this.repetitions = repetitions;
-    }
-
-    public List<Long> getFeedbacks() {
-        return feedbacks;
-    }
-
-    public void setFeedbacks(List<Long> feedbacks) {
-        this.feedbacks = feedbacks;
+    public void setFeedback(long feedback) {
+        this.feedback = feedback;
     }
 
     @Override
@@ -114,23 +68,20 @@ public class Workout implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Workout)) return false;
         Workout workout = (Workout) o;
-        return getId() == workout.getId() && Objects.equals(getExercises(), workout.getExercises()) && Objects.equals(getWeights(), workout.getWeights()) && Objects.equals(getRounds(), workout.getRounds()) && Objects.equals(getRepetitions(), workout.getRepetitions()) && Objects.equals(getFeedbacks(), workout.getFeedbacks());
+        return getId() == workout.getId() && getProgram() == workout.getProgram() && getFeedback() == workout.getFeedback();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getExercises(), getWeights(), getRounds(), getRepetitions(), getFeedbacks());
+        return Objects.hash(getId(), getProgram(), getFeedback());
     }
 
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Workout{");
         sb.append("id=").append(id);
-        sb.append(", exercises=").append(exercises);
-        sb.append(", weights=").append(weights);
-        sb.append(", rounds=").append(rounds);
-        sb.append(", repetitions=").append(repetitions);
-        sb.append(", feedbacks=").append(feedbacks);
+        sb.append(", program=").append(program);
+        sb.append(", feedback=").append(feedback);
         sb.append('}');
         return sb.toString();
     }

@@ -19,54 +19,46 @@ public class Program implements Serializable {
 
     @CsvBindByName
     @CsvBindByPosition(position = 1)
-    @Element(name = "Workouts")
-    private List<Long> workouts;
-
-    @CsvBindByName
-    @CsvBindByPosition(position = 1)
     @Element(name = "Duration in weeks")
     private int durationInWeeks;
 
     @CsvBindByName
-    @CsvBindByPosition(position = 1)
-    @Element(name = "Workouts per week")
-    private int workoutsPerWeek;
-
-    @CsvBindByName
-    @CsvBindByPosition(position = 1)
+    @CsvBindByPosition(position = 2)
     @Element(name = "Description")
     private String description;
 
     @CsvBindByName
-    @CsvBindByPosition(position = 1)
+    @CsvBindByPosition(position = 3)
     @Element(name = "Type")
     private ProgramType type;
 
-    public Program(int durationInWeeks, int workoutsPerWeek, String description,
-                   ProgramType type) {
+    @CsvBindByName
+    @CsvBindByPosition(position = 4)
+    @Element(name = "Client")
+    private long client;
+
+    @CsvBindByName
+    @CsvBindByPosition(position = 5)
+    @Element(name = "Trainer")
+    private long trainer;
+
+    public Program(int durationInWeeks, String description, ProgramType type) {
         this.durationInWeeks = durationInWeeks;
-        this.workoutsPerWeek = workoutsPerWeek;
         this.description = description;
         this.type = type;
     }
 
+
+
     public Program() {
-        this.durationInWeeks = 1;
-        this.workoutsPerWeek = 3;
-        this.description = "some description";
-        this.type = ProgramType.AEROBIC;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public List<Long> getWorkouts() {
-        return workouts;
-    }
-
-    public void setWorkouts(List<Long> workouts) {
-        this.workouts = workouts;
     }
 
     public int getDurationInWeeks() {
@@ -75,14 +67,6 @@ public class Program implements Serializable {
 
     public void setDurationInWeeks(int durationInWeeks) {
         this.durationInWeeks = durationInWeeks;
-    }
-
-    public int getWorkoutsPerWeek() {
-        return workoutsPerWeek;
-    }
-
-    public void setWorkoutsPerWeek(int workoutsPerWeek) {
-        this.workoutsPerWeek = workoutsPerWeek;
     }
 
     public String getDescription() {
@@ -101,8 +85,20 @@ public class Program implements Serializable {
         this.type = type;
     }
 
-    public long getId() {
-        return id;
+    public long getClient() {
+        return client;
+    }
+
+    public void setClient(long client) {
+        this.client = client;
+    }
+
+    public long getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(long trainer) {
+        this.trainer = trainer;
     }
 
     @Override
@@ -110,27 +106,23 @@ public class Program implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Program)) return false;
         Program program = (Program) o;
-        return getId() == program.getId() && getDurationInWeeks() == program.getDurationInWeeks() &&
-                getWorkoutsPerWeek() == program.getWorkoutsPerWeek() && Objects.equals(getWorkouts(),
-                program.getWorkouts()) && Objects.equals(getDescription(), program.getDescription()) &&
-                getType() == program.getType();
+        return getId() == program.getId() && getDurationInWeeks() == program.getDurationInWeeks() && getClient() == program.getClient() && getTrainer() == program.getTrainer() && Objects.equals(getDescription(), program.getDescription()) && getType() == program.getType();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getWorkouts(), getDurationInWeeks(), getWorkoutsPerWeek(),
-                getDescription(), getType());
+        return Objects.hash(getId(), getDurationInWeeks(), getDescription(), getType(), getClient(), getTrainer());
     }
 
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Program{");
         sb.append("id=").append(id);
-        sb.append(", workouts=").append(workouts);
         sb.append(", durationInWeeks=").append(durationInWeeks);
-        sb.append(", workoutsPerWeek=").append(workoutsPerWeek);
         sb.append(", description='").append(description).append('\'');
         sb.append(", type=").append(type);
+        sb.append(", client=").append(client);
+        sb.append(", trainer=").append(trainer);
         sb.append('}');
         return sb.toString();
     }
