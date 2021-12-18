@@ -10,6 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class DataProviderDB extends DataProvider{
 
@@ -304,7 +305,7 @@ public class DataProviderDB extends DataProvider{
 
     // -------------------------Exercise class CRUD--------------------------------------
 
-    List<Exercise> selectExercise(){
+    List<Exercise> selectExercises(){
         createTable(Constants.CREATE_TABLE_EXERCISE);
         ResultSet resultSet = readFromDB(Exercise.class).orElseThrow();
         List<Exercise> list= new ArrayList<>();
@@ -377,7 +378,7 @@ public class DataProviderDB extends DataProvider{
 
     // -------------------------Workout class CRUD--------------------------------------
 
-    List<Workout> selectWorkout(){
+    List<Workout> selectWorkouts(){
         createTable(Constants.CREATE_TABLE_WORKOUT);
         ResultSet resultSet = readFromDB(Workout.class).orElseThrow();
         List<Workout> list= new ArrayList<>();
@@ -555,55 +556,121 @@ public class DataProviderDB extends DataProvider{
     }
 
     // -------------------------Use case implementation--------------------------------------
-
+    // Trainer role
     @Override
     boolean checkClient(long id) {
-        return false;
+        Client client = getClientById(id).orElseThrow();
+        if (client.isAwaiting()){
+            List<Workout> workouts = selectWorkouts();
+            Optional<Workout> result = workouts.stream().filter(bean -> bean.getClient() == id).findFirst();
+            if(result.isEmpty()){
+                logger.error(Constants.CLIENT_WORKOUT);
+                return false;
+            }
+            viewFeedback(result.get().getFeedback());
+        }
+        return true;
     }
 
     @Override
-    boolean viewFeedback(long client) {
-        return false;
+    boolean viewFeedback(long id) {
+        if (getFeedbackById(id).isEmpty()){
+            return false;
+        }
+        Feedback feedback = getFeedbackById(id).get();
+        logger.info(Constants.WORKOUT_ESTIMATE + feedback.getEstimate().toString());
+        logger.info(Constants.COMMENTS + feedback.getComment());
+        return true;
     }
 
     @Override
-    boolean createWorkout(String type, long client, long trainer) {
-        return false;
+    boolean createWorkout(String typeWorkout, long client, long trainer) {
+        Workout.WorkoutType type;
+        try {
+            type = Workout.WorkoutType.valueOf(typeWorkout);
+        }
+        catch (IllegalArgumentException e){
+            logger.error(e.getClass().getName() + e.getMessage());
+            return false;
+        }
+        Workout workout = new Workout(type, client, trainer);
+        if (!insertWorkout(workout)){
+            logger.error(workout.getClass().getSimpleName() + Constants.NOT_ADDED);
+            return false;
+        }
+        if(!changeClientStatus(client)){
+            return false;
+        }
+        logger.info(workout.getClass().getSimpleName()+ Constants.ADDED);
+        logger.info(workout.getClass().getSimpleName() + Constants.ID_IS+ workout.getId());
+        return true;
+    }
+
+    boolean changeClientStatus(long id){
+        Client client = getClientById(id).orElseThrow();
+        client.setAwaiting(false);
+        return updateClient(client);
     }
 
     @Override
     boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
-        return false;
+        if(getWorkoutById(workout).isEmpty()){
+            return false;
+        }
+        Exercise exercise = new Exercise(name, weight, repetitions, rounds, workout);
+        return insertExercise(exercise);
     }
+
+    // Client role
 
     @Override
     boolean executeWorkout(long workoutID, String isCompleted) {
-        return false;
+        if (getWorkoutById(workoutID).isEmpty()){
+            logger.error(Workout.class.getSimpleName()+Constants.NOT_FOUND);
+            return false;
+        }
+        if(!viewWorkout(workoutID)){
+            logger.error("Impossible to view workout");
+            return false;
+        }
+        if(!isCompleted.isEmpty()){
+            Workout workout = getWorkoutById(workoutID).get();
+            workout.setFeedback(composeFeedback(isCompleted));
+            updateWorkout(workout);
+            Client client = getClientById(workout.getClient()).orElseThrow();
+            client.setAwaiting(true);
+            updateClient(client);
+        }
+        return true;
     }
 
     @Override
     boolean viewWorkout(long workoutID) {
-        return false;
+        List<Exercise> exercises = selectExercises();
+        List<Exercise> result = exercises.stream().filter(bean -> bean.getWorkout() == workoutID).collect(Collectors.toList());
+        if(result.isEmpty()) {
+            logger.error("Exercises for this workout wasn't found");
+            return false;
+        }
+        result.forEach(logger::info);
+        return true;
     }
 
     @Override
     long composeFeedback(String isCompleted) {
-        return 0;
+        Feedback.Estimate estimate;
+        try {
+            estimate = Feedback.Estimate.valueOf(isCompleted);
+        }
+        catch (IllegalArgumentException e){
+            logger.error(e.getClass().getName() + e.getMessage());
+            return -1;
+        }
+        Feedback feedback = new Feedback(estimate);
+        if (!insertFeedback(feedback)){
+            logger.error(feedback.getClass().getSimpleName()+Constants.NOT_ADDED);
+        }
+        return feedback.getId();
     }
 
-
-    @Override
-    File initDataSource(Class<?> type) {
-        return null;
-    }
-
-    @Override
-    <T> boolean saveRecords(List<T> beans) {
-        return false;
-    }
-
-    @Override
-    <T> List<T> selectRecords(Class<?> type) {
-        return null;
-    }
 }

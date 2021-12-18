@@ -21,7 +21,6 @@ import java.util.stream.Stream;
 public class DataProviderCsv extends DataProvider {
     private static final Logger logger = LogManager.getLogger(DataProviderCsv.class);
 
-    @Override
     File initDataSource(Class<?> type) {
         String filePath;
         File file = null;
@@ -41,7 +40,7 @@ public class DataProviderCsv extends DataProvider {
     }
 
     // -----------------general select/save methods-------------------------------
-    @Override
+
     public<T> boolean saveRecords(List<T> beans) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -64,7 +63,6 @@ public class DataProviderCsv extends DataProvider {
         return true;
     }
 
-    @Override
     public<T> List<T> selectRecords(Class<?> type)  {
         List<T> beanToCsv = new ArrayList<>();
         try {

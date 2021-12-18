@@ -20,7 +20,6 @@ import java.util.stream.Stream;
 public class DataProviderXml extends DataProvider{
     private static final Logger logger = LogManager.getLogger(DataProviderXml.class);
 
-    @Override
     File initDataSource(Class<?> type) {
         String filePath;
         File file = null;
@@ -40,7 +39,6 @@ public class DataProviderXml extends DataProvider{
     }
 
     // -----------------general select/save records-------------------------------
-    @Override
     <T> boolean saveRecords(List<T> beans) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -61,7 +59,6 @@ public class DataProviderXml extends DataProvider{
         return true;
     }
 
-    @Override
     <T> List<T> selectRecords(Class<?> type) {
         Serializer serializer = new Persister();
         File file;

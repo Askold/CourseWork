@@ -20,11 +20,7 @@ public abstract class DataProvider {
 
     // ---------- General methods ----------
 
-    abstract File initDataSource(Class<?> type);
-
-    abstract <T> boolean saveRecords(List<T> beans);
-
-    abstract <T> List<T> selectRecords(Class<?> type);
+    //abstract <T> List<T> selectRecords(Class<?> type);
 
     // ---------- Trainer CRUD ----------
 
