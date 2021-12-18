@@ -1,343 +1,343 @@
-2021-12-14 18:56:42.890 [main] ERROR org.example.DataProviders.DataProviderDB - java.lang.ClassNotFoundExceptioncom.mysql.cj.jdbc.Driver
-2021-12-14 18:58:43.121 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionExceptionБаза данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+2021-12-14 18:56:42.890 [main] ERROR DataProviderDB - java.lang.ClassNotFoundExceptioncom.mysql.cj.jdbc.Driver
+2021-12-14 18:58:43.121 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionExceptionБаза данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
 Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-202]
-2021-12-14 18:59:27.598 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+2021-12-14 18:59:27.598 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
 Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-202]
-2021-12-14 19:00:11.531 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientException    Неизвестный тип данных: "ID"
+2021-12-14 19:00:11.531 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientException    Неизвестный тип данных: "ID"
 Unknown data type: "ID"; SQL statement:
 CREATE TABLE IF NOT EXISTS Entities (id, SERIAL, name TEXT, surname TEXT); [50004-202]
-2021-12-14 20:54:36.185 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Неверное количество столбцов
+2021-12-14 20:54:36.185 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Неверное количество столбцов
 Column count does not match; SQL statement:
 INSERT INTO customers VALUES (?, ?) [21002-202]
-2021-12-14 20:56:02.531 [main] INFO  org.example.App - Trainer{id=1639504562524, name='name1', surname='surname1', clients=null} 
-2021-12-14 20:56:02.544 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Неверное количество столбцов
+2021-12-14 20:56:02.531 [main] INFO  App - Trainer{id=1639504562524, name='name1', surname='surname1', clients=null}
+2021-12-14 20:56:02.544 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Неверное количество столбцов
 Column count does not match; SQL statement:
 INSERT INTO customers VALUES (?, ?) [21002-202]
-2021-12-14 20:57:19.748 [main] INFO  org.example.App - Trainer{id=1639504639741, name='name1', surname='surname1', clients=null} 
-2021-12-14 21:03:12.546 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:03:12.549 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:03:12.554 [main] INFO  org.example.App - Trainer{id=1639504992550, name='name1', surname='surname1', clients=null} 
-2021-12-14 21:03:12.555 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:03:12.558 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:03:12.560 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 21:32:22.128 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:32:22.130 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:32:22.139 [main] INFO  org.example.DataProviders.DataProviderCsv - CSV PATH is :./src/main/resources/CSV/Trainer.csv
-2021-12-14 21:32:22.257 [main] INFO  org.example.DataProviders.DataProviderCsv - Records were selected
-2021-12-14 21:32:22.262 [main] INFO  org.example.App - [Trainer{id=1639127693619, name='Ahalab', surname='surname1', clients=null} , Trainer{id=1639127693616, name='Ahalab', surname='surname2', clients=null} , Trainer{id=1639127693617, name='Ahalab', surname='surname3', clients=null} , Trainer{id=1639127693618, name='Ahalab', surname='surname4', clients=null} ]
-2021-12-14 21:32:53.818 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:32:53.821 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:32:53.821 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:32:53.826 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:32:53.834 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
+2021-12-14 20:57:19.748 [main] INFO  App - Trainer{id=1639504639741, name='name1', surname='surname1', clients=null}
+2021-12-14 21:03:12.546 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:03:12.549 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:03:12.554 [main] INFO  App - Trainer{id=1639504992550, name='name1', surname='surname1', clients=null}
+2021-12-14 21:03:12.555 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:03:12.558 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:03:12.560 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 21:32:22.128 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:32:22.130 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:32:22.139 [main] INFO  DataProviderCsv - CSV PATH is :./src/main/resources/CSV/Trainer.csv
+2021-12-14 21:32:22.257 [main] INFO  DataProviderCsv - Records were selected
+2021-12-14 21:32:22.262 [main] INFO  App - [Trainer{id=1639127693619, name='Ahalab', surname='surname1', clients=null} , Trainer{id=1639127693616, name='Ahalab', surname='surname2', clients=null} , Trainer{id=1639127693617, name='Ahalab', surname='surname3', clients=null} , Trainer{id=1639127693618, name='Ahalab', surname='surname4', clients=null} ]
+2021-12-14 21:32:53.818 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:32:53.821 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:32:53.821 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:32:53.826 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:32:53.834 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
-2021-12-14 21:32:53.834 [main] INFO  org.example.App - []
-2021-12-14 21:34:01.798 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:34:01.801 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:34:01.801 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:34:01.805 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:34:01.812 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
+2021-12-14 21:32:53.834 [main] INFO  App - []
+2021-12-14 21:34:01.798 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:34:01.801 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:34:01.801 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:34:01.805 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:34:01.812 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
-2021-12-14 21:34:01.813 [main] INFO  org.example.App - []
-2021-12-14 21:35:47.984 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:35:47.987 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:35:47.988 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:35:47.992 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:35:48.000 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
+2021-12-14 21:34:01.813 [main] INFO  App - []
+2021-12-14 21:35:47.984 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:35:47.987 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:35:47.988 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:35:47.992 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:35:48.000 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
-2021-12-14 21:35:48.000 [main] INFO  org.example.App - []
-2021-12-14 21:39:06.344 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:39:06.347 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:39:06.347 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:39:06.351 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:39:06.358 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
+2021-12-14 21:35:48.000 [main] INFO  App - []
+2021-12-14 21:39:06.344 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:39:06.347 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:39:06.347 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:39:06.351 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:39:06.358 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
-2021-12-14 21:39:06.359 [main] INFO  org.example.App - []
-2021-12-14 21:39:31.235 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:39:31.238 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:39:31.238 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:39:31.242 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:39:31.250 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
+2021-12-14 21:39:06.359 [main] INFO  App - []
+2021-12-14 21:39:31.235 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:39:31.238 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:39:31.238 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:39:31.242 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:39:31.250 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
-2021-12-14 21:39:31.250 [main] INFO  org.example.App - []
-2021-12-14 21:40:01.136 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:40:01.139 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:40:01.139 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:40:01.143 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:40:01.151 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*];"; ожидалось "identifier"
+2021-12-14 21:39:31.250 [main] INFO  App - []
+2021-12-14 21:40:01.136 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:40:01.139 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:40:01.139 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:40:01.143 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:40:01.151 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*];"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*];"; expected "identifier"; SQL statement:
 SELECT * FROM ?; [42001-202]
-2021-12-14 21:40:01.151 [main] INFO  org.example.App - []
-2021-12-14 21:40:34.700 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:40:34.703 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:40:34.704 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:40:34.707 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:40:34.714 [main] INFO  org.example.DataProviders.DataProviderDB - org.example.Models.Trainer
-2021-12-14 21:40:34.720 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-14 21:40:01.151 [main] INFO  App - []
+2021-12-14 21:40:34.700 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:40:34.703 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:40:34.704 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:40:34.707 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:40:34.714 [main] INFO  DataProviderDB - Trainer
+2021-12-14 21:40:34.720 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-14 21:40:34.720 [main] INFO  org.example.App - []
-2021-12-14 21:41:14.273 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:41:14.276 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:41:14.277 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:41:14.281 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:41:14.287 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 21:41:14.293 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-14 21:40:34.720 [main] INFO  App - []
+2021-12-14 21:41:14.273 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:41:14.276 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:41:14.277 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:41:14.281 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:41:14.287 [main] INFO  DataProviderDB - Trainer
+2021-12-14 21:41:14.293 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-14 21:41:14.294 [main] INFO  org.example.App - []
-2021-12-14 21:41:33.106 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:41:33.109 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:41:33.110 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:41:33.114 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:41:33.123 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 21:41:33.123 [main] INFO  org.example.App - []
-2021-12-14 21:42:09.768 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:42:09.771 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:42:09.772 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:42:09.776 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:42:09.783 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*] "; ожидалось "identifier"
+2021-12-14 21:41:14.294 [main] INFO  App - []
+2021-12-14 21:41:33.106 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:41:33.109 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:41:33.110 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:41:33.114 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:41:33.123 [main] INFO  DataProviderDB - Trainer
+2021-12-14 21:41:33.123 [main] INFO  App - []
+2021-12-14 21:42:09.768 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:42:09.771 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:42:09.772 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:42:09.776 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:42:09.783 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*] "; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*] "; expected "identifier"; SQL statement:
 SELECT * FROM ?  [42001-202]
-2021-12-14 21:42:09.783 [main] INFO  org.example.App - []
-2021-12-14 21:43:41.419 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:43:41.422 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:43:41.423 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 21:43:41.427 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 21:43:41.436 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*] "; ожидалось "identifier"
+2021-12-14 21:42:09.783 [main] INFO  App - []
+2021-12-14 21:43:41.419 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:43:41.422 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:43:41.423 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 21:43:41.427 [main] DEBUG DataProviderDB - Created table
+2021-12-14 21:43:41.436 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*] "; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*] "; expected "identifier"; SQL statement:
 SELECT * FROM ?  [42001-202]
-2021-12-14 21:43:41.436 [main] INFO  org.example.App - []
-2021-12-14 22:02:58.078 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:02:58.081 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:02:58.082 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:02:58.087 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:02:58.093 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:03:20.806 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:03:20.809 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:03:20.814 [main] INFO  org.example.App - Trainer{id=1639508600810, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:03:20.815 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:03:20.818 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:03:20.821 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 22:03:32.851 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:03:32.854 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:03:32.855 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:03:32.858 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:03:32.865 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:07:48.151 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:07:48.154 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:07:48.154 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:07:48.158 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:07:48.166 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:07:48.170 [main] INFO  org.example.App - []
-2021-12-14 22:08:48.951 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:08:48.954 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:08:48.955 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:08:48.959 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:08:48.965 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:08:48.971 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 22:08:48.971 [main] INFO  org.example.App - []
-2021-12-14 22:09:18.649 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:09:18.652 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:09:18.652 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:09:18.656 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:09:18.663 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:09:18.666 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 22:09:18.667 [main] INFO  org.example.App - []
-2021-12-14 22:09:54.150 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:09:54.153 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:09:54.154 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:09:54.158 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:09:54.165 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:09:54.169 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 22:09:54.169 [main] INFO  org.example.App - []
-2021-12-14 22:10:40.224 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:10:40.227 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:10:40.233 [main] INFO  org.example.App - Trainer{id=1639509040228, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:10:40.233 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:10:40.237 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:10:40.239 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 22:10:40.240 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:10:40.240 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:10:40.246 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:10:40.251 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 22:10:40.251 [main] INFO  org.example.App - []
-2021-12-14 22:26:45.279 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:45.282 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:45.287 [main] INFO  org.example.App - Trainer{id=1639510005283, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:26:45.288 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:45.348 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:26:45.351 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 22:26:45.352 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:45.352 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:26:45.358 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:26:45.363 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 22:26:45.363 [main] INFO  org.example.App - []
-2021-12-14 22:26:57.256 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:57.259 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:57.264 [main] INFO  org.example.App - Trainer{id=1639510017260, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:26:57.265 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:26:57.269 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:26:57.271 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 22:52:46.942 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:52:46.949 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:52:46.955 [main] INFO  org.example.App - Trainer{id=1639511566950, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:52:46.956 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:52:46.961 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:52:46.964 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 22:52:48.053 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+2021-12-14 21:43:41.436 [main] INFO  App - []
+2021-12-14 22:02:58.078 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:02:58.081 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:02:58.082 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:02:58.087 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:02:58.093 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:03:20.806 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:03:20.809 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:03:20.814 [main] INFO  App - Trainer{id=1639508600810, name='name1', surname='surname1', clients=null}
+2021-12-14 22:03:20.815 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:03:20.818 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:03:20.821 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 22:03:32.851 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:03:32.854 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:03:32.855 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:03:32.858 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:03:32.865 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:07:48.151 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:07:48.154 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:07:48.154 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:07:48.158 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:07:48.166 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:07:48.170 [main] INFO  App - []
+2021-12-14 22:08:48.951 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:08:48.954 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:08:48.955 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:08:48.959 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:08:48.965 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:08:48.971 [main] INFO  DataProviderDB - []
+2021-12-14 22:08:48.971 [main] INFO  App - []
+2021-12-14 22:09:18.649 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:09:18.652 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:09:18.652 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:09:18.656 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:09:18.663 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:09:18.666 [main] INFO  DataProviderDB - []
+2021-12-14 22:09:18.667 [main] INFO  App - []
+2021-12-14 22:09:54.150 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:09:54.153 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:09:54.154 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:09:54.158 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:09:54.165 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:09:54.169 [main] INFO  DataProviderDB - []
+2021-12-14 22:09:54.169 [main] INFO  App - []
+2021-12-14 22:10:40.224 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:10:40.227 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:10:40.233 [main] INFO  App - Trainer{id=1639509040228, name='name1', surname='surname1', clients=null}
+2021-12-14 22:10:40.233 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:10:40.237 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:10:40.239 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 22:10:40.240 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:10:40.240 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:10:40.246 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:10:40.251 [main] INFO  DataProviderDB - []
+2021-12-14 22:10:40.251 [main] INFO  App - []
+2021-12-14 22:26:45.279 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:45.282 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:45.287 [main] INFO  App - Trainer{id=1639510005283, name='name1', surname='surname1', clients=null}
+2021-12-14 22:26:45.288 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:45.348 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:26:45.351 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 22:26:45.352 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:45.352 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:26:45.358 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:26:45.363 [main] INFO  DataProviderDB - []
+2021-12-14 22:26:45.363 [main] INFO  App - []
+2021-12-14 22:26:57.256 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:57.259 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:57.264 [main] INFO  App - Trainer{id=1639510017260, name='name1', surname='surname1', clients=null}
+2021-12-14 22:26:57.265 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:26:57.269 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:26:57.271 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 22:52:46.942 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:52:46.949 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:52:46.955 [main] INFO  App - Trainer{id=1639511566950, name='name1', surname='surname1', clients=null}
+2021-12-14 22:52:46.956 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:52:46.961 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:52:46.964 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 22:52:48.053 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
 Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-202]
-2021-12-14 22:52:48.056 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:52:48.061 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+2021-12-14 22:52:48.056 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:52:48.061 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
 Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-202]
-2021-12-14 22:52:48.061 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:52:48.067 [main] INFO  org.example.App - Trainer{id=1639511568062, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:52:48.074 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+2021-12-14 22:52:48.061 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:52:48.067 [main] INFO  App - Trainer{id=1639511568062, name='name1', surname='surname1', clients=null}
+2021-12-14 22:52:48.074 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientConnectionException    База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
 Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-202]
-2021-12-14 22:52:48.074 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:53:49.483 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:53:49.486 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:53:49.491 [main] INFO  org.example.App - Trainer{id=1639511629488, name='name1', surname='surname1', clients=null} 
-2021-12-14 22:53:49.492 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:53:49.497 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:53:49.499 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 22:53:49.500 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 22:53:49.501 [main] DEBUG org.example.DataProviders.DataProviderDB - Created table
-2021-12-14 22:53:49.508 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-14 22:53:49.512 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 22:53:49.512 [main] INFO  org.example.App - []
-2021-12-14 23:06:51.904 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:06:51.906 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:07:26.878 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:07:26.881 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:07:26.888 [main] INFO  org.example.App - Trainer{id=1639512446882, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:07:26.889 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:07:26.895 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:07:26.896 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:08:35.540 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:08:35.543 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:08:35.549 [main] INFO  org.example.App - Trainer{id=1639512515544, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:08:35.549 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:08:35.554 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:08:35.555 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:08:35.564 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:08:35.565 [main] INFO  org.example.App - []
-2021-12-14 23:11:33.711 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:11:33.713 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:11:33.719 [main] INFO  org.example.App - Trainer{id=1639512693714, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:11:33.719 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:11:33.725 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:11:33.726 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:11:33.736 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:11:33.736 [main] INFO  org.example.App - []
-2021-12-14 23:15:16.135 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:15:16.138 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:15:16.143 [main] INFO  org.example.App - Trainer{id=1639512916138, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:15:16.144 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:15:16.149 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:15:16.150 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:15:16.164 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientException    Метод не разрешен для запросов. Используйте execute или executeQuery вместо executeUpdate
+2021-12-14 22:52:48.074 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:53:49.483 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:53:49.486 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:53:49.491 [main] INFO  App - Trainer{id=1639511629488, name='name1', surname='surname1', clients=null}
+2021-12-14 22:53:49.492 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:53:49.497 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:53:49.499 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 22:53:49.500 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 22:53:49.501 [main] DEBUG DataProviderDB - Created table
+2021-12-14 22:53:49.508 [main] INFO  DataProviderDB - Trainer
+2021-12-14 22:53:49.512 [main] INFO  DataProviderDB - []
+2021-12-14 22:53:49.512 [main] INFO  App - []
+2021-12-14 23:06:51.904 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:06:51.906 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:07:26.878 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:07:26.881 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:07:26.888 [main] INFO  App - Trainer{id=1639512446882, name='name1', surname='surname1', clients=null}
+2021-12-14 23:07:26.889 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:07:26.895 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:07:26.896 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:08:35.540 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:08:35.543 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:08:35.549 [main] INFO  App - Trainer{id=1639512515544, name='name1', surname='surname1', clients=null}
+2021-12-14 23:08:35.549 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:08:35.554 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:08:35.555 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:08:35.564 [main] INFO  DataProviderDB - []
+2021-12-14 23:08:35.565 [main] INFO  App - []
+2021-12-14 23:11:33.711 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:11:33.713 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:11:33.719 [main] INFO  App - Trainer{id=1639512693714, name='name1', surname='surname1', clients=null}
+2021-12-14 23:11:33.719 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:11:33.725 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:11:33.726 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:11:33.736 [main] INFO  DataProviderDB - []
+2021-12-14 23:11:33.736 [main] INFO  App - []
+2021-12-14 23:15:16.135 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:15:16.138 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:15:16.143 [main] INFO  App - Trainer{id=1639512916138, name='name1', surname='surname1', clients=null}
+2021-12-14 23:15:16.144 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:15:16.149 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:15:16.150 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:15:16.164 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientException    Метод не разрешен для запросов. Используйте execute или executeQuery вместо executeUpdate
 Method is not allowed for a query. Use execute or executeQuery instead of executeUpdate; SQL statement:
 SELECT * FROM Trainer [90001-202]
-2021-12-14 23:15:16.164 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:15:16.164 [main] INFO  org.example.App - []
-2021-12-14 23:16:13.275 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:16:13.278 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:16:13.284 [main] INFO  org.example.App - Trainer{id=1639512973279, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:16:13.284 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:16:13.290 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:16:13.291 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:16:13.301 [main] INFO  org.example.DataProviders.DataProviderDB - rs2: org.h2.result.LocalResult@5adb0db3 columns: 3 rows: 0 pos: -1
-2021-12-14 23:16:13.302 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:16:13.302 [main] INFO  org.example.App - []
-2021-12-14 23:19:20.470 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:19:20.472 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:19:20.477 [main] INFO  org.example.App - Trainer{id=1639513160473, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:19:20.478 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:19:20.484 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:19:20.485 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:19:20.498 [main] INFO  org.example.DataProviders.DataProviderDB - rs2: org.h2.result.LocalResult@5adb0db3 columns: 3 rows: 0 pos: -1
-2021-12-14 23:19:20.498 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:19:20.498 [main] INFO  org.example.App - []
-2021-12-14 23:23:58.312 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:23:58.337 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:23:58.344 [main] INFO  org.example.App - Trainer{id=1639513438339, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:23:58.345 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:23:58.348 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:23:58.348 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:23:58.350 [main] INFO  org.example.DataProviders.DataProviderDB - rs6: org.h2.result.LocalResult@63798ca7 columns: 3 rows: 0 pos: -1
-2021-12-14 23:23:58.350 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:23:58.351 [main] INFO  org.example.App - []
-2021-12-14 23:24:28.359 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:24:28.382 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:24:28.388 [main] INFO  org.example.App - Trainer{id=1639513468384, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:24:28.388 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:24:28.391 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:24:28.392 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:24:28.394 [main] INFO  org.example.DataProviders.DataProviderDB - rs6: org.h2.result.LocalResult@63798ca7 columns: 3 rows: 0 pos: -1
-2021-12-14 23:24:28.394 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:24:28.394 [main] INFO  org.example.App - []
-2021-12-14 23:30:40.124 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:30:40.127 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:30:40.133 [main] INFO  org.example.App - Trainer{id=1639513840127, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:30:40.133 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:30:40.139 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:30:40.139 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:32:31.097 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:32:31.100 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:32:31.106 [main] INFO  org.example.App - Trainer{id=1639513951101, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:32:31.107 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:32:31.112 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:32:31.113 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:39:35.998 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:39:36.001 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:39:36.007 [main] INFO  org.example.App - Trainer{id=1639514376002, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:39:36.008 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:39:36.015 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:39:36.016 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:39:36.033 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientException    Данный метод не разрешен для PreparedStatement; используйте Statement.
+2021-12-14 23:15:16.164 [main] INFO  DataProviderDB - []
+2021-12-14 23:15:16.164 [main] INFO  App - []
+2021-12-14 23:16:13.275 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:16:13.278 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:16:13.284 [main] INFO  App - Trainer{id=1639512973279, name='name1', surname='surname1', clients=null}
+2021-12-14 23:16:13.284 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:16:13.290 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:16:13.291 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:16:13.301 [main] INFO  DataProviderDB - rs2: org.h2.result.LocalResult@5adb0db3 columns: 3 rows: 0 pos: -1
+2021-12-14 23:16:13.302 [main] INFO  DataProviderDB - []
+2021-12-14 23:16:13.302 [main] INFO  App - []
+2021-12-14 23:19:20.470 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:19:20.472 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:19:20.477 [main] INFO  App - Trainer{id=1639513160473, name='name1', surname='surname1', clients=null}
+2021-12-14 23:19:20.478 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:19:20.484 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:19:20.485 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:19:20.498 [main] INFO  DataProviderDB - rs2: org.h2.result.LocalResult@5adb0db3 columns: 3 rows: 0 pos: -1
+2021-12-14 23:19:20.498 [main] INFO  DataProviderDB - []
+2021-12-14 23:19:20.498 [main] INFO  App - []
+2021-12-14 23:23:58.312 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:23:58.337 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:23:58.344 [main] INFO  App - Trainer{id=1639513438339, name='name1', surname='surname1', clients=null}
+2021-12-14 23:23:58.345 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:23:58.348 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:23:58.348 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:23:58.350 [main] INFO  DataProviderDB - rs6: org.h2.result.LocalResult@63798ca7 columns: 3 rows: 0 pos: -1
+2021-12-14 23:23:58.350 [main] INFO  DataProviderDB - []
+2021-12-14 23:23:58.351 [main] INFO  App - []
+2021-12-14 23:24:28.359 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:24:28.382 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:24:28.388 [main] INFO  App - Trainer{id=1639513468384, name='name1', surname='surname1', clients=null}
+2021-12-14 23:24:28.388 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:24:28.391 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:24:28.392 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:24:28.394 [main] INFO  DataProviderDB - rs6: org.h2.result.LocalResult@63798ca7 columns: 3 rows: 0 pos: -1
+2021-12-14 23:24:28.394 [main] INFO  DataProviderDB - []
+2021-12-14 23:24:28.394 [main] INFO  App - []
+2021-12-14 23:30:40.124 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:30:40.127 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:30:40.133 [main] INFO  App - Trainer{id=1639513840127, name='name1', surname='surname1', clients=null}
+2021-12-14 23:30:40.133 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:30:40.139 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:30:40.139 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:32:31.097 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:32:31.100 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:32:31.106 [main] INFO  App - Trainer{id=1639513951101, name='name1', surname='surname1', clients=null}
+2021-12-14 23:32:31.107 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:32:31.112 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:32:31.113 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:39:35.998 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:39:36.001 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:39:36.007 [main] INFO  App - Trainer{id=1639514376002, name='name1', surname='surname1', clients=null}
+2021-12-14 23:39:36.008 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:39:36.015 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:39:36.016 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:39:36.033 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLNonTransientException    Данный метод не разрешен для PreparedStatement; используйте Statement.
 This method is not allowed for a prepared statement; use a regular statement instead. [90130-202]
-2021-12-14 23:39:36.033 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:39:36.034 [main] INFO  org.example.App - []
-2021-12-14 23:40:58.260 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:40:58.263 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:40:58.267 [main] INFO  org.example.App - Trainer{id=1639514458264, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:40:58.268 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:40:58.273 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:40:58.274 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:40:58.283 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:40:58.284 [main] INFO  org.example.App - []
-2021-12-14 23:48:02.300 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:48:02.304 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:48:02.309 [main] INFO  org.example.App - Trainer{id=1639514882304, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:48:02.309 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:48:02.315 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:48:02.316 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:48:02.327 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:48:02.328 [main] INFO  org.example.App - []
-2021-12-14 23:49:39.586 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:49:39.589 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:49:39.593 [main] INFO  org.example.App - Trainer{id=1639514979589, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:49:39.594 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:49:39.600 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:49:39.600 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:49:39.610 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:49:39.610 [main] INFO  org.example.App - []
-2021-12-14 23:52:15.280 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:52:15.282 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:52:15.288 [main] INFO  org.example.App - Trainer{id=1639515135283, name='name1', surname='surname1', clients=null} 
-2021-12-14 23:52:15.289 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:52:15.294 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-14 23:52:15.305 [main] INFO  org.example.DataProviders.DataProviderDB - []
-2021-12-14 23:58:18.921 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:58:18.924 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:58:18.925 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:59:10.099 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:59:10.102 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:59:10.103 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:59:48.775 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:59:48.778 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-14 23:59:48.778 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
+2021-12-14 23:39:36.033 [main] INFO  DataProviderDB - []
+2021-12-14 23:39:36.034 [main] INFO  App - []
+2021-12-14 23:40:58.260 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:40:58.263 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:40:58.267 [main] INFO  App - Trainer{id=1639514458264, name='name1', surname='surname1', clients=null}
+2021-12-14 23:40:58.268 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:40:58.273 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:40:58.274 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:40:58.283 [main] INFO  DataProviderDB - []
+2021-12-14 23:40:58.284 [main] INFO  App - []
+2021-12-14 23:48:02.300 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:48:02.304 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:48:02.309 [main] INFO  App - Trainer{id=1639514882304, name='name1', surname='surname1', clients=null}
+2021-12-14 23:48:02.309 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:48:02.315 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:48:02.316 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:48:02.327 [main] INFO  DataProviderDB - []
+2021-12-14 23:48:02.328 [main] INFO  App - []
+2021-12-14 23:49:39.586 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:49:39.589 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:49:39.593 [main] INFO  App - Trainer{id=1639514979589, name='name1', surname='surname1', clients=null}
+2021-12-14 23:49:39.594 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:49:39.600 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:49:39.600 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:49:39.610 [main] INFO  DataProviderDB - []
+2021-12-14 23:49:39.610 [main] INFO  App - []
+2021-12-14 23:52:15.280 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:52:15.282 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:52:15.288 [main] INFO  App - Trainer{id=1639515135283, name='name1', surname='surname1', clients=null}
+2021-12-14 23:52:15.289 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:52:15.294 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-14 23:52:15.305 [main] INFO  DataProviderDB - []
+2021-12-14 23:58:18.921 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:58:18.924 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:58:18.925 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:59:10.099 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:59:10.102 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:59:10.103 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:59:48.775 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:59:48.778 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-14 23:59:48.778 [main] DEBUG DataProviderDB - Connected to DB

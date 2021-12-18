@@ -1,511 +1,511 @@
-2021-12-15 00:00:05.221 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:05.224 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:05.229 [main] INFO  org.example.App - Trainer{id=1639515605226, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:00:05.230 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:05.236 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:00:05.236 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:05.246 [main] INFO  org.example.DataProviders.DataProviderDB - this is bean + Trainer{id=12, name='asd', surname='qwe', clients=null}
-2021-12-15 00:00:05.246 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:00:05.246 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:00:32.717 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:32.719 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:32.724 [main] INFO  org.example.App - Trainer{id=1639515632720, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:00:32.725 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:00:32.736 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-15 00:00:05.221 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:05.224 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:05.229 [main] INFO  App - Trainer{id=1639515605226, name='name1', surname='surname1', clients=null}
+2021-12-15 00:00:05.230 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:05.236 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:00:05.236 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:05.246 [main] INFO  DataProviderDB - this is bean + Trainer{id=12, name='asd', surname='qwe', clients=null}
+2021-12-15 00:00:05.246 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:00:05.246 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:00:32.717 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:32.719 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:32.724 [main] INFO  App - Trainer{id=1639515632720, name='name1', surname='surname1', clients=null}
+2021-12-15 00:00:32.725 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:00:32.736 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:01:40.754 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:01:40.757 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:01:40.762 [main] INFO  org.example.App - Trainer{id=1639515700758, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:01:40.762 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:01:40.772 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-15 00:01:40.754 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:01:40.757 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:01:40.762 [main] INFO  App - Trainer{id=1639515700758, name='name1', surname='surname1', clients=null}
+2021-12-15 00:01:40.762 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:01:40.772 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:02:03.880 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:02:03.882 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:02:03.888 [main] INFO  org.example.App - Trainer{id=1639515723883, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:02:03.889 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:02:03.899 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-15 00:02:03.880 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:02:03.882 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:02:03.888 [main] INFO  App - Trainer{id=1639515723883, name='name1', surname='surname1', clients=null}
+2021-12-15 00:02:03.889 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:02:03.899 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:06:07.649 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:06:07.652 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:06:07.656 [main] INFO  org.example.App - Trainer{id=1639515967652, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:06:07.657 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:06:07.669 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
+2021-12-15 00:06:07.649 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:06:07.652 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:06:07.656 [main] INFO  App - Trainer{id=1639515967652, name='name1', surname='surname1', clients=null}
+2021-12-15 00:06:07.657 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:06:07.669 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
 Invalid value "2" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:07:19.939 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:07:19.942 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:07:19.948 [main] INFO  org.example.App - Trainer{id=1639516039943, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:07:19.949 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:07:19.961 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
+2021-12-15 00:07:19.939 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:07:19.942 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:07:19.948 [main] INFO  App - Trainer{id=1639516039943, name='name1', surname='surname1', clients=null}
+2021-12-15 00:07:19.949 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:07:19.961 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
 Invalid value "2" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:08:28.314 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:08:28.317 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:08:28.323 [main] INFO  org.example.App - Trainer{id=1639516108318, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:08:28.323 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:08:28.329 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:08:37.079 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:08:37.082 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:08:37.083 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:08:37.101 [main] INFO  org.example.DataProviders.DataProviderDB - this is bean + Trainer{id=12, name='asd', surname='qwe', clients=null}
-2021-12-15 00:08:37.102 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:08:37.102 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:15:24.806 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:15:24.809 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:15:24.814 [main] INFO  org.example.App - Trainer{id=1639516524810, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:15:24.815 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:15:24.829 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-15 00:08:28.314 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:08:28.317 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:08:28.323 [main] INFO  App - Trainer{id=1639516108318, name='name1', surname='surname1', clients=null}
+2021-12-15 00:08:28.323 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:08:28.329 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:08:37.079 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:08:37.082 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:08:37.083 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:08:37.101 [main] INFO  DataProviderDB - this is bean + Trainer{id=12, name='asd', surname='qwe', clients=null}
+2021-12-15 00:08:37.102 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:08:37.102 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:15:24.806 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:15:24.809 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:15:24.814 [main] INFO  App - Trainer{id=1639516524810, name='name1', surname='surname1', clients=null}
+2021-12-15 00:15:24.815 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:15:24.829 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:15:59.483 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:15:59.487 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:15:59.493 [main] INFO  org.example.App - Trainer{id=1639516559488, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:15:59.493 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:15:59.500 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:17:09.860 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:17:09.863 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:17:09.868 [main] INFO  org.example.App - Trainer{id=1639516629864, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:17:09.868 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:17:09.874 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:17:09.884 [main] INFO  org.example.DataProviders.DataProviderDB - this is bean + Trainer{id=12, name='asd', surname='qwe', clients=null}
-2021-12-15 00:17:09.885 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:17:09.885 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:19:21.418 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:19:21.421 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:19:21.428 [main] INFO  org.example.App - Trainer{id=1639516761422, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:19:21.429 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:19:21.434 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:19:21.446 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
-2021-12-15 00:19:43.042 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:19:43.045 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:19:43.050 [main] INFO  org.example.App - Trainer{id=1639516783046, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:19:43.051 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:19:43.062 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
+2021-12-15 00:15:59.483 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:15:59.487 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:15:59.493 [main] INFO  App - Trainer{id=1639516559488, name='name1', surname='surname1', clients=null}
+2021-12-15 00:15:59.493 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:15:59.500 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:17:09.860 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:17:09.863 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:17:09.868 [main] INFO  App - Trainer{id=1639516629864, name='name1', surname='surname1', clients=null}
+2021-12-15 00:17:09.868 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:17:09.874 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:17:09.884 [main] INFO  DataProviderDB - this is bean + Trainer{id=12, name='asd', surname='qwe', clients=null}
+2021-12-15 00:17:09.885 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:17:09.885 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:19:21.418 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:19:21.421 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:19:21.428 [main] INFO  App - Trainer{id=1639516761422, name='name1', surname='surname1', clients=null}
+2021-12-15 00:19:21.429 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:19:21.434 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:19:21.446 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} ]
+2021-12-15 00:19:43.042 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:19:43.045 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:19:43.050 [main] INFO  App - Trainer{id=1639516783046, name='name1', surname='surname1', clients=null}
+2021-12-15 00:19:43.051 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:19:43.062 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "1" для параметра "parameterIndex"
 Invalid value "1" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:21:36.321 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:21:36.324 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:21:36.325 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:03.352 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:03.355 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:03.356 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:22.079 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:22.082 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:22.082 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:22.088 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:22.104 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} ]
-2021-12-15 00:22:42.407 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:42.409 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:42.410 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:42.416 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:22:42.432 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} ]
-2021-12-15 00:23:26.842 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:26.845 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:26.845 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:26.851 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:26.866 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} ]
-2021-12-15 00:23:46.537 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:46.540 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:46.541 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:57.526 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:57.528 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:23:57.529 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:24:13.765 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:24:13.768 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:24:13.769 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:24:13.774 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:24:13.790 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} ]
-2021-12-15 00:25:20.873 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:25:20.875 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:25:20.880 [main] INFO  org.example.App - Trainer{id=1639517120876, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:25:20.881 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:25:20.892 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
+2021-12-15 00:21:36.321 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:21:36.324 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:21:36.325 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:03.352 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:03.355 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:03.356 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:22.079 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:22.082 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:22.082 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:22.088 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:22.104 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} ]
+2021-12-15 00:22:42.407 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:42.409 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:42.410 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:42.416 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:22:42.432 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} ]
+2021-12-15 00:23:26.842 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:26.845 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:26.845 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:26.851 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:26.866 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} ]
+2021-12-15 00:23:46.537 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:46.540 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:46.541 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:57.526 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:57.528 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:23:57.529 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:24:13.765 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:24:13.768 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:24:13.769 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:24:13.774 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:24:13.790 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} ]
+2021-12-15 00:25:20.873 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:25:20.875 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:25:20.880 [main] INFO  App - Trainer{id=1639517120876, name='name1', surname='surname1', clients=null}
+2021-12-15 00:25:20.881 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:25:20.892 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
 Invalid value "2" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:25:41.424 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:25:41.427 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:25:41.433 [main] INFO  org.example.App - Trainer{id=1639517141428, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:25:41.434 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:25:41.444 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
+2021-12-15 00:25:41.424 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:25:41.427 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:25:41.433 [main] INFO  App - Trainer{id=1639517141428, name='name1', surname='surname1', clients=null}
+2021-12-15 00:25:41.434 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:25:41.444 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Недопустимое значение "2" для параметра "parameterIndex"
 Invalid value "2" for parameter "parameterIndex" [90008-202]
-2021-12-15 00:26:05.349 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:26:05.352 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:26:05.357 [main] INFO  org.example.App - Trainer{id=1639517165353, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:26:05.358 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:26:05.365 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:26:05.374 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} ]
-2021-12-15 00:31:15.275 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:31:15.278 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:31:15.284 [main] INFO  org.example.App - Trainer{id=1639517475279, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:31:15.284 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:31:15.290 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:31:15.292 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException    Нарушение уникального индекса или первичного ключа: "PRIMARY KEY ON PUBLIC.TRAINER(ID) ( /* key:0 */ CAST(12 AS BIGINT), 'asd', 'qwe')"
+2021-12-15 00:26:05.349 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:26:05.352 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:26:05.357 [main] INFO  App - Trainer{id=1639517165353, name='name1', surname='surname1', clients=null}
+2021-12-15 00:26:05.358 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:26:05.365 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:26:05.374 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} ]
+2021-12-15 00:31:15.275 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:31:15.278 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:31:15.284 [main] INFO  App - Trainer{id=1639517475279, name='name1', surname='surname1', clients=null}
+2021-12-15 00:31:15.284 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:31:15.290 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:31:15.292 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException    Нарушение уникального индекса или первичного ключа: "PRIMARY KEY ON PUBLIC.TRAINER(ID) ( /* key:0 */ CAST(12 AS BIGINT), 'asd', 'qwe')"
 Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.TRAINER(ID) ( /* key:0 */ CAST(12 AS BIGINT), 'asd', 'qwe')"; SQL statement:
 INSERT INTO TRAINER (id, name, surname) VALUES (?, ?, ?) [23505-202]
-2021-12-15 00:31:27.800 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:31:27.803 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:31:27.808 [main] INFO  org.example.App - Trainer{id=1639517487804, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:31:27.809 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:31:27.815 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:31:27.825 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} ]
-2021-12-15 00:32:25.971 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:32:25.973 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:32:25.979 [main] INFO  org.example.App - Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} 
-2021-12-15 00:32:25.979 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 00:32:25.986 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 00:32:25.995 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} ]
-2021-12-15 01:03:49.678 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:03:49.681 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:03:49.683 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:03:49.690 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 01:03:49.705 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} ]
-2021-12-15 01:03:49.706 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:03:49.709 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:21.520 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:21.523 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:21.524 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:21.532 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 01:04:21.546 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} ]
-2021-12-15 01:04:21.547 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:21.549 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:41.397 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:41.400 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:41.401 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 01:04:41.409 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 01:04:41.424 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} ]
-2021-12-15 01:04:41.425 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:08.221 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:08.225 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:08.227 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:08.236 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 11:56:08.253 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} ]
-2021-12-15 11:56:08.255 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:08.263 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
+2021-12-15 00:31:27.800 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:31:27.803 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:31:27.808 [main] INFO  App - Trainer{id=1639517487804, name='name1', surname='surname1', clients=null}
+2021-12-15 00:31:27.809 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:31:27.815 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:31:27.825 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} ]
+2021-12-15 00:32:25.971 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:32:25.973 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:32:25.979 [main] INFO  App - Trainer{id=1639517545974, name='name1', surname='surname1', clients=null}
+2021-12-15 00:32:25.979 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 00:32:25.986 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 00:32:25.995 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} ]
+2021-12-15 01:03:49.678 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:03:49.681 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:03:49.683 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:03:49.690 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 01:03:49.705 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} ]
+2021-12-15 01:03:49.706 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:03:49.709 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:21.520 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:21.523 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:21.524 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:21.532 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 01:04:21.546 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} ]
+2021-12-15 01:04:21.547 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:21.549 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:41.397 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:41.400 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:41.401 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 01:04:41.409 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 01:04:41.424 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} ]
+2021-12-15 01:04:41.425 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:08.221 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:08.225 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:08.227 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:08.236 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 11:56:08.253 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} ]
+2021-12-15 11:56:08.255 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:08.263 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
 Data conversion error converting "?"; SQL statement:
 UPDATE Trainer SET name = '?', surname = '?' WHERE id = '?' [22018-202]
-2021-12-15 11:56:57.468 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:57.471 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:57.472 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:57.479 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 11:56:57.496 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} ]
-2021-12-15 11:56:57.497 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:56:57.504 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
+2021-12-15 11:56:57.468 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:57.471 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:57.472 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:57.479 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 11:56:57.496 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} ]
+2021-12-15 11:56:57.497 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:56:57.504 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
 Data conversion error converting "?"; SQL statement:
 UPDATE Trainer SET name = '?', surname = '?' WHERE id = '?' [22018-202]
-2021-12-15 11:57:34.611 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:57:34.614 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:57:34.615 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:57:34.622 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 11:57:34.635 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} ]
-2021-12-15 11:57:34.636 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:57:34.642 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
+2021-12-15 11:57:34.611 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:57:34.614 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:57:34.615 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:57:34.622 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 11:57:34.635 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} ]
+2021-12-15 11:57:34.636 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:57:34.642 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
 Data conversion error converting "?"; SQL statement:
 UPDATE Trainer SET name = '?', surname = '?' WHERE id = '?' [22018-202]
-2021-12-15 11:58:29.950 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:29.953 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:29.954 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:29.961 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 11:58:29.978 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558709953, name='Dany', surname='McLovin', clients=null} ]
-2021-12-15 11:58:29.979 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:29.986 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
+2021-12-15 11:58:29.950 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:29.953 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:29.954 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:29.961 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 11:58:29.978 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558709953, name='Dany', surname='McLovin', clients=null} ]
+2021-12-15 11:58:29.979 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:29.986 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLDataException    Ошибка преобразования данных при конвертации "?"
 Data conversion error converting "?"; SQL statement:
 UPDATE Trainer SET name = ?, surname = '?' WHERE id = '?' [22018-202]
-2021-12-15 11:58:41.547 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:41.550 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:41.551 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 11:58:41.559 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 11:58:41.574 [main] INFO  org.example.DataProviders.DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558709953, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558721551, name='Dany', surname='McLovin', clients=null} ]
-2021-12-15 11:58:41.574 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:50.385 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:50.388 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:50.388 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:57.838 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:57.841 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:57.842 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:08:57.861 [main] INFO  org.example.App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558709953, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558721551, name='Dany', surname='Cocksucker', clients=null} ]
-2021-12-15 12:09:51.810 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:09:51.814 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:09:51.815 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:10:53.362 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:10:53.365 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:10:53.366 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:10:53.373 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:11.848 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:11.850 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:11.851 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:11.859 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:11:11.860 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:25.268 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:25.270 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:25.271 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:11:25.288 [main] INFO  org.example.App - [Trainer{id=1639559471851, name='Dany', surname='Cocksucker', clients=null} ]
-2021-12-15 12:12:03.039 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:12:03.042 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:12:03.043 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:12:03.050 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:12:03.051 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:19.470 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:19.473 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:19.474 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:19.481 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:13:19.482 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:55.259 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:55.262 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:55.263 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:55.270 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:13:55.271 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:13:55.286 [main] INFO  org.example.App - [Trainer{id=1639559471851, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559523043, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559599473, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559635262, name='Dany', surname='Mclovin', clients=null} ]
-2021-12-15 12:13:55.287 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:14:52.998 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:14:53.002 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:14:53.004 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:14:53.012 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:14:53.013 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:14:53.028 [main] INFO  org.example.App - [Trainer{id=1639559471851, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559523043, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559599473, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559635262, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559693003, name='Dany', surname='Mclovin', clients=null} ]
-2021-12-15 12:14:53.029 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:14:53.032 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.256 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.259 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.261 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.269 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:15:53.270 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.288 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.293 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:15:53.294 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:04.865 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:04.867 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:04.868 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:04.874 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.465 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.467 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.468 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.475 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:16:14.475 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.489 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.492 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:14.493 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.275 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.278 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.279 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.285 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:16:29.286 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.299 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.302 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.303 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:16:29.304 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:25.003 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:25.006 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:25.007 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:25.013 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:29.352 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:29.354 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:29.356 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:29.364 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:17:29.365 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:29.380 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:17:29.383 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:19:20.623 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:19:20.626 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:19:20.628 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:19:20.636 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:19:20.636 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:19:20.650 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:21:45.015 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:21:45.017 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:21:45.023 [main] INFO  org.example.App - Trainer{id=1639560105018, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:21:45.023 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:21:45.033 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:21:45.033 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:22:01.330 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:22:01.332 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:22:01.333 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:26:33.126 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:26:33.128 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:26:33.130 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:26:33.137 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:26:33.138 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:26:33.142 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:26:33.150 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:27:19.562 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:27:19.565 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:27:19.566 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:27:19.573 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:27:19.573 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:27:19.578 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:27:19.584 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:28.627 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:28.630 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:28.632 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:28.639 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:28:28.640 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:28.646 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:47.708 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:47.710 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:47.712 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:47.719 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:28:47.719 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:47.724 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:28:47.731 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:32.988 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:32.991 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:32.992 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:32.999 [main] DEBUG org.example.DataProviders.DataProviderDB - New Trainer inserted
-2021-12-15 12:29:33.000 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:33.016 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:33.018 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:29:33.019 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:33:48.224 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:37:28.972 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:37:28.983 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:37:55.384 [main] INFO  org.example.App - Trainer{id=1639561075377, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:37:55.638 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:37:55.651 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 11:58:41.547 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:41.550 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:41.551 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 11:58:41.559 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 11:58:41.574 [main] INFO  DataProviderDB - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558709953, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558721551, name='Dany', surname='McLovin', clients=null} ]
+2021-12-15 11:58:41.574 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:50.385 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:50.388 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:50.388 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:57.838 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:57.841 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:57.842 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:08:57.861 [main] INFO  App - [Trainer{id=12, name='asd', surname='qwe', clients=null} , Trainer{id=123, name='Trainer', surname='Some', clients=null} , Trainer{id=124546, name='Alex', surname='Wengo', clients=null} , Trainer{id=123456789, name='Den', surname='Some', clients=null} , Trainer{id=1639127693619, name='Whore', surname='Some', clients=null} , Trainer{id=1639127693819, name='ANALWhore', surname='Some', clients=null} , Trainer{id=1639517545974, name='name1', surname='surname1', clients=null} , Trainer{id=1639519429683, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519461524, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639519481401, name='Andrew', surname='Lipstick', clients=null} , Trainer{id=1639558568226, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558617471, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558654614, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558709953, name='Dany', surname='McLovin', clients=null} , Trainer{id=1639558721551, name='Dany', surname='Cocksucker', clients=null} ]
+2021-12-15 12:09:51.810 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:09:51.814 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:09:51.815 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:10:53.362 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:10:53.365 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:10:53.366 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:10:53.373 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:11.848 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:11.850 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:11.851 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:11.859 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:11:11.860 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:25.268 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:25.270 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:25.271 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:11:25.288 [main] INFO  App - [Trainer{id=1639559471851, name='Dany', surname='Cocksucker', clients=null} ]
+2021-12-15 12:12:03.039 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:12:03.042 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:12:03.043 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:12:03.050 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:12:03.051 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:19.470 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:19.473 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:19.474 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:19.481 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:13:19.482 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:55.259 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:55.262 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:55.263 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:55.270 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:13:55.271 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:13:55.286 [main] INFO  App - [Trainer{id=1639559471851, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559523043, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559599473, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559635262, name='Dany', surname='Mclovin', clients=null} ]
+2021-12-15 12:13:55.287 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:14:52.998 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:14:53.002 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:14:53.004 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:14:53.012 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:14:53.013 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:14:53.028 [main] INFO  App - [Trainer{id=1639559471851, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559523043, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559599473, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559635262, name='Dany', surname='Cocksucker', clients=null} , Trainer{id=1639559693003, name='Dany', surname='Mclovin', clients=null} ]
+2021-12-15 12:14:53.029 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:14:53.032 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.256 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.259 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.261 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.269 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:15:53.270 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.288 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.293 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:15:53.294 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:04.865 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:04.867 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:04.868 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:04.874 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.465 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.467 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.468 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.475 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:16:14.475 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.489 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.492 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:14.493 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.275 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.278 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.279 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.285 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:16:29.286 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.299 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.302 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.303 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:16:29.304 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:25.003 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:25.006 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:25.007 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:25.013 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:29.352 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:29.354 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:29.356 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:29.364 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:17:29.365 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:29.380 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:17:29.383 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:19:20.623 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:19:20.626 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:19:20.628 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:19:20.636 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:19:20.636 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:19:20.650 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:21:45.015 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:21:45.017 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:21:45.023 [main] INFO  App - Trainer{id=1639560105018, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:21:45.023 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:21:45.033 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:21:45.033 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:22:01.330 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:22:01.332 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:22:01.333 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:26:33.126 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:26:33.128 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:26:33.130 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:26:33.137 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:26:33.138 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:26:33.142 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:26:33.150 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:27:19.562 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:27:19.565 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:27:19.566 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:27:19.573 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:27:19.573 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:27:19.578 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:27:19.584 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:28.627 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:28.630 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:28.632 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:28.639 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:28:28.640 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:28.646 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:47.708 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:47.710 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:47.712 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:47.719 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:28:47.719 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:47.724 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:28:47.731 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:32.988 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:32.991 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:32.992 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:32.999 [main] DEBUG DataProviderDB - New Trainer inserted
+2021-12-15 12:29:33.000 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:33.016 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:33.018 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:29:33.019 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:33:48.224 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:37:28.972 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:37:28.983 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:37:55.384 [main] INFO  App - Trainer{id=1639561075377, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:37:55.638 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:37:55.651 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO ? (id, name, surname) VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:38:49.237 [main] INFO  org.example.App - Trainer{id=1639561129230, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:38:49.501 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:38:49.511 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:38:49.237 [main] INFO  App - Trainer{id=1639561129230, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:38:49.501 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:38:49.511 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO ? (id, name, surname) VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:39:43.259 [main] INFO  org.example.App - Trainer{id=1639561183250, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:39:43.457 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:39:43.465 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:39:43.259 [main] INFO  App - Trainer{id=1639561183250, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:39:43.457 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:39:43.465 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO ? (id, name, surname) VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:40:11.443 [main] INFO  org.example.App - Trainer{id=1639561211435, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:40:11.639 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:40:11.643 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-15 12:40:11.649 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:40:11.443 [main] INFO  App - Trainer{id=1639561211435, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:40:11.639 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:40:11.643 [main] INFO  DataProviderDB - Trainer
+2021-12-15 12:40:11.649 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO ? (id, name, surname) VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:40:49.412 [main] INFO  org.example.App - Trainer{id=1639561249401, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:40:49.617 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:40:49.620 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-15 12:40:49.626 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:40:49.412 [main] INFO  App - Trainer{id=1639561249401, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:40:49.617 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:40:49.620 [main] INFO  DataProviderDB - Trainer
+2021-12-15 12:40:49.626 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO ?[*] (ID, NAME, SURNAME) VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO ? (id, name, surname) VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:41:39.000 [main] INFO  org.example.App - Trainer{id=1639561298993, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:41:39.258 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:41:39.262 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-15 12:41:39.271 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO '?' [*](ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:41:39.000 [main] INFO  App - Trainer{id=1639561298993, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:41:39.258 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:41:39.262 [main] INFO  DataProviderDB - Trainer
+2021-12-15 12:41:39.271 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO '?' [*](ID, NAME, SURNAME) VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO '?' [*](ID, NAME, SURNAME) VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO '?' (id, name, surname) VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:42:58.384 [main] INFO  org.example.App - Trainer{id=1639561378373, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:42:58.738 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:42:58.742 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-15 12:42:58.750 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO '?' [*]VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:42:58.384 [main] INFO  App - Trainer{id=1639561378373, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:42:58.738 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:42:58.742 [main] INFO  DataProviderDB - Trainer
+2021-12-15 12:42:58.750 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO '?' [*]VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO '?' [*]VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO '?' VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:47:46.284 [main] INFO  org.example.App - Trainer{id=1639561666271, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:47:46.545 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:47:46.550 [main] INFO  org.example.DataProviders.DataProviderDB - Trainer
-2021-12-15 12:47:46.558 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] VALUES (?, ?, ?)"; ожидалось "identifier"
+2021-12-15 12:47:46.284 [main] INFO  App - Trainer{id=1639561666271, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:47:46.545 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:47:46.550 [main] INFO  DataProviderDB - Trainer
+2021-12-15 12:47:46.558 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "INSERT INTO ?[*] VALUES (?, ?, ?)"; ожидалось "identifier"
 Syntax error in SQL statement "INSERT INTO ?[*] VALUES (?, ?, ?)"; expected "identifier"; SQL statement:
 INSERT INTO ? VALUES (?, ?, ?) [42001-202]
-2021-12-15 12:50:22.129 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:50:22.144 [main] ERROR org.example.DataProviders.DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
+2021-12-15 12:50:22.129 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:50:22.144 [main] ERROR DataProviderDB - org.h2.jdbc.JdbcSQLSyntaxErrorException    Синтаксическая ошибка в выражении SQL "SELECT * FROM ?[*]"; ожидалось "identifier"
 Syntax error in SQL statement "SELECT * FROM ?[*]"; expected "identifier"; SQL statement:
 SELECT * FROM ? [42001-202]
-2021-12-15 12:51:53.668 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:57:28.928 [main] INFO  org.example.App - Trainer{id=1639562248915, name='Hairy', surname='Schlong', clients=null} 
-2021-12-15 12:57:29.187 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:57:29.197 [main] DEBUG org.example.DataProviders.DataProviderDB - Trainer was added
-2021-12-15 12:57:29.198 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:57:29.209 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 12:57:36.368 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 14:48:23.816 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:17:00.304 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:18:14.071 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:18:34.090 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:19:32.065 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:19:32.092 [main] INFO  org.example.App - Trainer{id=1639570772069, name='null', surname='null', clients=null} 
-2021-12-15 15:27:12.200 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:27:41.492 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:27:41.517 [main] INFO  org.example.App - Trainer{id=1639571261496, name='null', surname='null', clients=null} 
-2021-12-15 15:29:29.998 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:29:30.012 [main] DEBUG org.example.DataProviders.DataProviderDB - Trainer was added
-2021-12-15 15:29:49.761 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 15:29:49.773 [main] DEBUG org.example.DataProviders.DataProviderDB - Trainer was added
-2021-12-15 15:37:04.333 [main] DEBUG org.example.DataProviders.DataProviderDB - Connected to DB
-2021-12-15 21:49:38.426 [main] INFO  org.example.DataProviders.DataProviderCsv - Created new XML file: Trainer
-2021-12-15 21:49:38.428 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 21:49:38.484 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 21:49:38.518 [main] INFO  org.example.App - {"id":1639594178403,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 21:49:38","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 21:49:38.823 [main] INFO  org.example.App - Connected to MongoDB
-2021-12-15 21:49:38.941 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 21:49:38.946 [main] INFO  org.example.App - MongoDB collection received
-2021-12-15 21:49:38.994 [main] INFO  org.example.App - New History record added
-2021-12-15 21:52:17.715 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 21:52:17.778 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 21:52:17.816 [main] INFO  org.example.App - {"id":1639594337692,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 21:52:17","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 21:52:18.105 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 21:52:18.175 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 21:52:18.181 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 21:52:18.199 [main] DEBUG org.example.App - New History record added
-2021-12-15 21:54:04.923 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 21:54:04.988 [main] DEBUG org.example.DataProviders.DataProviderCsv - javax.xml.stream.XMLStreamExceptionParseError at [row,col]:[3,25]
+2021-12-15 12:51:53.668 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:57:28.928 [main] INFO  App - Trainer{id=1639562248915, name='Hairy', surname='Schlong', clients=null}
+2021-12-15 12:57:29.187 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:57:29.197 [main] DEBUG DataProviderDB - Trainer was added
+2021-12-15 12:57:29.198 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:57:29.209 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 12:57:36.368 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 14:48:23.816 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:17:00.304 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:18:14.071 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:18:34.090 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:19:32.065 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:19:32.092 [main] INFO  App - Trainer{id=1639570772069, name='null', surname='null', clients=null}
+2021-12-15 15:27:12.200 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:27:41.492 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:27:41.517 [main] INFO  App - Trainer{id=1639571261496, name='null', surname='null', clients=null}
+2021-12-15 15:29:29.998 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:29:30.012 [main] DEBUG DataProviderDB - Trainer was added
+2021-12-15 15:29:49.761 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 15:29:49.773 [main] DEBUG DataProviderDB - Trainer was added
+2021-12-15 15:37:04.333 [main] DEBUG DataProviderDB - Connected to DB
+2021-12-15 21:49:38.426 [main] INFO  DataProviderCsv - Created new XML file: Trainer
+2021-12-15 21:49:38.428 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 21:49:38.484 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 21:49:38.518 [main] INFO  App - {"id":1639594178403,"className":"class DataProviderXml","createdDate":"15/12/2021 21:49:38","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 21:49:38.823 [main] INFO  App - Connected to MongoDB
+2021-12-15 21:49:38.941 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 21:49:38.946 [main] INFO  App - MongoDB collection received
+2021-12-15 21:49:38.994 [main] INFO  App - New History record added
+2021-12-15 21:52:17.715 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 21:52:17.778 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 21:52:17.816 [main] INFO  App - {"id":1639594337692,"className":"class DataProviderXml","createdDate":"15/12/2021 21:52:17","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 21:52:18.105 [main] DEBUG App - Connected to MongoDB
+2021-12-15 21:52:18.175 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 21:52:18.181 [main] DEBUG App - MongoDB collection received
+2021-12-15 21:52:18.199 [main] DEBUG App - New History record added
+2021-12-15 21:54:04.923 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 21:54:04.988 [main] DEBUG DataProviderCsv - javax.xml.stream.XMLStreamExceptionParseError at [row,col]:[3,25]
 Message: XML document structures must start and end within the same entity.
-2021-12-15 22:09:15.638 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:09:15.709 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:09:15.739 [main] INFO  org.example.App - {"id":1639595355609,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:09:15","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:09:16.010 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:09:16.080 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:09:16.087 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:09:16.107 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:12:20.168 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:12:20.315 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:12:20.352 [main] INFO  org.example.App - {"id":1639595540117,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:12:20","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:12:20.617 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:12:20.682 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:12:20.687 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:12:20.702 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:13:06.838 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:13:06.894 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:13:06.922 [main] INFO  org.example.App - {"id":1639595586819,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:13:06","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:13:07.157 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:13:07.221 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:13:07.227 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:13:07.246 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:26:34.775 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:26:34.846 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:26:34.882 [main] INFO  org.example.App - {"id":1639596394718,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:26:34","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:26:35.139 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:26:35.197 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:26:35.203 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:26:35.220 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:31:07.249 [main] INFO  org.example.DataProviders.DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:31:07.413 [main] DEBUG org.example.DataProviders.DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:31:07.481 [main] INFO  org.example.App - {"id":1639596667215,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:31:07","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:31:07.752 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:31:07.813 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:31:07.819 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:31:07.834 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:33:58.093 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:33:58.174 [main] DEBUG org.example.DataProviders.DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:33:58.203 [main] INFO  org.example.App - {"id":1639596838072,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:33:58","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:33:58.426 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:33:58.482 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:33:58.487 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:33:58.500 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:34:54.148 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:34:54.201 [main] ERROR org.example.DataProviders.DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:34:54.233 [main] INFO  org.example.App - {"id":1639596894129,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:34:54","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:34:54.468 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:34:54.531 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:34:54.536 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:34:54.552 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:39:51.542 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:39:51.601 [main] ERROR org.example.DataProviders.DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List org.example.Models.Trainer.clients is null in class org.example.Models.Trainer
-2021-12-15 22:39:51.634 [main] INFO  org.example.App - {"id":1639597191521,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:39:51","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:39:51.906 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:39:51.976 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:39:51.982 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:39:52.001 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:40:40.492 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:40:40.580 [main] INFO  org.example.App - {"id":1639597240473,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:40:40","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
-2021-12-15 22:40:40.809 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:40:40.872 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:40:40.878 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:40:40.891 [main] DEBUG org.example.App - New History record added
-2021-12-15 22:43:07.118 [main] INFO  org.example.DataProviders.DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
-2021-12-15 22:43:07.247 [main] ERROR org.example.DataProviders.DataProviderXml - org.simpleframework.xml.transform.TransformExceptionTransform of class java.util.ImmutableCollections$ListN not supported
-2021-12-15 22:43:07.344 [main] INFO  org.example.App - {"id":1639597387095,"className":"class org.example.DataProviders.DataProviderXml","createdDate":"15/12/2021 22:43:07","actor":"system","methodName":"saveRecords","status":"FAULT"}
-2021-12-15 22:43:07.632 [main] DEBUG org.example.App - Connected to MongoDB
-2021-12-15 22:43:07.691 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
-2021-12-15 22:43:07.695 [main] DEBUG org.example.App - MongoDB collection received
-2021-12-15 22:43:07.709 [main] DEBUG org.example.App - New History record added
+2021-12-15 22:09:15.638 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:09:15.709 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:09:15.739 [main] INFO  App - {"id":1639595355609,"className":"class DataProviderXml","createdDate":"15/12/2021 22:09:15","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:09:16.010 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:09:16.080 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:09:16.087 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:09:16.107 [main] DEBUG App - New History record added
+2021-12-15 22:12:20.168 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:12:20.315 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:12:20.352 [main] INFO  App - {"id":1639595540117,"className":"class DataProviderXml","createdDate":"15/12/2021 22:12:20","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:12:20.617 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:12:20.682 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:12:20.687 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:12:20.702 [main] DEBUG App - New History record added
+2021-12-15 22:13:06.838 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:13:06.894 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:13:06.922 [main] INFO  App - {"id":1639595586819,"className":"class DataProviderXml","createdDate":"15/12/2021 22:13:06","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:13:07.157 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:13:07.221 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:13:07.227 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:13:07.246 [main] DEBUG App - New History record added
+2021-12-15 22:26:34.775 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:26:34.846 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:26:34.882 [main] INFO  App - {"id":1639596394718,"className":"class DataProviderXml","createdDate":"15/12/2021 22:26:34","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:26:35.139 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:26:35.197 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:26:35.203 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:26:35.220 [main] DEBUG App - New History record added
+2021-12-15 22:31:07.249 [main] INFO  DataProviderCsv - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:31:07.413 [main] DEBUG DataProviderCsv - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:31:07.481 [main] INFO  App - {"id":1639596667215,"className":"class DataProviderXml","createdDate":"15/12/2021 22:31:07","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:31:07.752 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:31:07.813 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:31:07.819 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:31:07.834 [main] DEBUG App - New History record added
+2021-12-15 22:33:58.093 [main] INFO  DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:33:58.174 [main] DEBUG DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:33:58.203 [main] INFO  App - {"id":1639596838072,"className":"class DataProviderXml","createdDate":"15/12/2021 22:33:58","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:33:58.426 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:33:58.482 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:33:58.487 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:33:58.500 [main] DEBUG App - New History record added
+2021-12-15 22:34:54.148 [main] INFO  DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:34:54.201 [main] ERROR DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:34:54.233 [main] INFO  App - {"id":1639596894129,"className":"class DataProviderXml","createdDate":"15/12/2021 22:34:54","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:34:54.468 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:34:54.531 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:34:54.536 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:34:54.552 [main] DEBUG App - New History record added
+2021-12-15 22:39:51.542 [main] INFO  DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:39:51.601 [main] ERROR DataProviderXml - org.simpleframework.xml.core.ElementExceptionValue for @org.simpleframework.xml.Element(name="Clients", type=void.class, data=false, required=true) on field 'clients' private java.util.List Trainer.clients is null in class Trainer
+2021-12-15 22:39:51.634 [main] INFO  App - {"id":1639597191521,"className":"class DataProviderXml","createdDate":"15/12/2021 22:39:51","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:39:51.906 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:39:51.976 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:39:51.982 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:39:52.001 [main] DEBUG App - New History record added
+2021-12-15 22:40:40.492 [main] INFO  DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:40:40.580 [main] INFO  App - {"id":1639597240473,"className":"class DataProviderXml","createdDate":"15/12/2021 22:40:40","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-12-15 22:40:40.809 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:40:40.872 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:40:40.878 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:40:40.891 [main] DEBUG App - New History record added
+2021-12-15 22:43:07.118 [main] INFO  DataProviderXml - XML PATH is :./src/main/resources/XML/Trainer.xml
+2021-12-15 22:43:07.247 [main] ERROR DataProviderXml - org.simpleframework.xml.transform.TransformExceptionTransform of class java.util.ImmutableCollections$ListN not supported
+2021-12-15 22:43:07.344 [main] INFO  App - {"id":1639597387095,"className":"class DataProviderXml","createdDate":"15/12/2021 22:43:07","actor":"system","methodName":"saveRecords","status":"FAULT"}
+2021-12-15 22:43:07.632 [main] DEBUG App - Connected to MongoDB
+2021-12-15 22:43:07.691 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48 (NamespaceExists): 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is {"ok": 0.0, "errmsg": "Collection already exists. NS: myMongoDb.HistoryContent", "code": 48, "codeName": "NamespaceExists"}
+2021-12-15 22:43:07.695 [main] DEBUG App - MongoDB collection received
+2021-12-15 22:43:07.709 [main] DEBUG App - New History record added

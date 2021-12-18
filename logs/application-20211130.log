@@ -1,22 +1,22 @@
-2021-11-30 18:13:20.420 [main] ERROR org.example.App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
-2021-11-30 18:13:59.880 [main] ERROR org.example.App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
-2021-11-30 18:14:23.699 [main] ERROR org.example.App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
-2021-11-30 18:14:59.345 [main] ERROR org.example.App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
-2021-11-30 19:58:33.269 [main] INFO  org.example.App - all records were added
-2021-11-30 19:58:33.309 [main] INFO  org.example.App - {"id":1638291513154,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"30/11/2021 19:58:33","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
-2021-11-30 19:58:33.610 [main] INFO  org.example.App - Connected to db
-2021-11-30 19:58:33.691 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
-2021-11-30 19:58:33.694 [main] INFO  org.example.App - Collection received
-2021-11-30 19:58:33.724 [main] INFO  org.example.App - Record added
-2021-11-30 20:04:19.513 [main] INFO  org.example.App - all records were added
-2021-11-30 20:04:19.549 [main] INFO  org.example.App - {"id":1638291859409,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"30/11/2021 20:04:19","actor":"system","methodName":"[Ljava.lang.reflect.Method;@57cf54e1","status":"SUCCESS"}
-2021-11-30 20:04:19.783 [main] INFO  org.example.App - Connected to db
-2021-11-30 20:04:19.829 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
-2021-11-30 20:04:19.832 [main] INFO  org.example.App - Collection received
-2021-11-30 20:04:19.846 [main] INFO  org.example.App - Record added
-2021-11-30 20:09:53.869 [main] INFO  org.example.App - all records were added
-2021-11-30 20:09:53.898 [main] INFO  org.example.App - {"id":1638292193775,"className":"class org.example.DataProviders.DataProviderCsv","createdDate":"30/11/2021 20:09:53","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
-2021-11-30 20:09:54.106 [main] INFO  org.example.App - Connected to db
-2021-11-30 20:09:54.154 [main] ERROR org.example.App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
-2021-11-30 20:09:54.158 [main] INFO  org.example.App - Collection received
-2021-11-30 20:09:54.198 [main] INFO  org.example.App - Record added
+2021-11-30 18:13:20.420 [main] ERROR App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
+2021-11-30 18:13:59.880 [main] ERROR App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
+2021-11-30 18:14:23.699 [main] ERROR App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
+2021-11-30 18:14:59.345 [main] ERROR App - java.io.FileNotFoundException/Users/askoldsilya/IdeaProjects/JavaLabsProject/src/main/resources/CSV/Trainer.csv (No such file or directory)
+2021-11-30 19:58:33.269 [main] INFO  App - all records were added
+2021-11-30 19:58:33.309 [main] INFO  App - {"id":1638291513154,"className":"class DataProviderCsv","createdDate":"30/11/2021 19:58:33","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-11-30 19:58:33.610 [main] INFO  App - Connected to db
+2021-11-30 19:58:33.691 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-11-30 19:58:33.694 [main] INFO  App - Collection received
+2021-11-30 19:58:33.724 [main] INFO  App - Record added
+2021-11-30 20:04:19.513 [main] INFO  App - all records were added
+2021-11-30 20:04:19.549 [main] INFO  App - {"id":1638291859409,"className":"class DataProviderCsv","createdDate":"30/11/2021 20:04:19","actor":"system","methodName":"[Ljava.lang.reflect.Method;@57cf54e1","status":"SUCCESS"}
+2021-11-30 20:04:19.783 [main] INFO  App - Connected to db
+2021-11-30 20:04:19.829 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-11-30 20:04:19.832 [main] INFO  App - Collection received
+2021-11-30 20:04:19.846 [main] INFO  App - Record added
+2021-11-30 20:09:53.869 [main] INFO  App - all records were added
+2021-11-30 20:09:53.898 [main] INFO  App - {"id":1638292193775,"className":"class DataProviderCsv","createdDate":"30/11/2021 20:09:53","actor":"system","methodName":"saveRecords","status":"SUCCESS"}
+2021-11-30 20:09:54.106 [main] INFO  App - Connected to db
+2021-11-30 20:09:54.154 [main] ERROR App - com.mongodb.MongoCommandExceptionCommand failed with error 48: 'Collection already exists. NS: myMongoDb.HistoryContent' on server localhost:27017. The full response is { "ok" : 0.0, "errmsg" : "Collection already exists. NS: myMongoDb.HistoryContent", "code" : 48, "codeName" : "NamespaceExists" }
+2021-11-30 20:09:54.158 [main] INFO  App - Collection received
+2021-11-30 20:09:54.198 [main] INFO  App - Record added
