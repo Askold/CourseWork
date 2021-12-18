@@ -26,9 +26,17 @@ public class Constants {
     public static final String NOT_ADDED =" not added";
     //Use-case
     public static final String SOME_COMMENTS = "Some comments";
-    public static final String LAST_WORKOUT = "Last workout is:";
-    public static final String LAST_PROGRAM = "Last program is:";
-    public static final String SELECTED_CLIENT = "Selected client:";
+    public static final String SOME_DESCRIPTION = "Some description";
+    public static final String WORKOUT_ESTIMATE = "Workout for client was: ";
+    public static final String COMMENTS = "His comments: ";
+    public static final String CLIENT_WORKOUT = "Client don't have a workout yet";
+    public static final String ID_IS = " ID is ";
+    //public static final String  =
+    //public static final String  =;
+    //public static final String  =;
+    //public static final String  =;
+    //public static final String  =;
+    //public static final String  =;
     //Database
     public static final String DATABASE_URL = "jdbc:h2:./test";
     public static final String DATABASE_USER = "sa";
@@ -46,7 +54,47 @@ public class Constants {
     public static final String UPDATE_TRAINER = "UPDATE Trainer SET name = ?, surname = ? WHERE id = ?";
     public static final String DELETE_TRAINER = "DELETE FROM Trainer WHERE id = ?";
     public static final String CLEAR = "TRUNCATE TABLE ";
-   //public static final String  =;
-   //public static final String  =;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
 
 }

@@ -42,7 +42,7 @@ public class DataProviderCsv extends DataProvider {
 
     // -----------------general select/save records-------------------------------
     @Override
-    public <T> boolean saveRecords(List<T> beans) {
+    public<T> boolean saveRecords(List<T> beans) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         Writer writer;
@@ -116,6 +116,7 @@ public class DataProviderCsv extends DataProvider {
         catch (NoSuchElementException e){
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
+            return Optional.empty();
         }
         return Optional.of(result);
     }
@@ -204,6 +205,7 @@ public class DataProviderCsv extends DataProvider {
         catch (NoSuchElementException e){
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
+            return Optional.empty();
         }
         return Optional.of(result);
     }
@@ -215,7 +217,7 @@ public class DataProviderCsv extends DataProvider {
         Client beanToUpdate = new Client();
         if (getClientById(bean.getId()).isPresent()) beanToUpdate = getClientById(bean.getId()).get();
         if (!beanToUpdate.equals(bean)) {
-            if (!deleteTrainerById(bean.getId())){
+            if (!deleteClientById(bean.getId())){
                 historyRecord.setStatus(HistoryContent.Status.FAULT);
                 addHistoryRecord(historyRecord);
                 logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
@@ -226,6 +228,27 @@ public class DataProviderCsv extends DataProvider {
         addHistoryRecord(historyRecord);
         logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
         return true;
+    }
+
+    @Override
+    boolean deleteClientById(long id) {
+        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+        Client beanToRemove = new Client();
+        try{
+            beanToRemove = getClientById(id).orElseThrow();
+        }catch (NoSuchElementException e){
+            logger.error(e.getClass().getName() + e.getMessage());
+            logger.error(beanToRemove.getClass().getSimpleName() + Constants.NOT_DELETED);
+            historyRecord.setStatus(HistoryContent.Status.FAULT);
+            return false;
+        }
+        List<Client> listOfBeans = selectRecords(Client.class);
+        Client finalBeanToRemove = beanToRemove;
+        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
+        addHistoryRecord(historyRecord);
+        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
+        return saveRecords(listOfBeans);
     }
 
     // -------------------------Exercises class CRUD--------------------------------------
@@ -245,6 +268,7 @@ public class DataProviderCsv extends DataProvider {
             writer.close();
         } catch (IOException | CsvDataTypeMismatchException | CsvRequiredFieldEmptyException e) {
             logger.error(e.getClass().getName() + e.getMessage());
+            logger.error(Exercise.class.getSimpleName()+Constants.NOT_ADDED);
             historyRecord.setStatus(HistoryContent.Status.FAULT);
             addHistoryRecord(historyRecord);
             return false;
@@ -265,6 +289,7 @@ public class DataProviderCsv extends DataProvider {
         catch (NoSuchElementException e){
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
+            return Optional.empty();
         }
         return Optional.of(result);
     }
@@ -307,6 +332,7 @@ public class DataProviderCsv extends DataProvider {
         catch (NoSuchElementException e){
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
+            return Optional.empty();
         }
         return Optional.of(result);
     }
@@ -318,7 +344,7 @@ public class DataProviderCsv extends DataProvider {
         Workout beanToUpdate = new Workout();
         if (getTrainerById(bean.getId()).isPresent()) beanToUpdate = getWorkoutById(bean.getId()).get();
         if (!beanToUpdate.equals(bean)) {
-            if (!deleteTrainerById(bean.getId())){
+            if (!deleteWorkoutById(bean.getId())){
                 historyRecord.setStatus(HistoryContent.Status.FAULT);
                 addHistoryRecord(historyRecord);
                 logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
@@ -329,6 +355,27 @@ public class DataProviderCsv extends DataProvider {
         addHistoryRecord(historyRecord);
         logger.debug(bean.getClass().getSimpleName() + Constants.UPDATED);
         return true;
+    }
+
+    @Override
+    boolean deleteWorkoutById(long id) {
+        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+        Workout beanToRemove = new Workout();
+        try{
+            beanToRemove = getWorkoutById(id).orElseThrow();
+        }catch (NoSuchElementException e){
+            logger.error(e.getClass().getName() + e.getMessage());
+            logger.error(beanToRemove.getClass().getSimpleName() + Constants.NOT_DELETED);
+            historyRecord.setStatus(HistoryContent.Status.FAULT);
+            return false;
+        }
+        List<Workout> listOfBeans = selectRecords(Workout.class);
+        Workout finalBeanToRemove = beanToRemove;
+        listOfBeans.removeIf(bean -> bean.equals(finalBeanToRemove));
+        addHistoryRecord(historyRecord);
+        logger.debug(beanToRemove.getClass().getSimpleName() + Constants.DELETED);
+        return saveRecords(listOfBeans);
     }
 
     // -------------------------Feedback class CRUD--------------------------------------
@@ -368,80 +415,80 @@ public class DataProviderCsv extends DataProvider {
         catch (NoSuchElementException e){
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
+            return Optional.empty();
         }
         return Optional.of(result);
     }
 
-    // -------------------------Program class CRUD--------------------------------------
-    @Override
-    boolean createNewProgram(Program program) {
-        HistoryContent historyRecord = new HistoryContent(getClass().toString(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-        historyRecord.setBean(new Gson().toJson(program));
-        Writer wr;
-        try {
-            wr = new FileWriter(initDataSource(Program.class), true);
-            CSVWriter writer = new CSVWriter(wr);
-            StatefulBeanToCsv<Program> beanToCsv = new StatefulBeanToCsvBuilder<Program>(writer)
-                    .withLineEnd(CSVWriter.DEFAULT_LINE_END)
-                    .build();
-            beanToCsv.write(program);
-            writer.close();
-        } catch (IOException | CsvDataTypeMismatchException | CsvRequiredFieldEmptyException e) {
-            logger.error(e.getClass().getName() + e.getMessage());
-            historyRecord.setStatus(HistoryContent.Status.FAULT);
-            addHistoryRecord(historyRecord);
-            return false;
-        }
-        logger.info(program.getClass().getSimpleName() + Constants.ADDED);
-        addHistoryRecord(historyRecord);
-        return true;
-    }
-
-    @Override
-    Optional<Program> getProgramById(long id) {
-        List<Program> listOfBeans = selectRecords(Program.class);
-        Stream<Program> streamFromList = listOfBeans.stream();
-        Program result = new Program();
-        try{
-            result = streamFromList.filter((bean -> bean.getId() == id)).findFirst().orElseThrow();
-        }
-        catch (NoSuchElementException e){
-            logger.error(e.getClass().getName() + e.getMessage());
-            logger.error(result.getClass().getSimpleName() + Constants.NOT_FOUND);
-        }
-        return Optional.of(result);
-    }
 
     // ------------------------- Use-case implementation--------------------------------------
-    //Trainer role
-
+    // Trainer role
 
     @Override
-    Optional<Exercise> addNewExercise(long id){
-        Exercise exercise = new Exercise();
-        insertExercise(exercise);
-        return Optional.of(exercise);
-    }
-
-    boolean addExercises(List<Long> ids) {
-        try {
-            ids.forEach(i -> getExerciseById(i).orElse(addNewExercise(i).orElseThrow()));
-        }catch (NoSuchElementException e){
-            logger.error(e.getClass().getName() + e.getMessage());
-            return false;
+    boolean checkClient(long id) {
+        Client client = getClientById(id).orElseThrow();
+        if (client.isAwaiting()){
+            List<Workout> workouts = selectRecords(Workout.class);
+            Optional<Workout> result = workouts.stream().filter(bean -> bean.getClient() == id).findFirst();
+            if(result.isEmpty()){
+                logger.error(Constants.CLIENT_WORKOUT);
+                return false;
+            }
+            viewFeedback(result.get().getFeedback());
         }
         return true;
     }
 
     @Override
-    Optional<Feedback> viewFeedback(Client client) {
-
-        return Optional.empty();
+    boolean viewFeedback(long id) {
+        if (getFeedbackById(id).isEmpty()){
+            return false;
+        }
+        Feedback feedback = getFeedbackById(id).get();
+        logger.info(Constants.WORKOUT_ESTIMATE + feedback.getEstimate().toString());
+        logger.info(Constants.COMMENTS + feedback.getComment());
+        return true;
     }
 
+    @Override
+    boolean createWorkout(String typeWorkout, long client, long trainer) {
+        Workout.WorkoutType type;
+        try {
+            type = Workout.WorkoutType.valueOf(typeWorkout);
+        }
+        catch (IllegalArgumentException e){
+            logger.error(e.getClass().getName() + e.getMessage());
+            return false;
+        }
+        Workout workout = new Workout(type, client, trainer);
+        if (!insertWorkout(workout)){
+            logger.error(workout.getClass().getSimpleName() + Constants.NOT_ADDED);
+            return false;
+        }
+        if(!changeClientStatus(client)){
+            return false;
+        }
+        logger.info(workout.getClass().getSimpleName()+ Constants.ADDED);
+        logger.info(workout.getClass().getSimpleName() + Constants.ID_IS+ workout.getId());
+        return true;
+    }
 
-    //Client role
+    boolean changeClientStatus(long id){
+        Client client = getClientById(id).orElseThrow();
+        client.setAwaiting(false);
+        return updateClient(client);
+    }
+
+    @Override
+    boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
+        if(getWorkoutById(workout).isEmpty()){
+            return false;
+        }
+        Exercise exercise = new Exercise(name, weight, repetitions, rounds, workout);
+        return insertExercise(exercise);
+    }
+
+    // Client role
 
     @Override
     boolean executeWorkout(long workoutID, String isCompleted){
@@ -457,7 +504,9 @@ public class DataProviderCsv extends DataProvider {
             Workout workout = getWorkoutById(workoutID).get();
             workout.setFeedback(composeFeedback(isCompleted));
             updateWorkout(workout);
-            //Client client = getClientById();
+            Client client = getClientById(workout.getClient()).orElseThrow();
+            client.setAwaiting(true);
+            updateClient(client);
         }
         return true;
     }
@@ -476,7 +525,7 @@ public class DataProviderCsv extends DataProvider {
 
     @Override
     long composeFeedback(String isCompleted) {
-        Feedback.Estimate estimate = null;
+        Feedback.Estimate estimate;
         try {
             estimate = Feedback.Estimate.valueOf(isCompleted);
             }

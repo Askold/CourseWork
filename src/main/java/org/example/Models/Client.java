@@ -24,6 +24,11 @@ public class Client extends User {
     @Element(name = "Height")
     private int height;
 
+    @CsvBindByName
+    @CsvBindByPosition(position = 6)
+    @Element(name = "Awaiting")
+    private boolean awaiting = true;
+
     public Client(String name, String surname, int age, int weight, int height) {
         super(name, surname);
         this.age = age;
@@ -63,18 +68,27 @@ public class Client extends User {
         this.height = height;
     }
 
+    public boolean isAwaiting() {
+        return awaiting;
+    }
+
+    public void setAwaiting(boolean awaiting) {
+        this.awaiting = awaiting;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Client)) return false;
         if (!super.equals(o)) return false;
         Client client = (Client) o;
-        return getAge() == client.getAge() && getWeight() == client.getWeight() && getHeight() == client.getHeight();
+        return getAge() == client.getAge() && getWeight() == client.getWeight()
+                && getHeight() == client.getHeight() && isAwaiting() == client.isAwaiting();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), getAge(), getWeight(), getHeight());
+        return Objects.hash(super.hashCode(), getAge(), getWeight(), getHeight(), isAwaiting());
     }
 
     @Override
@@ -83,6 +97,7 @@ public class Client extends User {
         sb.append("age=").append(age);
         sb.append(", weight=").append(weight);
         sb.append(", height=").append(height);
+        sb.append(", awaiting=").append(awaiting);
         sb.append('}');
         return sb.toString();
     }

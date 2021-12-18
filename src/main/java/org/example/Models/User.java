@@ -7,13 +7,14 @@ import org.simpleframework.xml.Element;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Random;
 
 public class User implements Serializable {
 
     @CsvBindByName
     @CsvBindByPosition(position = 0)
     @Attribute
-    private long id = System.currentTimeMillis();
+    private long id = System.currentTimeMillis() + new Random().nextInt(10000);
 
     @CsvBindByName
     @CsvBindByPosition(position = 1)

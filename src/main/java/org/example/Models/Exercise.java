@@ -2,18 +2,20 @@ package org.example.Models;
 
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvBindByPosition;
+import org.example.Constants;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Random;
 
 public class Exercise implements Serializable {
 
     @CsvBindByName
     @CsvBindByPosition(position = 0)
     @Attribute
-    private long id = System.currentTimeMillis();
+    private long id = System.currentTimeMillis() + new Random().nextInt(10000);;
 
     @CsvBindByName
     @CsvBindByPosition(position = 1)
@@ -23,7 +25,7 @@ public class Exercise implements Serializable {
     @CsvBindByName
     @CsvBindByPosition(position = 2)
     @Element(name = "Description")
-    private String description;
+    private String description = Constants.SOME_DESCRIPTION;
 
     @CsvBindByName
     @CsvBindByPosition(position = 3)
@@ -53,9 +55,8 @@ public class Exercise implements Serializable {
         this.rounds = rounds;
     }
 
-    public Exercise(String name, String description, int weight, int repetitions, int rounds, long workout) {
+    public Exercise(String name, int weight, int repetitions, int rounds, long workout) {
         this.name = name;
-        this.description = description;
         this.weight = weight;
         this.repetitions = repetitions;
         this.rounds = rounds;

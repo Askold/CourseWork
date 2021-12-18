@@ -18,7 +18,7 @@ import java.util.Optional;
 public abstract class DataProvider {
     private static final Logger logger = LogManager.getLogger(App.class);
 
-    // ---------- Trainer CRUD ----------
+    // ---------- General methods ----------
 
     abstract File initDataSource(Class<?> type);
 
@@ -44,6 +44,8 @@ public abstract class DataProvider {
 
     abstract boolean updateClient(Client client);
 
+    abstract boolean deleteClientById(long id);
+
     // ---------- Exercise CRUD ----------
 
     abstract boolean insertExercise(Exercise exercise);
@@ -58,32 +60,30 @@ public abstract class DataProvider {
 
     abstract boolean updateWorkout(Workout workout);
 
+    abstract boolean deleteWorkoutById(long id);
+
     // ---------- Feedback CRUD ----------
 
     abstract boolean insertFeedback(Feedback feedback);
 
     abstract Optional<Feedback> getFeedbackById(long id);
 
-    // ---------- Program CRUD ----------
+    // ---------- Use cases implementation ----------
+    //---------Trainer role
+    //-------checkClient use case
+    abstract boolean checkClient(long id);
 
-    abstract boolean createNewProgram(Program program);
+    abstract boolean viewFeedback(long client);
 
-    abstract Optional<Program> getProgramById(long id);
+    // method getClientById() is in Client CRUD section
 
-    // ---------- Use-case implementation ----------
-    //Trainer role
+    // other cases
+    abstract boolean createWorkout(String type, long client, long trainer);
 
-    //abstract boolean composeProgram(int workoutsAmount, int durationInWeeks, int workoutsPerWeek,
-    //                                       String description, Program.ProgramType type, long clientId);
-//
-    //abstract long composeWorkout(List<Long> exercisesIds, List<Integer> weights, List<Integer> rounds,
-    //                                List<Integer> repetitions);
+    abstract boolean createExercise(String name, int weight, int repetitions, int rounds, long workout);
 
-    abstract Optional<Exercise> addNewExercise(long id);
+    //---------Client role
 
-    abstract Optional<Feedback> viewFeedback(Client client);
-
-    //Client role
     abstract boolean executeWorkout(long workoutID, String isCompleted);
 
     abstract boolean viewWorkout(long workoutID);

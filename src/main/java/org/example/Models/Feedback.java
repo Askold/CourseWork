@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Feedback {
@@ -17,7 +18,7 @@ public class Feedback {
     @CsvBindByName
     @CsvBindByPosition(position = 0)
     @Attribute
-    private long id = System.currentTimeMillis();
+    private long id = System.currentTimeMillis() + new Random().nextInt(10000);
 
     @CsvBindByName
     @CsvBindByPosition(position = 1)
