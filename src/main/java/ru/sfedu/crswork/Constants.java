@@ -55,12 +55,12 @@ public class Constants {
     //---------Client CRUD
     public static final String INSERT_CLIENT ="INSERT INTO Client VALUES (?, ?, ?, ?, ?, ?, ?)";
     public static final String GET_CLIENT = "SELECT * FROM Client WHERE id = ?";
-    public static final String UPDATE_CLIENT = "UPDATE Client SET name = ?, surname = ? WHERE id = ?";
+    public static final String UPDATE_CLIENT = "UPDATE Client SET name = ?, surname = ?, age = ?, weight = ?, height = ?, awaiting = ? WHERE id = ?";
     public static final String DELETE_CLIENT = "DELETE FROM Client WHERE id = ?";
     //---------Workout CRUD
     public static final String INSERT_WORKOUT ="INSERT INTO Workout VALUES (?, ?, ?, ?, ?)";
     public static final String GET_WORKOUT = "SELECT * FROM Workout WHERE id = ?";
-    public static final String UPDATE_WORKOUT = "UPDATE Workout SET name = ?, surname = ? WHERE id = ?";
+    public static final String UPDATE_WORKOUT = "UPDATE Workout SET feedback = ?, type = ?, client = ?, trainer = ? WHERE id = ?";
     public static final String DELETE_WORKOUT = "DELETE FROM Workout WHERE id = ?";
     //---------Exercise CRUD
     public static final String INSERT_EXERCISE ="INSERT INTO Exercise VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -95,30 +95,31 @@ public class Constants {
             "name VARCHAR, " +
             "surname VARCHAR," +
             "age INTEGER," +
-            "weight INTEGER" +
-            "height INTEGER" +
+            "weight INTEGER, " +
+            "height INTEGER, " +
             "awaiting BOOLEAN" +
             ")";
-    public static final String CREATE_TABLE_WORKOUT = "CREATE TABLE IF NOT EXISTS TRAINER (" +
+    public static final String CREATE_TABLE_WORKOUT = "CREATE TABLE IF NOT EXISTS WORKOUT (" +
             "id BIGINT PRIMARY KEY, " +
             "feedback BIGINT, " +
             "type VARCHAR," +
             "client BIGINT, " +
             "trainer BIGINT" +
             ")";
-    public static final String CREATE_TABLE_EXERCISE = "CREATE TABLE IF NOT EXISTS TRAINER (" +
+    public static final String CREATE_TABLE_EXERCISE = "CREATE TABLE IF NOT EXISTS EXERCISE (" +
             "id BIGINT PRIMARY KEY, " +
             "name VARCHAR, " +
             "description VARCHAR," +
             "weight INTEGER, " +
-            "repetitions INTEGER" +
-            "rounds INTEGER" +
+            "repetitions INTEGER, " +
+            "rounds INTEGER, " +
+            "workout BIGINT" +
             ")";
-    public static final String CREATE_TABLE_FEEDBACK = "CREATE TABLE IF NOT EXISTS TRAINER (" +
+    public static final String CREATE_TABLE_FEEDBACK = "CREATE TABLE IF NOT EXISTS FEEDBACK (" +
             "id BIGINT PRIMARY KEY, " +
             "Date VARCHAR, " +
             "Comment VARCHAR," +
-            "Estimate VARCHAR, " +
+            "Estimate VARCHAR " +
             ")";
     //public static final String  =  ;
     //public static final String  =  ;

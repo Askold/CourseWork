@@ -17,13 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/src/main/resources/CSV/Program.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/src/main/resources/CSV/Trainer.csv">
           <value>
             <Attribute>

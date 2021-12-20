@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class DataProviderDB extends DataProvider{
 
     private static final Logger logger = LogManager.getLogger(DataProviderDB.class);
-    private final Connection connection = getNewConnection();
+    //private final Connection connection = getNewConnection();
 
     // -----------------General methods-------------------------------
 
@@ -23,7 +23,7 @@ public class DataProviderDB extends DataProvider{
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()) {
             statement = connection.prepareStatement(Constants.CLEAR +type.getSimpleName());
             statement.execute();
         } catch (SQLException e) {
@@ -37,7 +37,7 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
-    public boolean createTable(String query){
+    public boolean createTable(String query, Connection connection){
         Statement stmt;
         try {
             stmt = connection.createStatement();
@@ -63,7 +63,7 @@ public class DataProviderDB extends DataProvider{
 
     }
 
-    Optional<ResultSet> readFromDB(Class<?> type){
+    Optional<ResultSet> readFromDB(Class<?> type, Connection connection){
         PreparedStatement statement;
         ResultSet resultSet = null;
         try {
@@ -80,17 +80,18 @@ public class DataProviderDB extends DataProvider{
     // -------------------------Trainer class CRUD--------------------------------------
 
     List<Trainer> selectTrainers(){
-        createTable(Constants.CREATE_TABLE_TRAINER);
-        ResultSet resultSet = readFromDB(Trainer.class).orElseThrow();
         List<Trainer> list= new ArrayList<>();
-        try {
-            while (resultSet.next()){
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_TRAINER, connection); // Creating table if it doesn't exist
+            ResultSet resultSet = readFromDB(Trainer.class, connection).orElseThrow(); // Getting resultSet
+            while (resultSet.next()){ // resultSet to bean
                 Trainer bean = new Trainer(resultSet.getLong(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getInt(4), resultSet.getInt(5));
-                list.add(bean);
+                list.add(bean); // Updating list of beans
             }
         } catch (SQLException e){
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            e.printStackTrace();
         }
 
         return list;
@@ -112,9 +113,9 @@ public class DataProviderDB extends DataProvider{
     boolean insertTrainer(Trainer trainer){
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        if(!createTable(Constants.CREATE_TABLE_TRAINER)) return false;
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()) {
+            if(!createTable(Constants.CREATE_TABLE_TRAINER, connection)) return false;
             statement = connection.prepareStatement(Constants.INSERT_TRAINER);
             executeTrainerStatement(statement, trainer);
             statement.execute();
@@ -129,34 +130,49 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    Optional<Trainer> resultSetToTrainer(ResultSet resultSet){
+        Trainer trainer = new Trainer();
+        try {
+            trainer.setId(resultSet.getLong(1));
+            trainer.setName(resultSet.getString(2));
+            trainer.setSurname(resultSet.getString(3));
+            trainer.setWorkExperience(resultSet.getInt(4));
+            trainer.setRating(resultSet.getInt(5));
+        } catch (SQLException e) {
+            logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
+        }
+        return Optional.empty();
+    }
+
     @Override
     Optional<Trainer> getTrainerById(long id){
         Trainer trainer = new Trainer();
-        createTable(Constants.CREATE_TABLE_TRAINER);
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()) {
+            createTable(Constants.CREATE_TABLE_TRAINER, connection);
             statement = connection.prepareStatement(Constants.GET_TRAINER);
             statement.setString(1, String.valueOf(id));
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
             if (resultSet.next()) {
-                trainer.setId(resultSet.getLong(1));
-                trainer.setName(resultSet.getString(2));
-                trainer.setSurname(resultSet.getString(3));
-                trainer.setWorkExperience(resultSet.getInt(4));
-                trainer.setRating(resultSet.getInt(5));
+                trainer = resultSetToTrainer(resultSet).orElseThrow();
+            } else {
+                logger.error(trainer.getClass().getSimpleName() + Constants.NOT_FOUND);
+                return Optional.empty();
             }
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
         }
         return Optional.of(trainer);
     }
 
     @Override
     public boolean updateTrainer(Trainer trainer){
-        createTable(Constants.CREATE_TABLE_TRAINER);
         PreparedStatement preparedStatement;
         try(Connection connection = getNewConnection()) {
+            createTable(Constants.CREATE_TABLE_TRAINER, connection);
             preparedStatement = connection.prepareStatement(Constants.UPDATE_TRAINER);
             executeTrainerStatement(preparedStatement, trainer);
             preparedStatement.execute();
@@ -171,9 +187,9 @@ public class DataProviderDB extends DataProvider{
     public boolean deleteTrainerById(long id){
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        createTable(Constants.CREATE_TABLE_TRAINER);
         PreparedStatement preparedStatement;
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_TRAINER, connection);
             preparedStatement = connection.prepareStatement(Constants.DELETE_TRAINER);
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
@@ -190,11 +206,11 @@ public class DataProviderDB extends DataProvider{
     // -------------------------Client class CRUD--------------------------------------
 
     List<Client> selectClients(){
-        createTable(Constants.CREATE_TABLE_CLIENT);
-        ResultSet resultSet = readFromDB(Client.class).orElseThrow();
         List<Client> list= new ArrayList<>();
-        try {
+        try (Connection connection = getNewConnection()){
+            ResultSet resultSet = readFromDB(Client.class, connection).orElseThrow();
             while (resultSet.next()){
+                createTable(Constants.CREATE_TABLE_CLIENT, connection);
                 Client bean = new Client(resultSet.getLong(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getInt(4),
                         resultSet.getInt(5), resultSet.getInt(6),
@@ -215,6 +231,7 @@ public class DataProviderDB extends DataProvider{
             statement.setInt(4, client.getAge());
             statement.setInt(5, client.getWeight());
             statement.setInt(6, client.getHeight());
+            statement.setBoolean(7, client.isAwaiting());
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
         }
@@ -224,9 +241,9 @@ public class DataProviderDB extends DataProvider{
     boolean insertClient(Client client) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        if(!createTable(Constants.CREATE_TABLE_CLIENT)) return false;
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            if(!createTable(Constants.CREATE_TABLE_CLIENT, connection)) return false;
             statement = connection.prepareStatement(Constants.INSERT_CLIENT);
             executeClientStatement(statement, client);
             statement.execute();
@@ -242,36 +259,51 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    Optional<Client> resultSetToClient(ResultSet resultSet){
+        Client client = new Client();
+        try {
+            client.setId(resultSet.getLong(1));
+            client.setName(resultSet.getString(2));
+            client.setSurname(resultSet.getString(3));
+            client.setAge(resultSet.getInt(4));
+            client.setWeight(resultSet.getInt(5));
+            client.setHeight(resultSet.getInt(6));
+            client.setAwaiting(resultSet.getBoolean(7));
+        } catch (SQLException e) {
+            logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
+        }
+        return Optional.of(client);
+    }
+
     @Override
     Optional<Client> getClientById(long id) {
         Client client = new Client();
-        createTable(Constants.CREATE_TABLE_CLIENT);
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_CLIENT, connection);
             statement = connection.prepareStatement(Constants.GET_CLIENT);
             statement.setString(1, String.valueOf(id));
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
             if (resultSet.next()) {
-                client.setId(resultSet.getLong(1));
-                client.setName(resultSet.getString(2));
-                client.setSurname(resultSet.getString(3));
-                client.setAge(resultSet.getInt(4));
-                client.setWeight(resultSet.getInt(5));
-                client.setHeight(resultSet.getInt(6));
-                client.setAwaiting(resultSet.getBoolean(7));
+                client = resultSetToClient(resultSet).orElseThrow();
+            }else {
+                logger.error(client.getClass().getSimpleName() + Constants.NOT_FOUND);
+                return Optional.empty();
             }
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
         }
         return Optional.of(client);
     }
 
     @Override
     boolean updateClient(Client client) {
-        createTable(Constants.CREATE_TABLE_CLIENT);
         PreparedStatement preparedStatement;
         try(Connection connection = getNewConnection()) {
+            createTable(Constants.CREATE_TABLE_CLIENT, connection);
             preparedStatement = connection.prepareStatement(Constants.UPDATE_CLIENT);
             executeClientStatement(preparedStatement, client);
             preparedStatement.execute();
@@ -287,9 +319,9 @@ public class DataProviderDB extends DataProvider{
     boolean deleteClientById(long id) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        createTable(Constants.CREATE_TABLE_CLIENT);
         PreparedStatement preparedStatement;
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_CLIENT, connection);
             preparedStatement = connection.prepareStatement(Constants.DELETE_CLIENT);
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
@@ -306,10 +338,10 @@ public class DataProviderDB extends DataProvider{
     // -------------------------Exercise class CRUD--------------------------------------
 
     List<Exercise> selectExercises(){
-        createTable(Constants.CREATE_TABLE_EXERCISE);
-        ResultSet resultSet = readFromDB(Exercise.class).orElseThrow();
         List<Exercise> list= new ArrayList<>();
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_EXERCISE, connection);
+            ResultSet resultSet = readFromDB(Exercise.class, connection).orElseThrow();
             while (resultSet.next()){
                 Exercise bean = new Exercise(resultSet.getLong(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getInt(4),
@@ -328,9 +360,9 @@ public class DataProviderDB extends DataProvider{
     boolean insertExercise(Exercise exercise) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        if(!createTable(Constants.CREATE_TABLE_EXERCISE)) return false;
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            if(!createTable(Constants.CREATE_TABLE_EXERCISE, connection)) return false;
             statement = connection.prepareStatement(Constants.INSERT_EXERCISE);
             statement.setLong(1, exercise.getId());
             statement.setString(2, exercise.getName());
@@ -351,27 +383,41 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    Optional<Exercise> resultSetToExercise(ResultSet resultSet){
+        Exercise exercise = new Exercise();
+        try {
+            exercise.setId(resultSet.getLong(1));
+            exercise.setName(resultSet.getString(2));
+            exercise.setDescription(resultSet.getString(3));
+            exercise.setWeight(resultSet.getInt(4));
+            exercise.setRepetitions(resultSet.getInt(5));
+            exercise.setRounds(resultSet.getInt(6));
+            exercise.setWorkout(resultSet.getLong(7));
+        } catch (SQLException e) {
+            logger.error(e.getClass().getName() +"    "+ e.getMessage());
+        }
+        return Optional.of(exercise);
+    }
+
     @Override
     Optional<Exercise> getExerciseById(long id) {
         Exercise exercise = new Exercise();
-        createTable(Constants.CREATE_TABLE_EXERCISE);
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_EXERCISE, connection);
             statement = connection.prepareStatement(Constants.GET_EXERCISE);
             statement.setString(1, String.valueOf(id));
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
             if (resultSet.next()) {
-                exercise.setId(resultSet.getLong(1));
-                exercise.setName(resultSet.getString(2));
-                exercise.setDescription(resultSet.getString(3));
-                exercise.setWeight(resultSet.getInt(4));
-                exercise.setRepetitions(resultSet.getInt(5));
-                exercise.setRounds(resultSet.getInt(6));
-                exercise.setWorkout(resultSet.getLong(7));
+                exercise = resultSetToExercise(resultSet).orElseThrow();
+            } else {
+                logger.error(exercise.getClass().getSimpleName() + Constants.NOT_FOUND);
+                return Optional.empty();
             }
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
         }
         return Optional.of(exercise);
     }
@@ -379,11 +425,11 @@ public class DataProviderDB extends DataProvider{
     // -------------------------Workout class CRUD--------------------------------------
 
     List<Workout> selectWorkouts(){
-        createTable(Constants.CREATE_TABLE_WORKOUT);
-        ResultSet resultSet = readFromDB(Workout.class).orElseThrow();
         List<Workout> list= new ArrayList<>();
-        try {
+        try (Connection connection = getNewConnection()){
+            ResultSet resultSet = readFromDB(Workout.class, connection).orElseThrow();
             while (resultSet.next()){
+                createTable(Constants.CREATE_TABLE_WORKOUT, connection);
                 Workout bean = new Workout(resultSet.getLong(1), resultSet.getLong(2),
                         resultSet.getString(3), resultSet.getLong(4),
                         resultSet.getLong(5));
@@ -412,9 +458,9 @@ public class DataProviderDB extends DataProvider{
     boolean insertWorkout(Workout workout) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        if(!createTable(Constants.CREATE_TABLE_WORKOUT)) return false;
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            if(!createTable(Constants.CREATE_TABLE_WORKOUT, connection)) return false;
             statement = connection.prepareStatement(Constants.INSERT_WORKOUT);
             executeWorkoutStatement(statement, workout);
             statement.execute();
@@ -430,34 +476,50 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
-    @Override
-    Optional<Workout> getWorkoutById(long id) {
-        Workout workout= new Workout();
-        createTable(Constants.CREATE_TABLE_WORKOUT);
-        PreparedStatement statement;
+    Optional<Workout> resultSetToWorkout(ResultSet resultSet){
+        Workout workout = new Workout();
         try {
-            statement = connection.prepareStatement(Constants.GET_WORKOUT);
-            statement.setString(1, String.valueOf(id));
-            statement.execute();
-            ResultSet resultSet = statement.getResultSet();
-            if (resultSet.next()) {
-                workout.setId(resultSet.getLong(1));
-                workout.setFeedback(resultSet.getLong(2));
-                workout.setType(Workout.WorkoutType.valueOf(resultSet.getString(3)));
-                workout.setClient(resultSet.getLong(4));
-                workout.setTrainer(resultSet.getLong(5));
-            }
+        workout.setId(resultSet.getLong(1));
+        workout.setFeedback(resultSet.getLong(2));
+        workout.setType(Workout.WorkoutType.valueOf(resultSet.getString(3)));
+        workout.setClient(resultSet.getLong(4));
+        workout.setTrainer(resultSet.getLong(5));
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
         }
         return Optional.of(workout);
     }
 
     @Override
+    Optional<Workout> getWorkoutById(long id) {
+        Workout workout= new Workout();
+        PreparedStatement statement;
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_WORKOUT, connection);
+            statement = connection.prepareStatement(Constants.GET_WORKOUT);
+            statement.setString(1, String.valueOf(id));
+            statement.execute();
+            ResultSet resultSet = statement.getResultSet();
+            if (resultSet.next()) {
+                workout = resultSetToWorkout(resultSet).orElseThrow();
+            } else {
+                logger.error(workout.getClass().getSimpleName()+Constants.NOT_FOUND);
+                return Optional.empty();
+            }
+        } catch (SQLException e) {
+            logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
+        }
+        logger.debug(workout);
+        return Optional.of(workout);
+    }
+
+    @Override
     boolean updateWorkout(Workout workout) {
-        createTable(Constants.CREATE_TABLE_WORKOUT);
         PreparedStatement preparedStatement;
         try(Connection connection = getNewConnection()) {
+            createTable(Constants.CREATE_TABLE_WORKOUT, connection);
             preparedStatement = connection.prepareStatement(Constants.UPDATE_WORKOUT);
             executeWorkoutStatement(preparedStatement, workout);
             preparedStatement.execute();
@@ -473,9 +535,9 @@ public class DataProviderDB extends DataProvider{
     boolean deleteWorkoutById(long id) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        createTable(Constants.CREATE_TABLE_WORKOUT);
         PreparedStatement preparedStatement;
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_WORKOUT, connection);
             preparedStatement = connection.prepareStatement(Constants.DELETE_WORKOUT);
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
@@ -492,10 +554,10 @@ public class DataProviderDB extends DataProvider{
     // -------------------------Feedback class CRUD--------------------------------------
 
     List<Feedback> selectFeedbacks(){
-        createTable(Constants.CREATE_TABLE_FEEDBACK);
-        ResultSet resultSet = readFromDB(Feedback.class).orElseThrow();
         List<Feedback> list= new ArrayList<>();
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_FEEDBACK, connection);
+            ResultSet resultSet = readFromDB(Feedback.class, connection).orElseThrow();
             while (resultSet.next()){
                 Feedback bean = new Feedback(resultSet.getLong(1), resultSet.getString(2),
                         resultSet.getString(3), resultSet.getString(4));
@@ -512,9 +574,9 @@ public class DataProviderDB extends DataProvider{
     boolean insertFeedback(Feedback feedback) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        if(!createTable(Constants.CREATE_TABLE_FEEDBACK)) return false;
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            if(!createTable(Constants.CREATE_TABLE_FEEDBACK, connection)) return false;
             statement = connection.prepareStatement(Constants.INSERT_FEEDBACK);
             statement.setLong(1, feedback.getId());
             statement.setString(2, feedback.getDate());
@@ -522,7 +584,6 @@ public class DataProviderDB extends DataProvider{
             statement.setString(4, String.valueOf(feedback.getEstimate()));
             statement.execute();
             logger.debug(feedback.getClass().getSimpleName() + Constants.ADDED);
-
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
             historyRecord.setStatus(HistoryContent.Status.FAULT);
@@ -533,24 +594,38 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    Optional<Feedback> resultSetToFeedback(ResultSet resultSet){
+        Feedback feedback = new Feedback();
+        try {
+            feedback.setId(resultSet.getLong(1));
+            feedback.setDate(resultSet.getString(2));
+            feedback.setComment(resultSet.getString(3));
+            feedback.setEstimate(Feedback.Estimate.valueOf(resultSet.getString(4)));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.of(feedback);
+    }
+
     @Override
     Optional<Feedback> getFeedbackById(long id) {
         Feedback feedback = new Feedback();
-        createTable(Constants.CREATE_TABLE_FEEDBACK);
         PreparedStatement statement;
-        try {
+        try (Connection connection = getNewConnection()){
+            createTable(Constants.CREATE_TABLE_FEEDBACK, connection);
             statement = connection.prepareStatement(Constants.GET_FEEDBACK);
             statement.setString(1, String.valueOf(id));
             statement.execute();
             ResultSet resultSet = statement.getResultSet();
             if (resultSet.next()) {
-                feedback.setId(resultSet.getLong(1));
-                feedback.setDate(resultSet.getString(2));
-                feedback.setComment(resultSet.getString(3));
-                feedback.setEstimate(Feedback.Estimate.valueOf(resultSet.getString(4)));
+                feedback = resultSetToFeedback(resultSet).orElseThrow();
+            } else {
+                logger.error(feedback.getClass().getSimpleName() + Constants.NOT_FOUND);
+                return Optional.empty();
             }
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
         }
         return Optional.of(feedback);
     }

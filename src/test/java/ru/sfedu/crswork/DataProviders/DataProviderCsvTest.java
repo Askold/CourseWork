@@ -96,7 +96,6 @@ public class DataProviderCsvTest {
 
     //-----------------Trainer role tests------------------
 
-
     //checkClient use case
 
     @Test
@@ -109,7 +108,7 @@ public class DataProviderCsvTest {
     @Test
     public void testNegativeCheckClient() {
         List<Client> clients = dp.selectRecords(Client.class);
-        assertFalse(dp.checkClient(clients.get(0).getId()));
+        assertFalse(dp.checkClient(clients.get(2).getId()));
     }
 
     @Test
@@ -147,7 +146,7 @@ public class DataProviderCsvTest {
     public void testNegativeCreateWorkout() {
         List<Client> clients = dp.selectRecords(Client.class);
         List<Trainer> trainers = dp.selectRecords(Trainer.class);
-        assertTrue(dp.createWorkout("FLEX", clients.get(0).getId(), trainers.get(0).getId()));
+        assertFalse(dp.createWorkout("FLEX", clients.get(0).getId(), trainers.get(0).getId()));
     }
 
     //createExercise() use case
