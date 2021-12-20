@@ -31,21 +31,22 @@ public class DataProviderCsvTest {
                 new Client("Macky", "Mclovin", 12, 60, 160),
                 new Client("Wendy", "Tour", 40, 80, 185)
         );
-        List<Exercise> exercises = List.of(
-                new Exercise("Exercise1", 15, 15, 3, 1),
-                new Exercise("Exercise2", 20, 10, 4, 1),
-                new Exercise("Exercise3", 100, 12, 5, 2),
-                new Exercise("Exercise4", 58, 10, 4, 2)
-        );
 
         List<Feedback> feedbacks = List.of(
                 new Feedback(Feedback.Estimate.COMMON)
         );
 
         List<Workout> workouts = List.of(
-                new Workout(1, Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
+                new Workout( Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
                         feedbacks.get(0).getId()),
-                new Workout(2, Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
+                new Workout( Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
+        );
+
+        List<Exercise> exercises = List.of(
+                new Exercise("Exercise1", 15, 15, 3, workouts.get(0).getId()),
+                new Exercise("Exercise2", 20, 10, 4, workouts.get(0).getId()),
+                new Exercise("Exercise3", 100, 12, 5, workouts.get(1).getId()),
+                new Exercise("Exercise4", 58, 10, 4, workouts.get(1).getId())
         );
 
         dp.saveRecords(testTrainer);
@@ -139,14 +140,13 @@ public class DataProviderCsvTest {
     public void testPositiveCreateWorkout() {
         List<Client> clients = dp.selectRecords(Client.class);
         List<Trainer> trainers = dp.selectRecords(Trainer.class);
-        assertTrue(dp.createWorkout("FLEXIBILITY", clients.get(0).getId(), trainers.get(0).getId()));
+        assertTrue(dp.createWorkout(Workout.WorkoutType.AEROBIC, clients.get(0).getId(), trainers.get(0).getId()));
     }
 
     @Test
     public void testNegativeCreateWorkout() {
-        List<Client> clients = dp.selectRecords(Client.class);
         List<Trainer> trainers = dp.selectRecords(Trainer.class);
-        assertFalse(dp.createWorkout("FLEX", clients.get(0).getId(), trainers.get(0).getId()));
+        assertFalse(dp.createWorkout(Workout.WorkoutType.STRENGTH, -1, trainers.get(0).getId()));
     }
 
     //createExercise() use case

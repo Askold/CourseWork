@@ -31,10 +31,17 @@ public class Constants {
     public static final String COMMENTS = "His comments: ";
     public static final String CLIENT_WORKOUT = "Client don't have a workout yet";
     public static final String ID_IS = " ID is ";
-    //public static final String  =
-    //public static final String  =;
-    //public static final String  =;
-    //public static final String  =;
+    public static final String EXERCISES_WORKOUT =  "Exercises for this workout wasn't found";
+    public static final String IMPOSSIBLE_TO_VIEW = "Impossible to view workout";
+    //-----------------History content-----------------
+    public static final String HISTORY_ADDED = "New History record added";
+    public static final String LOCALHOST=" localhost";
+    public static final String MONGODB_NAME = "myMongoDb";
+    public static final String CONNECTED_TO_MONGO = "Connected to MongoDB";
+    public static final String CONNECTION_NAME ="HistoryContent";
+    public static final String COLLECTION_CREATED ="MongoDB collection created";
+    public static final String COLLECTION_RECIEVED = "MongoDB collection received";
+
     //public static final String  =;
     //-----------------Database-----------------
     public static final String DATABASE_URL = "jdbc:h2:./test";
@@ -65,23 +72,9 @@ public class Constants {
     //---------Exercise CRUD
     public static final String INSERT_EXERCISE ="INSERT INTO Exercise VALUES (?, ?, ?, ?, ?, ?, ?)";
     public static final String GET_EXERCISE = "SELECT * FROM Exercise WHERE id = ?";
-    public static final String UPDATE_EXERCISE = "UPDATE Exercise SET name = ?, surname = ? WHERE id = ?";
-    public static final String DELETE_EXERCISE = "DELETE FROM Exercise WHERE id = ?";
     //---------Feedback CRUD
     public static final String INSERT_FEEDBACK ="INSERT INTO Feedback VALUES (?, ?, ?, ?)";
     public static final String GET_FEEDBACK = "SELECT * FROM Feedback WHERE id = ?";
-    public static final String UPDATE_FEEDBACK = "UPDATE Feedback SET name = ?, surname = ? WHERE id = ?";
-    public static final String DELETE_FEEDBACK = "DELETE FROM Feedback WHERE id = ?";
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
     //---------Creating tables
     public static final String CREATE_TABLE_TRAINER = "CREATE TABLE IF NOT EXISTS TRAINER (" +
             "id BIGINT PRIMARY KEY, " +
@@ -121,12 +114,27 @@ public class Constants {
             "Comment VARCHAR," +
             "Estimate VARCHAR " +
             ")";
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
+    //-----------------CLI-----------------
+    //---------Methods
+    public static final String CREATE_EXERCISE = "create_exercise";
+    public static final String CREATE_WORKOUT = "create_workout";
+    public static final String CHECK_CLIENT = "check_client" ;
+    public static final String EXECUTE_WORKOUT = "execute_workout" ;
+    //---------Data Providers
+    public static final String DP_CSV =  "csv";
+    public static final String DP_XML =  "xml";
+    public static final String DP_DB =  "db";
+    //---------Workout types
+    public static final String TYPE_AEROBIC = "AEROBIC";
+    public static final String TYPE_STRENGTH = "STRENGTH" ;
+    public static final String TYPE_FLEXIBILITY = "FLEXIBILITY" ;
+    public static final String TYPE_BALANCE = "BALANCE" ;
+    //---------Workout estimates
+    //---------Errors
+    public static final String DP_NOT_FOUND = " : such DataProvider not found" ;
+    public static final String ARGS_ERROR = "Incorrect amount of arguments or type is wrong" ;
+    public static final String TYPE_NOT_FOUND = "Such Workout Type not found";
+    public static final String METHOD_NOT_FOUND =  ": such method not found";
     //public static final String  =  ;
     //public static final String  =  ;
     //public static final String  =  ;

@@ -139,14 +139,14 @@ public class DataProviderXmlTest {
     public void testPositiveCreateWorkout() {
         List<Client> clients = dp.selectRecords(Client.class);
         List<Trainer> trainers = dp.selectRecords(Trainer.class);
-        assertTrue(dp.createWorkout("FLEXIBILITY", clients.get(0).getId(), trainers.get(0).getId()));
+        assertTrue(dp.createWorkout(Workout.WorkoutType.AEROBIC, clients.get(0).getId(), trainers.get(0).getId()));
     }
 
     @Test
     public void testNegativeCreateWorkout() {
         List<Client> clients = dp.selectRecords(Client.class);
         List<Trainer> trainers = dp.selectRecords(Trainer.class);
-        assertFalse(dp.createWorkout("FLEX", clients.get(0).getId(), trainers.get(0).getId()));
+        assertFalse(dp.createWorkout(Workout.WorkoutType.FLEXIBILITY, -1, trainers.get(0).getId()));
     }
 
     //createExercise() use case

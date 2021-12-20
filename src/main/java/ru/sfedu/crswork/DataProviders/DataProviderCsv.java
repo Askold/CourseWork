@@ -21,13 +21,20 @@ import java.util.stream.Stream;
 public class DataProviderCsv extends DataProvider {
     private static final Logger logger = LogManager.getLogger(DataProviderCsv.class);
 
+    /**
+     * initiating data source
+     * @param type class of handling objects
+     * @return initiated File object
+     */
     File initDataSource(Class<?> type) {
         String filePath;
         File file = null;
         try {
+            // composing file path of default path to csv, name of class and extension
             filePath = ConfigurationUtil.getConfigurationEntry(Constants.DEFAULT_CSV_PATH)
                     +'/'+ type.getSimpleName() + Constants.CSV_EXTENSION;
             file = new File(filePath);
+            // create file if it doesn't exist
             if (!file.exists()){
                 file.createNewFile();
                 logger.info(Constants.CSV_CREATED + type.getSimpleName());
@@ -40,12 +47,19 @@ public class DataProviderCsv extends DataProvider {
     }
 
     // -----------------general select/save methods-------------------------------
-
+    /**
+     * inserting list of any type of beans (<T>, generic)
+     * @param beans list of elements
+     * @param <T> generic, operates with any data type
+     * @return result of inserting
+     */
     public<T> boolean saveRecords(List<T> beans) {
+        // creating history content object
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         Writer writer;
         try {
+            // writing elements into file
             writer = new FileWriter(initDataSource(beans.get(0).getClass()), false);
             StatefulBeanToCsv<T> beanToCsv = new StatefulBeanToCsvBuilder<T>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
@@ -63,9 +77,16 @@ public class DataProviderCsv extends DataProvider {
         return true;
     }
 
+    /**
+     * transferring all records of any type from data source to List
+     * @param type class of objects
+     * @param <T> generic, operates with any data type
+     * @return List of elements, of specified class
+     */
     public<T> List<T> selectRecords(Class<?> type)  {
         List<T> beanToCsv = new ArrayList<>();
         try {
+            // reading records from file into List of Java beans
             FileReader reader = new FileReader(initDataSource(type));
             beanToCsv = new CsvToBeanBuilder(reader)
                     .withType(type)
@@ -78,13 +99,16 @@ public class DataProviderCsv extends DataProvider {
     }
 
     // -------------------------Trainer class CRUD--------------------------------------
+    // only Trainer class has comments because other CRUD's are the same
     @Override
     boolean insertTrainer(Trainer trainer) {
+        // creating history content object
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         historyRecord.setBean(new Gson().toJson(trainer));
         Writer wr;
         try {
+            // writing bean into file
             wr = new FileWriter(initDataSource(Trainer.class), true);
             CSVWriter writer = new CSVWriter(wr);
             StatefulBeanToCsv<Trainer> beanToCsv = new StatefulBeanToCsvBuilder<Trainer>(writer)
@@ -109,6 +133,7 @@ public class DataProviderCsv extends DataProvider {
         Stream<Trainer> streamFromList = listOfBeans.stream();
         Trainer result = new Trainer();
         try{
+            // searching for object in List
             result = streamFromList.filter((bean -> bean.getId() == id)).findFirst().orElseThrow();
         }
         catch (NoSuchElementException e){
@@ -123,14 +148,17 @@ public class DataProviderCsv extends DataProvider {
     boolean updateTrainer(Trainer bean) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
-        Trainer beanToUpdate = new Trainer();
+        Trainer beanToUpdate;
         try{
+            // searching for this element in List
             beanToUpdate = getTrainerById(bean.getId()).orElseThrow();
         } catch (NoSuchElementException e){
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(bean.getClass().getSimpleName() + Constants.NOT_UPDATED);
             return false;
         }
+        // if bean didn't change, just return true, in other case:
+        // delete old bean and insert new one
         if (!beanToUpdate.equals(bean)) {
             if (!deleteTrainerById(bean.getId())){
                 historyRecord.setStatus(HistoryContent.Status.FAULT);
@@ -151,8 +179,11 @@ public class DataProviderCsv extends DataProvider {
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         Trainer beanToRemove = new Trainer();
         try{
+            // searching for bean prepared for deleting
             beanToRemove = getTrainerById(id).orElseThrow();
         }catch (NoSuchElementException e){
+            // deleting from List an object which equals with one we have found
+            // and replacement this List with the previous one
             logger.error(e.getClass().getName() + e.getMessage());
             logger.error(beanToRemove.getClass().getSimpleName() + Constants.NOT_DELETED);
             historyRecord.setStatus(HistoryContent.Status.FAULT);
@@ -423,15 +454,20 @@ public class DataProviderCsv extends DataProvider {
     // Trainer role
 
     @Override
-    boolean checkClient(long id) {
+    public boolean checkClient(long id) {
+        // searching for a client
         Client client = getClientById(id).orElseThrow();
+        // check if client has completed previous workout
         if (client.isAwaiting()){
+            // receiving the workout
             List<Workout> workouts = selectRecords(Workout.class);
             Optional<Workout> result = workouts.stream().filter(bean -> bean.getClient() == id).findFirst();
             if(result.isEmpty()){
+                // if client doesn't have any workout
                 logger.error(Constants.CLIENT_WORKOUT);
                 return false;
             }
+            // displaying workout
             viewFeedback(result.get().getFeedback());
         }
         return true;
@@ -439,31 +475,28 @@ public class DataProviderCsv extends DataProvider {
 
     @Override
     boolean viewFeedback(long id) {
+        // receiving feedback from data source
         if (getFeedbackById(id).isEmpty()){
             return false;
         }
         Feedback feedback = getFeedbackById(id).get();
+        // displays the information
         logger.info(Constants.WORKOUT_ESTIMATE + feedback.getEstimate().toString());
         logger.info(Constants.COMMENTS + feedback.getComment());
         return true;
     }
 
     @Override
-    boolean createWorkout(String typeWorkout, long client, long trainer) {
-        Workout.WorkoutType type;
-        try {
-            type = Workout.WorkoutType.valueOf(typeWorkout);
-        }
-        catch (IllegalArgumentException e){
-            logger.error(e.getClass().getName() + e.getMessage());
-            return false;
-        }
-        Workout workout = new Workout(type, client, trainer);
+    public boolean createWorkout(Workout.WorkoutType typeWorkout, long client, long trainer) {
+        // composing object with provided data
+        Workout workout = new Workout(typeWorkout, client, trainer);
         if (!insertWorkout(workout)){
+            //inserting new workout to data source
             logger.error(workout.getClass().getSimpleName() + Constants.NOT_ADDED);
             return false;
         }
         if(!changeClientStatus(client)){
+            //changing status of client
             return false;
         }
         logger.info(workout.getClass().getSimpleName()+ Constants.ADDED);
@@ -472,16 +505,19 @@ public class DataProviderCsv extends DataProvider {
     }
 
     boolean changeClientStatus(long id){
+        // receiving client object, setting new status and updating it in DS
         Client client = getClientById(id).orElseThrow();
-        client.setAwaiting(false);
+        client.setAwaiting(!client.isAwaiting());
         return updateClient(client);
     }
 
     @Override
-    boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
+    public boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
+        // checks if provided workout exists in data source
         if(getWorkoutById(workout).isEmpty()){
             return false;
         }
+        // composing and inserting to ds new exercise
         Exercise exercise = new Exercise(name, weight, repetitions, rounds, workout);
         return insertExercise(exercise);
     }
@@ -489,32 +525,35 @@ public class DataProviderCsv extends DataProvider {
     // Client role
 
     @Override
-    boolean executeWorkout(long workoutID, String isCompleted){
+    public boolean executeWorkout(long workoutID, String isCompleted){
+        // checks if provided workout exists in data source
         if (getWorkoutById(workoutID).isEmpty()){
             logger.error(Workout.class.getSimpleName()+Constants.NOT_FOUND);
             return false;
         }
+        // displays workout content
         if(!viewWorkout(workoutID)){
-            logger.error("Impossible to view workout");
+            logger.error(Constants.IMPOSSIBLE_TO_VIEW);
             return false;
         }
         if(!isCompleted.isEmpty()){
+            // composing new workout and connecting it with workout
             Workout workout = getWorkoutById(workoutID).get();
             workout.setFeedback(composeFeedback(isCompleted));
             updateWorkout(workout);
-            Client client = getClientById(workout.getClient()).orElseThrow();
-            client.setAwaiting(true);
-            updateClient(client);
+            // updating client status
+            changeClientStatus(workout.getClient());
         }
         return true;
     }
 
     @Override
     boolean viewWorkout(long workoutID){
+        // finds workout and displaying it
         List<Exercise> exercises = selectRecords(Exercise.class);
         List<Exercise> result = exercises.stream().filter(bean -> bean.getWorkout() == workoutID).collect(Collectors.toList());
         if(result.isEmpty()) {
-            logger.error("Exercises for this workout wasn't found");
+            logger.error(Constants.EXERCISES_WORKOUT);
             return false;
         }
         result.forEach(logger::info);
@@ -523,6 +562,7 @@ public class DataProviderCsv extends DataProvider {
 
     @Override
     long composeFeedback(String isCompleted) {
+        // getting enum value from provided string
         Feedback.Estimate estimate;
         try {
             estimate = Feedback.Estimate.valueOf(isCompleted);
@@ -531,6 +571,7 @@ public class DataProviderCsv extends DataProvider {
             logger.error(e.getClass().getName() + e.getMessage());
             return -1;
             }
+        // composing new feedback and inserting it to data source
         Feedback feedback = new Feedback(estimate);
         if (!insertFeedback(feedback)){
             logger.error(feedback.getClass().getSimpleName()+Constants.NOT_ADDED);

@@ -19,7 +19,12 @@ import java.util.stream.Stream;
 
 public class DataProviderXml extends DataProvider{
     private static final Logger logger = LogManager.getLogger(DataProviderXml.class);
-
+//--------------------!!!Only methods different from DataProviderCsv have comments!!!----------------
+    /**
+     * initiating data source
+     * @param type class of handling objects
+     * @return initiated File object
+     */
     File initDataSource(Class<?> type) {
         String filePath;
         File file = null;
@@ -39,10 +44,17 @@ public class DataProviderXml extends DataProvider{
     }
 
     // -----------------general select/save records-------------------------------
+    /**
+     * inserting list of any type of beans (<T>, generic)
+     * @param beans list of elements
+     * @param <T> generic, operates with any data type
+     * @return result of inserting
+     */
     <T> boolean saveRecords(List<T> beans) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         try {
+            // writing List of elements into file
             Serializer serializer = new Persister();
             File file = initDataSource(beans.get(0).getClass());
             Writer writer = new FileWriter(file);
@@ -58,12 +70,18 @@ public class DataProviderXml extends DataProvider{
         addHistoryRecord(historyRecord);
         return true;
     }
-
+    /**
+     * transferring all records of any type from data source to List
+     * @param type class of objects
+     * @param <T> generic, operates with any data type
+     * @return List of elements, of specified class
+     */
     <T> List<T> selectRecords(Class<?> type) {
         Serializer serializer = new Persister();
         File file;
         EntityWrapper beansList = null;
         try {
+            // reading records from file to list
             file = initDataSource(type);
             beansList = serializer.read(EntityWrapper.class, file);
         } catch (Exception e) {
@@ -78,6 +96,7 @@ public class DataProviderXml extends DataProvider{
     boolean insertTrainer(Trainer bean) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
+        // selecting all records from file, adding new element and rewrite all records
         List<Trainer> data = selectRecords(Trainer.class);
         data.add(bean);
         if(!saveRecords(data)){
@@ -361,7 +380,7 @@ public class DataProviderXml extends DataProvider{
     // Trainer role
 
     @Override
-    boolean checkClient(long id) {
+    public boolean checkClient(long id) {
         Client client = getClientById(id).orElseThrow();
         if (client.isAwaiting()){
             List<Workout> workouts = selectRecords(Workout.class);
@@ -387,16 +406,8 @@ public class DataProviderXml extends DataProvider{
     }
 
     @Override
-    boolean createWorkout(String typeWorkout, long client, long trainer) {
-        Workout.WorkoutType type;
-        try {
-            type = Workout.WorkoutType.valueOf(typeWorkout);
-        }
-        catch (IllegalArgumentException e){
-            logger.error(e.getClass().getName() + e.getMessage());
-            return false;
-        }
-        Workout workout = new Workout(type, client, trainer);
+    public boolean createWorkout(Workout.WorkoutType typeWorkout, long client, long trainer) {
+        Workout workout = new Workout(typeWorkout, client, trainer);
         if (!insertWorkout(workout)){
             logger.error(workout.getClass().getSimpleName() + Constants.NOT_ADDED);
             return false;
@@ -416,7 +427,7 @@ public class DataProviderXml extends DataProvider{
     }
 
     @Override
-    boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
+    public boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
         if(getWorkoutById(workout).isEmpty()){
             return false;
         }
@@ -426,22 +437,20 @@ public class DataProviderXml extends DataProvider{
 
     // Client role
     @Override
-    boolean executeWorkout(long workoutID, String isCompleted) {
+    public boolean executeWorkout(long workoutID, String isCompleted) {
         if (getWorkoutById(workoutID).isEmpty()){
             logger.error(Workout.class.getSimpleName()+Constants.NOT_FOUND);
             return false;
         }
         if(!viewWorkout(workoutID)){
-            logger.error("Impossible to view workout");
+            logger.error(Constants.IMPOSSIBLE_TO_VIEW);
             return false;
         }
         if(!isCompleted.isEmpty()){
             Workout workout = getWorkoutById(workoutID).get();
             workout.setFeedback(composeFeedback(isCompleted));
             updateWorkout(workout);
-            Client client = getClientById(workout.getClient()).orElseThrow();
-            client.setAwaiting(true);
-            updateClient(client);
+            changeClientStatus(workout.getClient());
         }
         return true;
     }
@@ -451,7 +460,7 @@ public class DataProviderXml extends DataProvider{
         List<Exercise> exercises = selectRecords(Exercise.class);
         List<Exercise> result = exercises.stream().filter(bean -> bean.getWorkout() == workoutID).collect(Collectors.toList());
         if(result.isEmpty()) {
-            logger.error("Exercises for this workout wasn't found");
+            logger.error(Constants.EXERCISES_WORKOUT);
             return false;
         }
         result.forEach(logger::info);

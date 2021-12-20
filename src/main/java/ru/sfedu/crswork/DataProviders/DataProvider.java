@@ -9,28 +9,49 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bson.Document;
 import ru.sfedu.crswork.App;
+import ru.sfedu.crswork.Constants;
 import ru.sfedu.crswork.Models.*;
 
-import java.io.File;
-import java.util.List;
 import java.util.Optional;
-
+/**
+ * Abstract DataProvider class with required methods
+ * Includes:
+ * - CRUD for all beans
+ * - methods implemented from use case diagram
+ * CRUD explained only for Trainer class, all other beans have the same structure and principles
+ */
 public abstract class DataProvider {
     private static final Logger logger = LogManager.getLogger(App.class);
 
-    // ---------- General methods ----------
-
-    //abstract <T> List<T> selectRecords(Class<?> type);
-
     // ---------- Trainer CRUD ----------
 
+    /**
+     * inserting Trainer class object into the data source
+     * @param trainer Trainer class object
+     * @return result of inserting
+     */
     abstract boolean insertTrainer(Trainer trainer);
 
-    abstract boolean deleteTrainerById(long id);
-
+    /**
+     * Looking for record from data source with specific ID
+     * @param id ID of the sought object
+     * @return an object of Trainer class wrapped in Optional
+     */
     abstract Optional<Trainer> getTrainerById(long id);
 
+    /**
+     * Updating an existing record in data source
+     * @param trainer updated object
+     * @return result of updating
+     */
     abstract boolean updateTrainer(Trainer trainer);
+
+    /**
+     * Delete record from data source by ID
+     * @param id ID of record intended to be deleted
+     * @return result of deleting
+     */
+    abstract boolean deleteTrainerById(long id);
 
     // ---------- Client CRUD ----------
 
@@ -66,54 +87,108 @@ public abstract class DataProvider {
 
     // ---------- Use cases implementation ----------
     //---------Trainer role
-    //-------checkClient use case
-    abstract boolean checkClient(long id);
 
+    /**
+     * checks if the client has completed the workout and displays the feedback if he has
+     * @param id Client id
+     * @return result of checking
+     */
+    public abstract boolean checkClient(long id);
+
+    /**
+     * displays the feedback
+     * @param client object of Client class
+     * @return result of displaying
+     */
     abstract boolean viewFeedback(long client);
 
     // method getClientById() is in Client CRUD section
 
-    // other cases
-    abstract boolean createWorkout(String type, long client, long trainer);
+    /**
+     * Creates new workout and inserts it to data source
+     * @param type type of workout (enum)
+     * @param client id of Client class object
+     * @param trainer id of Trainer class object
+     * @return result of creating
+     */
+    public abstract boolean createWorkout(Workout.WorkoutType type, long client, long trainer);
 
-    abstract boolean createExercise(String name, int weight, int repetitions, int rounds, long workout);
+    /**
+     * creates new exercise and inserts it to data source
+     * @param name name of the new exercise
+     * @param weight weight of attribute that will be used in the exercise
+     * @param repetitions amount of repetitions client used to do
+     * @param rounds amount of repetitions client used to do
+     * @param workout id of Workout class object
+     * @return result of creating
+     */
+    public abstract boolean createExercise(String name, int weight, int repetitions, int rounds, long workout);
 
     //---------Client role
 
-    abstract boolean executeWorkout(long workoutID, String isCompleted);
+    /**
+     * Used by client to view workout information and mark it as completed  if it true
+     * @param workoutID id of Workout class object
+     * @param isCompleted false flag if is empty, or contains feedback data
+     * @return result of viewing and making up a feedback
+     */
+    public abstract boolean executeWorkout(long workoutID, String isCompleted);
 
+    /**
+     * Displays workout
+     * @param workoutID id od Workout object
+     * @return result of displaying
+     */
     abstract boolean viewWorkout(long workoutID);
 
+    /**
+     * creates feedback by client and inserts it to data source
+     * @param isCompleted conserve client's estimate enum represented in string
+     * @return result of creating
+     */
     abstract long composeFeedback(String isCompleted);
 
     // ----------- MongoDB history --------------
 
+    /**
+     *
+     * @param record
+     */
     public void addHistoryRecord(HistoryContent record){
         String recordJson = new Gson().toJson(record);
         logger.info(recordJson);
-        MongoDatabase database = connectToDB();
-        MongoCollection collection = receiveCollection(database);
+        MongoDatabase database = connectToDB().orElseThrow();
+        MongoCollection collection = receiveCollection(database).orElseThrow();
         collection.insertOne(Document.parse(recordJson));
-        logger.debug("New History record added");
+        logger.debug(Constants.HISTORY_ADDED);
     }
 
-    private static MongoDatabase connectToDB(){
-        MongoClient mongoClient = new MongoClient("localhost", 27017);
-        MongoDatabase database = mongoClient.getDatabase("myMongoDb");
-        logger.debug("Connected to MongoDB");
-        return database;
+    /**
+     * connects to MongoDB
+     * @return object of MongoDatabes class
+     */
+    private static Optional<MongoDatabase> connectToDB(){
+        MongoClient mongoClient = new MongoClient(Constants.LOCALHOST, 27017);
+        MongoDatabase database = mongoClient.getDatabase(Constants.MONGODB_NAME);
+        logger.debug(Constants.CONNECTED_TO_MONGO);
+        return Optional.of(database);
     }
 
-    private static MongoCollection receiveCollection(MongoDatabase database){
+    /**
+     * receives collection from MongoDB
+     * @param database object of MongoDatabase class
+     * @return object of MongoCollection class
+     */
+    private static Optional<MongoCollection> receiveCollection(MongoDatabase database){
         try {
-            database.createCollection("HistoryContent");
-            logger.debug("MongoDB collection created");
+            database.createCollection(Constants.CONNECTION_NAME);
+            logger.debug(Constants.COLLECTION_CREATED);
         }catch (MongoCommandException e){
-            logger.error(e.getClass().getName() + e.getMessage()); ;
+            logger.info(e.getClass().getName() + e.getMessage());
         }
-        MongoCollection<Document> collection = database.getCollection("HistoryContent");
-        logger.debug("MongoDB collection received");
-        return collection;
+        MongoCollection<Document> collection = database.getCollection(Constants.CONNECTION_NAME);
+        logger.debug(Constants.COLLECTION_RECIEVED);
+        return Optional.of(collection);
     }
 
 

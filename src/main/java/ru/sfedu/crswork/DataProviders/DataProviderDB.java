@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import ru.sfedu.crswork.Constants;
 import ru.sfedu.crswork.Models.*;
 
-import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +14,19 @@ import java.util.stream.Collectors;
 public class DataProviderDB extends DataProvider{
 
     private static final Logger logger = LogManager.getLogger(DataProviderDB.class);
-    //private final Connection connection = getNewConnection();
+    //--------------------!!!Only methods different from DataProviderCsv have comments!!!----------------
 
     // -----------------General methods-------------------------------
-
+    /**
+     * clears table
+     * @param type class of objects which table should be cleared
+     * @return result of clearing
+     */
     public boolean clearTable(Class<?> type){
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
+        // executing the statement
         try (Connection connection = getNewConnection()) {
             statement = connection.prepareStatement(Constants.CLEAR +type.getSimpleName());
             statement.execute();
@@ -37,6 +41,12 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    /**
+     * creating new table if it doesn't exist
+     * @param query creating query
+     * @param connection object of Connection class
+     * @return result of creating
+     */
     public boolean createTable(String query, Connection connection){
         Statement stmt;
         try {
@@ -49,6 +59,10 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    /**
+     * receives new connection to database
+     * @return result of connecting
+     */
     public Connection getNewConnection() {
         Connection con = null;
         try {
@@ -63,6 +77,12 @@ public class DataProviderDB extends DataProvider{
 
     }
 
+    /**
+     * stage of selecting records of special type
+     * @param type class which objects should be selected
+     * @param connection Connection class object
+     * @return ResultSet class object
+     */
     Optional<ResultSet> readFromDB(Class<?> type, Connection connection){
         PreparedStatement statement;
         ResultSet resultSet = null;
@@ -78,8 +98,12 @@ public class DataProviderDB extends DataProvider{
     }
 
     // -------------------------Trainer class CRUD--------------------------------------
-
-    List<Trainer> selectTrainers(){
+    // only Trainer class has comments because other CRUD's are the same
+    /**
+     * secelting all records of Trainers class from database
+     * @return List of elements
+     */
+    public List<Trainer> selectTrainers(){
         List<Trainer> list= new ArrayList<>();
         try (Connection connection = getNewConnection()){
             createTable(Constants.CREATE_TABLE_TRAINER, connection); // Creating table if it doesn't exist
@@ -97,6 +121,11 @@ public class DataProviderDB extends DataProvider{
         return list;
     }
 
+    /**
+     * compose statement with Trainer object parameters
+     * @param statement PreparedStatement class object
+     * @param trainer Trainer class object
+     */
     void executeTrainerStatement(PreparedStatement statement, Trainer trainer){
         try {
             statement.setLong(1, trainer.getId());
@@ -109,8 +138,9 @@ public class DataProviderDB extends DataProvider{
         }
     }
 
+
     @Override
-    boolean insertTrainer(Trainer trainer){
+    public boolean insertTrainer(Trainer trainer){
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
@@ -130,6 +160,11 @@ public class DataProviderDB extends DataProvider{
         return true;
     }
 
+    /**
+     * transforms ResultSet object to Trainer object
+     * @param resultSet ResultSet class object
+     * @return Trainer class object
+     */
     Optional<Trainer> resultSetToTrainer(ResultSet resultSet){
         Trainer trainer = new Trainer();
         try {
@@ -238,7 +273,7 @@ public class DataProviderDB extends DataProvider{
     }
 
     @Override
-    boolean insertClient(Client client) {
+    public boolean insertClient(Client client) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
@@ -357,7 +392,7 @@ public class DataProviderDB extends DataProvider{
     }
 
     @Override
-    boolean insertExercise(Exercise exercise) {
+    public boolean insertExercise(Exercise exercise) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
@@ -431,7 +466,7 @@ public class DataProviderDB extends DataProvider{
             while (resultSet.next()){
                 createTable(Constants.CREATE_TABLE_WORKOUT, connection);
                 Workout bean = new Workout(resultSet.getLong(1), resultSet.getLong(2),
-                        resultSet.getString(3), resultSet.getLong(4),
+                        Workout.WorkoutType.valueOf(resultSet.getString(3)), resultSet.getLong(4),
                         resultSet.getLong(5));
                 list.add(bean);
             }
@@ -455,7 +490,7 @@ public class DataProviderDB extends DataProvider{
     }
 
     @Override
-    boolean insertWorkout(Workout workout) {
+    public boolean insertWorkout(Workout workout) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
@@ -571,7 +606,7 @@ public class DataProviderDB extends DataProvider{
     }
 
     @Override
-    boolean insertFeedback(Feedback feedback) {
+    public boolean insertFeedback(Feedback feedback) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         PreparedStatement statement;
@@ -633,7 +668,7 @@ public class DataProviderDB extends DataProvider{
     // -------------------------Use case implementation--------------------------------------
     // Trainer role
     @Override
-    boolean checkClient(long id) {
+    public boolean checkClient(long id) {
         Client client = getClientById(id).orElseThrow();
         if (client.isAwaiting()){
             List<Workout> workouts = selectWorkouts();
@@ -659,16 +694,8 @@ public class DataProviderDB extends DataProvider{
     }
 
     @Override
-    boolean createWorkout(String typeWorkout, long client, long trainer) {
-        Workout.WorkoutType type;
-        try {
-            type = Workout.WorkoutType.valueOf(typeWorkout);
-        }
-        catch (IllegalArgumentException e){
-            logger.error(e.getClass().getName() + e.getMessage());
-            return false;
-        }
-        Workout workout = new Workout(type, client, trainer);
+    public boolean createWorkout(Workout.WorkoutType typeWorkout, long client, long trainer) {
+        Workout workout = new Workout(typeWorkout, client, trainer);
         if (!insertWorkout(workout)){
             logger.error(workout.getClass().getSimpleName() + Constants.NOT_ADDED);
             return false;
@@ -688,7 +715,7 @@ public class DataProviderDB extends DataProvider{
     }
 
     @Override
-    boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
+    public boolean createExercise(String name, int weight, int repetitions, int rounds, long workout) {
         if(getWorkoutById(workout).isEmpty()){
             return false;
         }
@@ -699,13 +726,13 @@ public class DataProviderDB extends DataProvider{
     // Client role
 
     @Override
-    boolean executeWorkout(long workoutID, String isCompleted) {
+    public boolean executeWorkout(long workoutID, String isCompleted) {
         if (getWorkoutById(workoutID).isEmpty()){
             logger.error(Workout.class.getSimpleName()+Constants.NOT_FOUND);
             return false;
         }
         if(!viewWorkout(workoutID)){
-            logger.error("Impossible to view workout");
+            logger.error(Constants.IMPOSSIBLE_TO_VIEW);
             return false;
         }
         if(!isCompleted.isEmpty()){
@@ -724,7 +751,7 @@ public class DataProviderDB extends DataProvider{
         List<Exercise> exercises = selectExercises();
         List<Exercise> result = exercises.stream().filter(bean -> bean.getWorkout() == workoutID).collect(Collectors.toList());
         if(result.isEmpty()) {
-            logger.error("Exercises for this workout wasn't found");
+            logger.error(Constants.EXERCISES_WORKOUT);
             return false;
         }
         result.forEach(logger::info);

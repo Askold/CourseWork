@@ -40,10 +40,10 @@ public class Workout implements Serializable {
         this.id = id;
     }
 
-    public Workout(long id, long feedback, String type, long client, long trainer) {
+    public Workout(long id, long feedback, WorkoutType type, long client, long trainer) {
         this.id = id;
         this.feedback = feedback;
-        this.type = WorkoutType.valueOf(type);
+        this.type = type;
         this.client = client;
         this.trainer = trainer;
     }
@@ -71,6 +71,14 @@ public class Workout implements Serializable {
         this.client = client;
         this.trainer = trainer;
     }
+
+    public Workout(WorkoutType type, long client, long trainer, long feedback) {
+        this.feedback = feedback;
+        this.type = type;
+        this.client = client;
+        this.trainer = trainer;
+    }
+
 
     public long getId() {
         return id;

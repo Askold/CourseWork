@@ -17,7 +17,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class DataProviderDBTest {
-    private static final Logger logger = LogManager.getLogger(App.class);
+    private static final Logger logger = LogManager.getLogger(DataProviderDBTest.class);
     DataProviderDB dp = new DataProviderDB();
 
     List<Trainer> trainerList = List.of(
@@ -57,7 +57,7 @@ public class DataProviderDBTest {
         testInsertFeedback();
     }
 
-    @After
+    @Test
     public void clearTables(){
         assertTrue(dp.clearTable(Trainer.class));
         assertTrue(dp.clearTable(Client.class));
@@ -113,6 +113,17 @@ public class DataProviderDBTest {
     @Test
     public void testSelectRecords() {
         List<Trainer> list = dp.selectTrainers();
+        logger.info(list);
+        logger.info(list.get(0));
+        list.forEach(System.out::println);
+        Assert.assertFalse(list.isEmpty());
+    }
+
+    @Test
+    public void testSelectClients() {
+        List<Client> list = dp.selectClients();
+        logger.info(list);
+        logger.info(list.get(0));
         list.forEach(System.out::println);
         Assert.assertFalse(list.isEmpty());
     }
@@ -196,14 +207,14 @@ public class DataProviderDBTest {
     public void testPositiveCreateWorkout() {
         List<Client> clients = dp.selectClients();
         List<Trainer> trainers = dp.selectTrainers();
-        assertTrue(dp.createWorkout("FLEXIBILITY", clients.get(0).getId(), trainers.get(0).getId()));
+        assertTrue(dp.createWorkout(Workout.WorkoutType.AEROBIC, clients.get(0).getId(), trainers.get(0).getId()));
     }
 
     @Test
     public void testNegativeCreateWorkout() {
         List<Client> clients = dp.selectClients();
         List<Trainer> trainers = dp.selectTrainers();
-        assertFalse(dp.createWorkout("FLEX", clients.get(0).getId(), trainers.get(0).getId()));
+        assertFalse(dp.createWorkout(Workout.WorkoutType.FLEXIBILITY, -1, trainers.get(0).getId()));
     }
 
     //createExercise() use case
