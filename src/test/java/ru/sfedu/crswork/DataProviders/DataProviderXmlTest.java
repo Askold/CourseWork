@@ -16,37 +16,37 @@ import static org.junit.Assert.assertEquals;
 public class DataProviderXmlTest {
     private static final Logger logger = LogManager.getLogger(DataProviderCsv.class);
     DataProviderXml dp = new DataProviderXml();
+    List<Trainer> testTrainer = List.of(
+            new Trainer("Alex", "Powerlifter", 5, 10),
+            new Trainer("Drake", "Natan", 3, 6),
+            new Trainer("William", "Defoe", 1, 9),
+            new Trainer("Mathew", "Mcconaughey", 8, 10)
+    );
+    List<Client> clientList = List.of(
+            new Client("Hairy", "Schlong", 24, 78, 182),
+            new Client("Davy", "Farter", 20, 80, 190),
+            new Client("Macky", "Mclovin", 12, 60, 160),
+            new Client("Wendy", "Tour", 40, 80, 185)
+    );
+    List<Exercise> exercises = List.of(
+            new Exercise("Exercise1", 15, 15, 3, 1),
+            new Exercise("Exercise2", 20, 10, 4, 1),
+            new Exercise("Exercise3", 100, 12, 5, 2),
+            new Exercise("Exercise4", 58, 10, 4, 2)
+    );
+
+    List<Feedback> feedbacks = List.of(
+            new Feedback(Feedback.Estimate.COMMON)
+    );
+
+    List<Workout> workouts = List.of(
+            new Workout(1, Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
+                    feedbacks.get(0).getId()),
+            new Workout(2, Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
+    );
 
     @Before
     public void initiateRecords() {
-        List<Trainer> testTrainer = List.of(
-                new Trainer("Alex", "Powerlifter", 5, 10),
-                new Trainer("Drake", "Natan", 3, 6),
-                new Trainer("William", "Defoe", 1, 9),
-                new Trainer("Mathew", "Mcconaughey", 8, 10)
-        );
-        List<Client> clientList = List.of(
-                new Client("Hairy", "Schlong", 24, 78, 182),
-                new Client("Davy", "Farter", 20, 80, 190),
-                new Client("Macky", "Mclovin", 12, 60, 160),
-                new Client("Wendy", "Tour", 40, 80, 185)
-        );
-        List<Exercise> exercises = List.of(
-                new Exercise("Exercise1", 15, 15, 3, 1),
-                new Exercise("Exercise2", 20, 10, 4, 1),
-                new Exercise("Exercise3", 100, 12, 5, 2),
-                new Exercise("Exercise4", 58, 10, 4, 2)
-        );
-
-        List<Feedback> feedbacks = List.of(
-                new Feedback(Feedback.Estimate.COMMON)
-        );
-
-        List<Workout> workouts = List.of(
-                new Workout(1, Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
-                        feedbacks.get(0).getId()),
-                new Workout(2, Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
-        );
 
         dp.saveRecords(testTrainer);
         dp.saveRecords(clientList);
@@ -166,9 +166,14 @@ public class DataProviderXmlTest {
     //-----------------Client role tests--------------------
 
     @Test
-    public void testExecuteWorkout() {
+    public void testPositiveExecuteWorkout() {
         assertTrue(dp.executeWorkout(2, ""));
         assertTrue(dp.executeWorkout(2, Feedback.Estimate.VERY_EASY.toString()));
+    }
+
+    @Test
+    public void testNegativeExecuteWorkout() {
+        assertFalse(dp.executeWorkout(-2, "something"));
     }
 
     @Test

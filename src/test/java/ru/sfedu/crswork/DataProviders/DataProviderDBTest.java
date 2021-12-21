@@ -234,9 +234,14 @@ public class DataProviderDBTest {
     //-----------------Client role tests--------------------
 
     @Test
-    public void testExecuteWorkout() {
-        assertTrue(dp.executeWorkout(2, "HARD"));
+    public void testPositiveExecuteWorkout() {
+        assertTrue(dp.executeWorkout(2, ""));
         assertTrue(dp.executeWorkout(2, Feedback.Estimate.VERY_EASY.toString()));
+    }
+
+    @Test
+    public void testNegativeExecuteWorkout() {
+        assertFalse(dp.executeWorkout(-1, "something"));
     }
 
     @Test

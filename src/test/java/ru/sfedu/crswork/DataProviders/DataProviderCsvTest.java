@@ -16,38 +16,39 @@ public class DataProviderCsvTest {
 
     private static final Logger logger = LogManager.getLogger(DataProviderCsvTest.class);
     DataProviderCsv dp = new DataProviderCsv();
+    List<Trainer> testTrainer = List.of(
+            new Trainer("Alex", "Powerlifter", 5, 10),
+            new Trainer("Drake", "Natan", 3, 6),
+            new Trainer("William", "Defoe", 1, 9),
+            new Trainer("Mathew", "Mcconaughey", 8, 10)
+    );
+    List<Client> clientList = List.of(
+            new Client("Hairy", "Schlong", 24, 78, 182),
+            new Client("Davy", "Farter", 20, 80, 190),
+            new Client("Macky", "Mclovin", 12, 60, 160),
+            new Client("Wendy", "Tour", 40, 80, 185)
+    );
+
+    List<Feedback> feedbacks = List.of(
+            new Feedback(Feedback.Estimate.COMMON)
+    );
+
+    List<Workout> workouts = List.of(
+            new Workout( Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
+                    feedbacks.get(0).getId()),
+            new Workout( Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
+    );
+
+    List<Exercise> exercises = List.of(
+            new Exercise("Exercise1", 15, 15, 3, workouts.get(0).getId()),
+            new Exercise("Exercise2", 20, 10, 4, workouts.get(0).getId()),
+            new Exercise("Exercise3", 100, 12, 5, workouts.get(1).getId()),
+            new Exercise("Exercise4", 58, 10, 4, workouts.get(1).getId())
+    );
 
     @Before
     public void initiateRecords() {
-        List<Trainer> testTrainer = List.of(
-                new Trainer("Alex", "Powerlifter", 5, 10),
-                new Trainer("Drake", "Natan", 3, 6),
-                new Trainer("William", "Defoe", 1, 9),
-                new Trainer("Mathew", "Mcconaughey", 8, 10)
-        );
-        List<Client> clientList = List.of(
-                new Client("Hairy", "Schlong", 24, 78, 182),
-                new Client("Davy", "Farter", 20, 80, 190),
-                new Client("Macky", "Mclovin", 12, 60, 160),
-                new Client("Wendy", "Tour", 40, 80, 185)
-        );
 
-        List<Feedback> feedbacks = List.of(
-                new Feedback(Feedback.Estimate.COMMON)
-        );
-
-        List<Workout> workouts = List.of(
-                new Workout( Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
-                        feedbacks.get(0).getId()),
-                new Workout( Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
-        );
-
-        List<Exercise> exercises = List.of(
-                new Exercise("Exercise1", 15, 15, 3, workouts.get(0).getId()),
-                new Exercise("Exercise2", 20, 10, 4, workouts.get(0).getId()),
-                new Exercise("Exercise3", 100, 12, 5, workouts.get(1).getId()),
-                new Exercise("Exercise4", 58, 10, 4, workouts.get(1).getId())
-        );
 
         dp.saveRecords(testTrainer);
         dp.saveRecords(clientList);
@@ -166,15 +167,19 @@ public class DataProviderCsvTest {
     //-----------------Client role tests--------------------
 
     @Test
-    public void testExecuteWorkout() {
-        assertTrue(dp.executeWorkout(2, ""));
-        assertTrue(dp.executeWorkout(2, Feedback.Estimate.VERY_EASY.toString()));
+    public void testPositiveExecuteWorkout() {
+        assertTrue(dp.executeWorkout(workouts.get(1).getId(), ""));
+        assertTrue(dp.executeWorkout(workouts.get(1).getId(), Feedback.Estimate.VERY_EASY.toString()));
+    }
+
+    @Test
+    public void testNegativeExecuteWorkout() {
+        assertFalse(dp.executeWorkout(2, "something"));
     }
 
     @Test
     public void testPositiveViewWorkout() {
-        assertTrue(dp.viewWorkout(1));
-        assertFalse(dp.viewWorkout(0));
+        assertTrue(dp.viewWorkout(workouts.get(0).getId()));
     }
 
     @Test

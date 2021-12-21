@@ -509,6 +509,9 @@ public class DataProviderCsv extends DataProvider {
 
     boolean changeClientStatus(long id){
         // receiving client object, setting new status and updating it in DS
+        if (getClientById(id).isEmpty()){
+            return false;
+        }
         Client client = getClientById(id).orElseThrow();
         client.setAwaiting(!client.isAwaiting());
         return updateClient(client);

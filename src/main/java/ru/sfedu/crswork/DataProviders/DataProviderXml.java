@@ -423,6 +423,9 @@ public class DataProviderXml extends DataProvider{
     }
 
     boolean changeClientStatus(long id){
+        if (getClientById(id).isEmpty()){
+            return false;
+        }
         Client client = getClientById(id).orElseThrow();
         client.setAwaiting(false);
         return updateClient(client);
