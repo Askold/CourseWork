@@ -235,7 +235,7 @@ public class DataProviderDBTest {
 
     @Test
     public void testExecuteWorkout() {
-        assertTrue(dp.executeWorkout(2, ""));
+        assertTrue(dp.executeWorkout(2, "HARD"));
         assertTrue(dp.executeWorkout(2, Feedback.Estimate.VERY_EASY.toString()));
     }
 

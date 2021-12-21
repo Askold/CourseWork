@@ -3,6 +3,34 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/out/artifacts/CourseWork_jar/CSV/Client.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/out/artifacts/CourseWork_jar/CSV/Exercise.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/out/artifacts/CourseWork_jar/CSV/Feedback.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/out/artifacts/CourseWork_jar/CSV/Workout.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/src/main/resources/CSV/Client.csv">
           <value>
             <Attribute>
@@ -11,6 +39,13 @@
           </value>
         </entry>
         <entry key="/src/main/resources/CSV/Exercise.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/src/main/resources/CSV/Feedback.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

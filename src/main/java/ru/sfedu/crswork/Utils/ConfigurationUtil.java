@@ -16,7 +16,7 @@ import java.util.Properties;
  */
 public class ConfigurationUtil {
 
-    private static final String DEFAULT_CONFIG_PATH = Constants.CONFIG_PATH;
+    private static final String DEFAULT_CONFIG_PATH = Constants.DEFAULT_CONFIG_PATH;
     private static final Properties configuration = new Properties();
     /**
      * Hides default constructor
@@ -37,8 +37,8 @@ public class ConfigurationUtil {
      */
     private static void loadConfiguration() throws IOException{
         File nf;
-        if(System.getProperty(Constants.C1) != null){
-            nf = new File(System.getProperty(Constants.C1));
+        if(System.getProperty(Constants.PROPERTIES_PATH) != null){
+            nf = new File(System.getProperty(Constants.PROPERTIES_PATH));
         }else{
             nf = new File(DEFAULT_CONFIG_PATH);
         }

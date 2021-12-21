@@ -26,7 +26,7 @@ public class DataProviderCsv extends DataProvider {
      * @param type class of handling objects
      * @return initiated File object
      */
-    File initDataSource(Class<?> type) {
+    Optional<File> initDataSource(Class<?> type) {
         String filePath;
         File file = null;
         try {
@@ -42,8 +42,9 @@ public class DataProviderCsv extends DataProvider {
             logger.info(Constants.CSV_PATH_IS + filePath);
         } catch (IOException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
+            return Optional.empty();
         }
-        return file;
+        return Optional.of(file);
     }
 
     // -----------------general select/save methods-------------------------------
@@ -60,7 +61,7 @@ public class DataProviderCsv extends DataProvider {
         Writer writer;
         try {
             // writing elements into file
-            writer = new FileWriter(initDataSource(beans.get(0).getClass()), false);
+            writer = new FileWriter(initDataSource(beans.get(0).getClass()).orElseThrow(), false);
             StatefulBeanToCsv<T> beanToCsv = new StatefulBeanToCsvBuilder<T>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
                     .build();
@@ -87,7 +88,7 @@ public class DataProviderCsv extends DataProvider {
         List<T> beanToCsv = new ArrayList<>();
         try {
             // reading records from file into List of Java beans
-            FileReader reader = new FileReader(initDataSource(type));
+            FileReader reader = new FileReader(initDataSource(type).orElseThrow());
             beanToCsv = new CsvToBeanBuilder(reader)
                     .withType(type)
                     .build().parse();
@@ -109,7 +110,7 @@ public class DataProviderCsv extends DataProvider {
         Writer wr;
         try {
             // writing bean into file
-            wr = new FileWriter(initDataSource(Trainer.class), true);
+            wr = new FileWriter(initDataSource(Trainer.class).orElseThrow(), true);
             CSVWriter writer = new CSVWriter(wr);
             StatefulBeanToCsv<Trainer> beanToCsv = new StatefulBeanToCsvBuilder<Trainer>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
@@ -205,7 +206,7 @@ public class DataProviderCsv extends DataProvider {
         historyRecord.setBean(new Gson().toJson(client));
         Writer wr;
         try {
-            wr = new FileWriter(initDataSource(Client.class), true);
+            wr = new FileWriter(initDataSource(Client.class).orElseThrow(), true);
             CSVWriter writer = new CSVWriter(wr);
             StatefulBeanToCsv<Client> beanToCsv = new StatefulBeanToCsvBuilder<Client>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
@@ -288,7 +289,7 @@ public class DataProviderCsv extends DataProvider {
         historyRecord.setBean(new Gson().toJson(exercise));
         Writer wr;
         try {
-            wr = new FileWriter(initDataSource(Exercise.class), true);
+            wr = new FileWriter(initDataSource(Exercise.class).orElseThrow(), true);
             CSVWriter writer = new CSVWriter(wr);
             StatefulBeanToCsv<Exercise> beanToCsv = new StatefulBeanToCsvBuilder<Exercise>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
@@ -332,7 +333,7 @@ public class DataProviderCsv extends DataProvider {
         historyRecord.setBean(new Gson().toJson(workout));
         Writer wr;
         try {
-            wr = new FileWriter(initDataSource(Workout.class), true);
+            wr = new FileWriter(initDataSource(Workout.class).orElseThrow(), true);
             CSVWriter writer = new CSVWriter(wr);
             StatefulBeanToCsv<Workout> beanToCsv = new StatefulBeanToCsvBuilder<Workout>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
@@ -415,7 +416,7 @@ public class DataProviderCsv extends DataProvider {
         historyRecord.setBean(new Gson().toJson(feedback));
         Writer wr;
         try {
-            wr = new FileWriter(initDataSource(Feedback.class), true);
+            wr = new FileWriter(initDataSource(Feedback.class).orElseThrow(), true);
             CSVWriter writer = new CSVWriter(wr);
             StatefulBeanToCsv<Feedback> beanToCsv = new StatefulBeanToCsvBuilder<Feedback>(writer)
                     .withLineEnd(CSVWriter.DEFAULT_LINE_END)
@@ -469,6 +470,8 @@ public class DataProviderCsv extends DataProvider {
             }
             // displaying workout
             viewFeedback(result.get().getFeedback());
+        }else{
+            logger.info(Constants.NOT_FINISHED);
         }
         return true;
     }
@@ -519,6 +522,7 @@ public class DataProviderCsv extends DataProvider {
         }
         // composing and inserting to ds new exercise
         Exercise exercise = new Exercise(name, weight, repetitions, rounds, workout);
+        logger.info(Constants.EXERCISE_SUCCESS);
         return insertExercise(exercise);
     }
 
@@ -544,6 +548,7 @@ public class DataProviderCsv extends DataProvider {
             // updating client status
             changeClientStatus(workout.getClient());
         }
+        logger.info(Constants.WORKOUT_EXECUTED);
         return true;
     }
 
@@ -576,6 +581,7 @@ public class DataProviderCsv extends DataProvider {
         if (!insertFeedback(feedback)){
             logger.error(feedback.getClass().getSimpleName()+Constants.NOT_ADDED);
         }
+        logger.info(Constants.FEEDBACK_SUCCESS);
         return feedback.getId();
     }
 

@@ -11,7 +11,9 @@ import org.bson.Document;
 import ru.sfedu.crswork.App;
 import ru.sfedu.crswork.Constants;
 import ru.sfedu.crswork.Models.*;
+import ru.sfedu.crswork.Utils.ConfigurationUtil;
 
+import java.io.IOException;
 import java.util.Optional;
 /**
  * Abstract DataProvider class with required methods
@@ -19,6 +21,7 @@ import java.util.Optional;
  * - CRUD for all beans
  * - methods implemented from use case diagram
  * CRUD explained only for Trainer class, all other beans have the same structure and principles
+ * @author Kirill Silonov
  */
 public abstract class DataProvider {
     private static final Logger logger = LogManager.getLogger(App.class);
@@ -165,10 +168,19 @@ public abstract class DataProvider {
 
     /**
      * connects to MongoDB
-     * @return object of MongoDatabes class
+     * @return object of MongoDatabase class
      */
     private static Optional<MongoDatabase> connectToDB(){
-        MongoClient mongoClient = new MongoClient(Constants.LOCALHOST, 27017);
+        String localhost = "";
+        int port = 0;
+        try {
+            localhost = ConfigurationUtil.getConfigurationEntry(Constants.MONGO_LOCALHOST);
+            port = Integer.parseInt(ConfigurationUtil.getConfigurationEntry(Constants.MONGO_PORT));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        MongoClient mongoClient = new MongoClient(localhost, port);
         MongoDatabase database = mongoClient.getDatabase(Constants.MONGODB_NAME);
         logger.debug(Constants.CONNECTED_TO_MONGO);
         return Optional.of(database);
@@ -181,12 +193,12 @@ public abstract class DataProvider {
      */
     private static Optional<MongoCollection> receiveCollection(MongoDatabase database){
         try {
-            database.createCollection(Constants.CONNECTION_NAME);
+            database.createCollection(Constants.COLLECTION_NAME);
             logger.debug(Constants.COLLECTION_CREATED);
         }catch (MongoCommandException e){
             logger.info(e.getClass().getName() + e.getMessage());
         }
-        MongoCollection<Document> collection = database.getCollection(Constants.CONNECTION_NAME);
+        MongoCollection<Document> collection = database.getCollection(Constants.COLLECTION_NAME);
         logger.debug(Constants.COLLECTION_RECIEVED);
         return Optional.of(collection);
     }

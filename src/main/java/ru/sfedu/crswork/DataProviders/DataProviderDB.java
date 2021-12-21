@@ -4,7 +4,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.sfedu.crswork.Constants;
 import ru.sfedu.crswork.Models.*;
+import ru.sfedu.crswork.Utils.ConfigurationUtil;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,10 +68,15 @@ public class DataProviderDB extends DataProvider{
     public Connection getNewConnection() {
         Connection con = null;
         try {
-            Class.forName(Constants.JDBC_DRIVER);
-            con = DriverManager.getConnection(Constants.DATABASE_URL,
-                    Constants.DATABASE_USER, Constants.DATABASE_PASSWORD);
-        } catch (SQLException | ClassNotFoundException e) {
+            String url = ConfigurationUtil.getConfigurationEntry(Constants.DATABASE_URL);
+            logger.info(url);
+            String user = ConfigurationUtil.getConfigurationEntry(Constants.DATABASE_USER);
+            logger.info(user);
+            String driver = ConfigurationUtil.getConfigurationEntry(Constants.JDBC_DRIVER);
+            logger.info(driver);
+            Class.forName(driver);
+            con = DriverManager.getConnection(url, user, Constants.DATABASE_PASSWORD);
+        } catch (SQLException | ClassNotFoundException | IOException e) {
             logger.error(e.getClass().getName() + "    " + e.getMessage());
         }
         logger.debug(Constants.CONNECTED_TO_DB);
@@ -267,6 +274,7 @@ public class DataProviderDB extends DataProvider{
             statement.setInt(5, client.getWeight());
             statement.setInt(6, client.getHeight());
             statement.setBoolean(7, client.isAwaiting());
+            statement.execute();
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
         }
@@ -281,7 +289,6 @@ public class DataProviderDB extends DataProvider{
             if(!createTable(Constants.CREATE_TABLE_CLIENT, connection)) return false;
             statement = connection.prepareStatement(Constants.INSERT_CLIENT);
             executeClientStatement(statement, client);
-            statement.execute();
             logger.debug(client.getClass().getSimpleName() + Constants.ADDED);
 
         } catch (SQLException e) {
@@ -340,8 +347,13 @@ public class DataProviderDB extends DataProvider{
         try(Connection connection = getNewConnection()) {
             createTable(Constants.CREATE_TABLE_CLIENT, connection);
             preparedStatement = connection.prepareStatement(Constants.UPDATE_CLIENT);
-            executeClientStatement(preparedStatement, client);
-            preparedStatement.execute();
+            preparedStatement.setString(1, client.getName());
+            preparedStatement.setString(2, client.getSurname());
+            preparedStatement.setInt(3, client.getAge());
+            preparedStatement.setInt(4, client.getWeight());
+            preparedStatement.setInt(5, client.getHeight());
+            preparedStatement.setBoolean(6, client.isAwaiting());
+            preparedStatement.setLong(7, client.getId());
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
             e.printStackTrace();
@@ -557,6 +569,11 @@ public class DataProviderDB extends DataProvider{
             createTable(Constants.CREATE_TABLE_WORKOUT, connection);
             preparedStatement = connection.prepareStatement(Constants.UPDATE_WORKOUT);
             executeWorkoutStatement(preparedStatement, workout);
+            preparedStatement.setLong(1, workout.getFeedback());
+            preparedStatement.setString(2, String.valueOf(workout.getType()));
+            preparedStatement.setLong(3, workout.getClient());
+            preparedStatement.setLong(4, workout.getTrainer());
+            preparedStatement.setLong(5, workout.getId());
             preparedStatement.execute();
         } catch (SQLException e) {
             logger.error(e.getClass().getName() +"    "+ e.getMessage());
@@ -678,6 +695,8 @@ public class DataProviderDB extends DataProvider{
                 return false;
             }
             viewFeedback(result.get().getFeedback());
+        }else{
+            logger.info(Constants.NOT_FINISHED);
         }
         return true;
     }
@@ -720,6 +739,7 @@ public class DataProviderDB extends DataProvider{
             return false;
         }
         Exercise exercise = new Exercise(name, weight, repetitions, rounds, workout);
+        logger.info(Constants.EXERCISE_SUCCESS);
         return insertExercise(exercise);
     }
 
@@ -743,6 +763,7 @@ public class DataProviderDB extends DataProvider{
             client.setAwaiting(true);
             updateClient(client);
         }
+        logger.info(Constants.WORKOUT_EXECUTED);
         return true;
     }
 
@@ -772,6 +793,7 @@ public class DataProviderDB extends DataProvider{
         if (!insertFeedback(feedback)){
             logger.error(feedback.getClass().getSimpleName()+Constants.NOT_ADDED);
         }
+        logger.info(Constants.FEEDBACK_SUCCESS);
         return feedback.getId();
     }
 

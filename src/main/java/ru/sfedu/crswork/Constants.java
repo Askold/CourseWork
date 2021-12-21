@@ -1,8 +1,8 @@
 package ru.sfedu.crswork;
 
 public class Constants {
-    public static final String C1 = "STRING1";
-    public static final String CONFIG_PATH ="./src/main/resources/environment.properties";
+    public static final String PROPERTIES_PATH = "properties";
+    public static final String DEFAULT_CONFIG_PATH ="./src/main/resources/environment.properties";
     //-----------------Data source-----------------
     public static final String DEFAULT_CSV_PATH = "csv_path";
     public static final String CSV_EXTENSION = ".csv";
@@ -33,21 +33,32 @@ public class Constants {
     public static final String ID_IS = " ID is ";
     public static final String EXERCISES_WORKOUT =  "Exercises for this workout wasn't found";
     public static final String IMPOSSIBLE_TO_VIEW = "Impossible to view workout";
+    public static final String FEEDBACK_SUCCESS = "feedback composed successfully!" ;
+    public static final String WORKOUT_EXECUTED = "workout executed successfully!" ;
+    public static final String EXERCISE_SUCCESS = "exercise created successfully!" ;
+    public static final String WORKOUT_SUCCESS = "workout created successfully!" ;
+    public static final String NOT_FINISHED =  "Client hasn't finished workout yet";
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+    //public static final String  =  ;
+
     //-----------------History content-----------------
     public static final String HISTORY_ADDED = "New History record added";
-    public static final String LOCALHOST=" localhost";
+    public static final String MONGO_LOCALHOST="mongo_localhost";
+    public static final String MONGO_PORT="mongo_port";
     public static final String MONGODB_NAME = "myMongoDb";
     public static final String CONNECTED_TO_MONGO = "Connected to MongoDB";
-    public static final String CONNECTION_NAME ="HistoryContent";
+    public static final String COLLECTION_NAME ="HistoryContent";
     public static final String COLLECTION_CREATED ="MongoDB collection created";
     public static final String COLLECTION_RECIEVED = "MongoDB collection received";
 
     //public static final String  =;
     //-----------------Database-----------------
-    public static final String DATABASE_URL = "jdbc:h2:./test";
-    public static final String DATABASE_USER = "sa";
+    public static final String DATABASE_URL = "h2_url";
+    public static final String DATABASE_USER = "h2_user";
     public static final String DATABASE_PASSWORD = "";
-    public static final String JDBC_DRIVER = "org.h2.Driver";
+    public static final String JDBC_DRIVER = "jdbc_driver";
     public static final String CONNECTED_TO_DB = "Connected to DB";
     public static final String CLEARED = "Table was cleared";
     //-----------------SQL queries-----------------
@@ -116,10 +127,10 @@ public class Constants {
             ")";
     //-----------------CLI-----------------
     //---------Methods
-    public static final String CREATE_EXERCISE = "create_exercise";
-    public static final String CREATE_WORKOUT = "create_workout";
-    public static final String CHECK_CLIENT = "check_client" ;
-    public static final String EXECUTE_WORKOUT = "execute_workout" ;
+    public static final String CREATE_EXERCISE = "createExercise";
+    public static final String CREATE_WORKOUT = "createWorkout";
+    public static final String CHECK_CLIENT = "checkClient" ;
+    public static final String EXECUTE_WORKOUT = "executeWorkout" ;
     //---------Data Providers
     public static final String DP_CSV =  "csv";
     public static final String DP_XML =  "xml";
@@ -135,16 +146,7 @@ public class Constants {
     public static final String ARGS_ERROR = "Incorrect amount of arguments or type is wrong" ;
     public static final String TYPE_NOT_FOUND = "Such Workout Type not found";
     public static final String METHOD_NOT_FOUND =  ": such method not found";
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
-    //public static final String  =  ;
+    public static final String SPLIT = "--------------------------------------------------------------------------------" ;
     //public static final String  =  ;
     //public static final String  =  ;
     //public static final String  =  ;

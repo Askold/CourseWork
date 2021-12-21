@@ -19,10 +19,12 @@ public class App {
      * @param args received parameters
      */
     public static void main( String[] args ) {
+        // checks argument are not absent
         if (args.length == 0){
             logger.error(Constants.ARGS_ERROR);
             return;
         }
+        // selecting DataProvider
         DataProvider dataProvider = selectDataProvider(args[0]).orElseThrow();
         String method;
         try{
@@ -32,6 +34,7 @@ public class App {
             logger.error(Constants.ARGS_ERROR);
             return;
         }
+        // selecting method
         switch (method){
             case Constants.CREATE_EXERCISE:
                 String name;
@@ -136,12 +139,12 @@ public class App {
         switch (arg){
             case Constants.DP_CSV:
                 dataProvider = new DataProviderCsv();
-                insertDataToFile();
+                insertDataToCsv();
                 result = Optional.of(dataProvider);
                 break;
             case Constants.DP_XML:
                 dataProvider = new DataProviderXml();
-                insertDataToFile();
+                insertDataToXml();
                 result = Optional.of(dataProvider);
                 break;
             case Constants.DP_DB:
@@ -153,27 +156,32 @@ public class App {
         return result;
     }
 
+
+    /**
+     * ID's provided here are simple because it simplifies interaction with objects through the CLI
+     */
+
     private static final List<Trainer> testTrainer = List.of(
-            new Trainer("Alex", "Powerlifter", 5, 10),
-            new Trainer("Drake", "Natan", 3, 6),
-            new Trainer("William", "Defoe", 1, 9),
-            new Trainer("Mathew", "Mcconaughey", 8, 10)
+            new Trainer(1, "Alex", "Powerlifter", 5, 10),
+            new Trainer(2, "Drake", "Natan", 3, 6),
+            new Trainer(3, "William", "Defoe", 1, 9),
+            new Trainer(4, "Mathew", "Mcconaughey", 8, 10)
     );
     private static final List<Client> clientList = List.of(
-            new Client("Hairy", "Schlong", 24, 78, 182),
-            new Client("Davy", "Farter", 20, 80, 190),
-            new Client("Macky", "Mclovin", 12, 60, 160),
-            new Client("Wendy", "Tour", 40, 80, 185)
+            new Client(1, "Hairy", "Schlong", 24, 78, 182, true),
+            new Client(2, "Davy", "Farter", 20, 80, 190, false),
+            new Client(3, "Macky", "Mclovin", 12, 60, 160),
+            new Client(4, "Wendy", "Tour", 40, 80, 185)
     );
 
     private static final List<Feedback> feedbacks = List.of(
-            new Feedback(Feedback.Estimate.COMMON)
+            new Feedback(1, Feedback.Estimate.COMMON)
     );
 
     private static final List<Workout> workouts = List.of(
-            new Workout( Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
+            new Workout(1, Workout.WorkoutType.AEROBIC, clientList.get(0).getId(), testTrainer.get(0).getId(),
                     feedbacks.get(0).getId()),
-            new Workout( Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
+            new Workout( 2, Workout.WorkoutType.STRENGTH, clientList.get(1).getId(), testTrainer.get(1).getId())
     );
 
     private static final List<Exercise> exercises = List.of(
@@ -183,13 +191,24 @@ public class App {
             new Exercise("Exercise4", 58, 10, 4, workouts.get(1).getId())
     );
 
-    private static void insertDataToFile(){
+    private static void insertDataToCsv(){
         DataProviderCsv dp = new DataProviderCsv();
         dp.saveRecords(testTrainer);
         dp.saveRecords(clientList);
         dp.saveRecords(exercises);
         dp.saveRecords(workouts);
         dp.saveRecords(feedbacks);
+        logger.info(Constants.SPLIT);
+    }
+
+    private static void insertDataToXml(){
+        DataProviderXml dp = new DataProviderXml();
+        dp.saveRecords(testTrainer);
+        dp.saveRecords(clientList);
+        dp.saveRecords(exercises);
+        dp.saveRecords(workouts);
+        dp.saveRecords(feedbacks);
+        logger.info(Constants.SPLIT);
     }
 
     private static void insertDataToDb(){
@@ -199,6 +218,7 @@ public class App {
         exercises.forEach(dp::insertExercise);
         workouts.forEach(dp::insertWorkout);
         feedbacks.forEach(dp::insertFeedback);
+        logger.info(Constants.SPLIT);
     }
 
 }

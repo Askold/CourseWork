@@ -41,6 +41,14 @@ public class Client extends User {
         this.height = height;
         this.awaiting = awaiting;
     }
+    public Client(long id, String name, String surname, int age, int weight, int height) {
+        super(id, name, surname);
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+    }
+
+
 
     public Client() {
 

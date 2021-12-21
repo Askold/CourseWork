@@ -43,6 +43,11 @@ public class Feedback {
         this.estimate = estimate;
     }
 
+    public Feedback(long id, Estimate estimate) {
+        this.id = id;
+        this.estimate = estimate;
+    }
+
     public Feedback() {
     }
 

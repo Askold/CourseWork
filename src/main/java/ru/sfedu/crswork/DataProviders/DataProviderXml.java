@@ -50,7 +50,7 @@ public class DataProviderXml extends DataProvider{
      * @param <T> generic, operates with any data type
      * @return result of inserting
      */
-    <T> boolean saveRecords(List<T> beans) {
+    public <T> boolean saveRecords(List<T> beans) {
         HistoryContent historyRecord = new HistoryContent(getClass().toString(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
         try {
@@ -390,6 +390,8 @@ public class DataProviderXml extends DataProvider{
                 return false;
             }
             viewFeedback(result.get().getFeedback());
+        }else{
+            logger.info(Constants.NOT_FINISHED);
         }
         return true;
     }
@@ -432,6 +434,7 @@ public class DataProviderXml extends DataProvider{
             return false;
         }
         Exercise exercise = new Exercise(name, weight, repetitions, rounds, workout);
+        logger.info(Constants.EXERCISE_SUCCESS);
         return insertExercise(exercise);
     }
 
@@ -452,6 +455,7 @@ public class DataProviderXml extends DataProvider{
             updateWorkout(workout);
             changeClientStatus(workout.getClient());
         }
+        logger.info(Constants.WORKOUT_EXECUTED);
         return true;
     }
 
@@ -481,6 +485,7 @@ public class DataProviderXml extends DataProvider{
         if (!insertFeedback(feedback)){
             logger.error(feedback.getClass().getSimpleName()+Constants.NOT_ADDED);
         }
+        logger.info(Constants.FEEDBACK_SUCCESS);
         return feedback.getId();
     }
 }
